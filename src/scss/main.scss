@@ -1,0 +1,62 @@
+@import '../../dist/bower_components/bourbon/app/assets/stylesheets/_bourbon.scss';
+// $visual-grid:true;
+@import '../../dist/bower_components/neat/app/assets/stylesheets/_neat.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+.pageWrap {
+  @include outer-container;
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  margin: 0;
+  background: #CED7DB;
+  color: #202020;
+  h1 {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.options {
+  float: right;
+  nav {
+    text-decoration: none;
+  }
+}
+
+aside {
+  @include outer-container;
+  @include span-columns(2);
+  float: left;
+  margin: 0;
+  background: #F34235;
+  height: 1000px;
+  nav {
+    display: block;
+  }
+}
+
+.login, .register {
+  width: 100%;
+  @include span-columns(8);
+  @include shift(1);
+  margin-top: 32px;
+  padding: 10px 0;
+  height: 400px;
+  border-radius: 2px;
+  background: #5F7C8A;
+  color: #202020;
+  text-align: center;
+  input {
+    opacity: .8;
+    height: 30px;
+    position: relative;
+    display: block;
+    margin: 20px auto;
+  }
+}
