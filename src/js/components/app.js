@@ -16,14 +16,14 @@ class App extends React.Component {
         </header>
         <aside>
           <nav>
-            <Link to="register">Register</Link>
-            <Link to="login">Login</Link>
+            <Link to="#">Auction</Link>
+            <Link to="#">Auction2</Link>
           </nav>
         </aside>
         <div className="pageWrap">
-            <main>
-              {this.props.children}
-            </main>
+          <main>
+            {this.props.children}
+          </main>
         </div>
       </div>
     )
