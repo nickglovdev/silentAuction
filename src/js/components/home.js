@@ -8,17 +8,7 @@ class Home extends React.Component {
   render () {
     return(
       <div className="homePage">
-        <aside>
-          <nav>
-            <Link to="register">Register</Link>
-            <Link to="login">Login</Link>
-            <Link to="#">Home</Link>
-          </nav>
-        </aside>
         <div className="pageWrap">
-          <main>
-            {this.props.children}
-          </main>
           <section className="siteDescription">
             <h2>Silence!</h2>
             <p>Hoodie bespoke kickstarter 90's seitan venmo godard poutine ramps.

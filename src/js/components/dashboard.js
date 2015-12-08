@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class App extends React.Component {
+class Dashboard extends React.Component {
   render() {
     return (
       <div>
@@ -30,4 +30,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Dashboard;
