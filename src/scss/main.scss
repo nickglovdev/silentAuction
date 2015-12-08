@@ -26,7 +26,7 @@ $visual-grid:true;
   }
 }
 
-div.homePage {
+.homePage {
   background-image: url('https://raw.githubusercontent.com/jacksaintjack/silentAuction/master/src/assets/pictures/NABHM0L1AB.jpg');
 }
 
@@ -61,7 +61,7 @@ aside {
   }
 }
 
-.login, .register {
+.login, .register, .faq {
   width: 100%;
   @include span-columns(9);
   @include shift(1);

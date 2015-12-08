@@ -6,6 +6,7 @@ import Sidebar from './components/public/sidebar';
 import Home from './components/public/home';
 import Login from './components/public/login';
 import Register from './components/public/register';
+import FAQ from './components/public/faq'
 import Dashboard from './components/moderator/dashboard'
 
 ReactDOM.render((
@@ -14,6 +15,7 @@ ReactDOM.render((
       <IndexRoute component={Home}/>
       <Route path="login" component={Login}/>
       <Route path="register" component={Register}/>
+      <Route path="faq" component={FAQ}/>
     </Route>
     <Route path='/dashboard' component={Dashboard}>
     </Route>
