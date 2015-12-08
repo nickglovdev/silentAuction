@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import Home from './public/home';
+import Home from './home';
 
 class Sidebar extends React.Component {
   render () {
