@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute} from 'react-router';
 
-import Sidebar from './components/sidebar';
-import Home from './components/home';
-import Login from './components/login';
-import Register from './components/register';
-import Dashboard from './components/dashboard'
+import Sidebar from './components/public/sidebar';
+import Home from './components/public/home';
+import Login from './components/public/login';
+import Register from './components/public/register';
+import Dashboard from './components/moderator/dashboard'
 
 ReactDOM.render((
   <Router>

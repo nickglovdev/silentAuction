@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router';
 
-import Login from './login';
-import Register from './register';
+import Login from './public/login';
+import Register from './public/register';
 
 class Home extends React.Component {
   render () {

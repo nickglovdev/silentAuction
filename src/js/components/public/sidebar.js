@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import Home from './home';
+import Home from './public/home';
 
 class Sidebar extends React.Component {
   render () {
     return(
-      <div>
+      <div className="homePage">
         <aside>
           <nav>
             <Link to="register">Register</Link>
