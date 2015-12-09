@@ -6,14 +6,14 @@ class ItemView extends React.Component {
     return(
       <section className="dashboardItem">
         <header className="itemViewHeader">
-          <Link to="#"> <button>Edit Auction</button> </Link>
+          <Link to="/editauction">Edit Auction</Link>
           <h3>Guest View Url</h3>
           <input type="text" value="Test" readonly/>
           <button>Copy URL</button>
         </header>
 
         <Link to="/createitem">Add Items</Link>
-        <button>Edit Items</button>
+        <Link to='/edititem'>Edit Items</Link>
 
         <section className="itemListView">
           <h3>Item Title One</h3>
