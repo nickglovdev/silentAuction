@@ -6,9 +6,14 @@ $visual-grid:true;
   box-sizing: border-box;
 }
 
+// main/public //
 .pageWrap {
   @include outer-container;
   width: 100%;
+}
+
+.homePage {
+  background-image: url('https://raw.githubusercontent.com/jacksaintjack/silentAuction/master/src/assets/pictures/NABHM0L1AB.jpg');
 }
 
 .siteDescription {
@@ -23,28 +28,6 @@ $visual-grid:true;
   h2 {
     text-align: center;
     font-size: 65px;
-  }
-}
-
-.homePage {
-  background-image: url('https://raw.githubusercontent.com/jacksaintjack/silentAuction/master/src/assets/pictures/NABHM0L1AB.jpg');
-}
-
-header {
-  width: 100%;
-  margin: 0;
-  background: #CED7DB;
-  color: #202020;
-  h1 {
-    margin: 0;
-    text-align: center;
-  }
-}
-
-.options {
-  float: right;
-  nav {
-    text-decoration: none;
   }
 }
 
@@ -80,3 +63,59 @@ aside {
     margin: 20px auto;
   }
 }
+// end main/public //
+
+// moderator dashboard //
+header {
+  width: 100%;
+  margin: 0;
+  background: #CED7DB;
+  color: #202020;
+  h1 {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.options {
+  float: right;
+  nav {
+    text-decoration: none;
+  }
+}
+// end moderator dashboard //
+
+// moderator Create //
+.auctionCreate {
+  width: 100%;
+  @include span-columns(9);
+  @include shift(1);
+  margin-top: 32px;
+  padding: 10px 0;
+  height: 450px;
+  border-radius: 2px;
+  background: rgba(95, 124, 138, 0.65);
+  color: #202020;
+  input {
+    opacity: .8;
+    height: 30px;
+    position: relative;
+    display: block;
+    margin: 20px auto;
+  }
+}
+
+.auctionCreateBtn {
+  float: right;
+  margin: 0 auto;
+}
+.auctionFormLeft{
+  @include span-columns(5);
+  float: left;
+}
+
+.auctionFormRight{
+  @include span-columns(5);
+  float: right;
+}
+// end moderator Create //

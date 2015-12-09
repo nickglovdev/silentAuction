@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 class Dashboard extends React.Component {
   render() {
     return (
-      <div>
+      <div className="dashboard">
         <header>
           <h1>Aucion Silencio
             <nav className="options">

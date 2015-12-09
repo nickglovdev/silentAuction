@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 class ItemView extends React.Component {
   render () {
     return(
-      <section>
+      <section className="dashboardItem">
         <header className="itemViewHeader">
           <Link to="#"> <button>Edit Auction</button> </Link>
           <h3>Guest View Url</h3>

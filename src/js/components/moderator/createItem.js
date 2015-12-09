@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react'
 class CreateItem extends React.Component {
   render () {
     return (
-      <section>
+      <section className="auctionCreateItem">
         <h1>Add Items</h1>
 
         <section className="itemForm">
