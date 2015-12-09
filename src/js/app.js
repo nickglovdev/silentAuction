@@ -10,7 +10,9 @@ import FAQ from './components/public/faq'
 import Dashboard from './components/moderator/dashboard';
 import CreateAuction from './components/moderator/createAuction';
 import ItemView from './components/moderator/dashboardItemView';
-import CreateItem from './components/moderator/createitem'
+import CreateItem from './components/moderator/createitem';
+import EditItem from './components/moderator/edititem';
+import EditAuction from './components/moderator/editauction'
 
 ReactDOM.render((
   <Router>
@@ -24,6 +26,8 @@ ReactDOM.render((
       <IndexRoute component={ItemView} />
       <Route path='/createauction' component={CreateAuction}/>
       <Route path='/createitem' component={CreateItem} />
+      <Route path='/edititem' component={EditItem} />
+      <Route path='/editauction' component={EditAuction} />
     </Route>
   </Router>
 ), document.getElementById('app'));
