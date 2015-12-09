@@ -1,55 +1,24 @@
-// import  Jquery from 'jquery';
-//
-// class User{
-//
-//   constructor(){
-//     this.access_token = null;
-//     this.refresh_token = null;
-//     this.token_expires = null;
-//
-//     this.state = {
-//       user
-//     }
-//   }
-//
-//   isLoggedIn(){
-//     return this.access_token !== null;
-//     console.log("is be logged inned")
-//   }
-//
-//   login(data){
-//     let url = ''
-//     data.grant_type = 'password';
-//     let options = {
-//       url: url,
-//       method: "POST",
-//       data: data
-//     }
-//     Jquery.ajax(options).then(response => {
-//       console.log(response, "oauth RESPONSE")
-//       let {access_token, refresh_token, expires_in} = response;
-//       this.access_token = access_token
-//       this.refresh_token = refresh_token
-//       this.token_expires = expires_in
-//       console.log(access_token)
-//     })
-//   };
-//
-//
-//   register(data){
-//     let url = ''
-//     let options = {
-//       url: url,
-//       method: 'POST',
-//       data: {
-//         user: data
-//       }
-//     };
-//
-//     Jquery.ajax(options).then(response =>{
-//       console.log(response)
-//     })
-//   };
-// }
-//
-// export default new User();
+import React from 'react';
+import  Jquery from 'jquery';
+
+class User{
+  // Create a function that takes the values given to us from the 'Register',
+  // component and make an AJAX request. The AJAX request should specify the
+  // POST method so that is known we are asking for a token in response.
+  register(data){
+    let url = 'https://silent-auctioner.herokuapp.com/users'
+    let options = {
+      url: url,
+      method: 'POST',
+      data: {
+        user: data
+      }
+    };
+
+    Jquery.ajax(options).then(response =>{
+      console.log(response)
+    })
+  };
+}
+
+export default new User();
