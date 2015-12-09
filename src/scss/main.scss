@@ -2,6 +2,9 @@
 $visual-grid:true;
 @import '../../dist/bower_components/neat/app/assets/stylesheets/_neat.scss';
 
+$mobile: new-breakpoint(max-width 480px);
+$desktop: new-breakpoint(min-width 850px);
+
 * {
   box-sizing: border-box;
 }
@@ -119,3 +122,23 @@ header {
   float: right;
 }
 // end moderator Create //
+
+
+// mobile //
+.login, .register, .faq {
+  @include media($mobile) {
+  @include span-columns(12);
+  margin: 0;
+  padding: 0;
+  }
+}
+
+aside {
+  @include media($mobile) {
+  @include span-columns(12);
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  }
+}
+// end mobile //

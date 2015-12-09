@@ -7,7 +7,7 @@ import FAQ from './faq';
 class Sidebar extends React.Component {
   render () {
     return(
-      <div>
+      <div className="sidebar">
         <aside>
           <nav>
             <Link to="register">Register</Link>
