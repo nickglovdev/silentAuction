@@ -8,7 +8,7 @@ class Dashboard extends React.Component {
         <header>
           <h1>Aucion Silencio
             <nav className="options">
-              <Link to="#">Create</Link>
+              <Link to="/createauction">Create</Link>
               <Link to="#">Current</Link>
               <Link to="#">Past</Link>
             </nav>
