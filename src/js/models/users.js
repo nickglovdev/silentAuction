@@ -1,7 +1,7 @@
 import React from 'react';
 import  Jquery from 'jquery';
 
-class User{
+class User {
   constructor() {
     this.access_token = null;
     this.refresh_token = null;
@@ -37,11 +37,10 @@ class User{
     };
 
     Jquery.ajax(options).then(response =>{
-      done(null, response);
-    }).fail(error => {
-      done(error);
-    });
+      console.log(response)
+    })
   };
+}
 
   //This section is where we are trying to authenicate our token so that we
   //Can log in
@@ -64,6 +63,7 @@ class User{
       this.token_created = created_at;
 
       this.dispatch();
+      console.log(dispatch);
       //Need to store the token in a cookie
 
       done(null,response);
