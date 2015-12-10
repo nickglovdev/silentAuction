@@ -1,27 +1,14 @@
 import React from 'react';
-import  Jquery from 'jquery';
+import  jQuery from 'jquery';
 
-class User {
+class User{
   constructor() {
     this.access_token = null;
     this.refresh_token = null;
     this.token_expires = null;
     this.token_create = null;
     this.listeners = [];
-  }
 
-  subscribe(callback) {
-    this.listeners.push(callback);
-  }
-
-  dispatch(){
-    this.listeners.forEach(callback => {
-      callback();
-    });
-  }
-
-  isLoggedIn() {
-    return this.access_token !==null;
   }
   // Create a function that takes the values given to us from the 'Register',
   // component and make an AJAX request. The AJAX request should specify the
@@ -36,11 +23,10 @@ class User {
       }
     };
 
-    Jquery.ajax(options).then(response =>{
+    jQuery.ajax(options).then(response =>{
       console.log(response);
     });
   };
-}
 
   //This section is where we are trying to authenicate our token so that we
   //Can log in
@@ -54,16 +40,13 @@ class User {
       data: data
     };
 
-    Jquery.ajax(options).then(response =>{
+    jQuery.ajax(options).then(response =>{
       let {access_token, refresh_token, expires_in, created_at} = response;
-
+      console.log(response)
       this.access_token = access_token;
       this.refresh_token = refresh_token;
       this.token_expires = expires_in;
       this.token_created = created_at;
-
-      this.dispatch();
-      console.log(dispatch);
       //Need to store the token in a cookie
 
       done(null,response);

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import setup from '../../setup'
+
 import User from '../../models/users'
 
 class Login extends React.Component{
-
   constructor(props){
     super(props);
 
@@ -21,6 +22,7 @@ class Login extends React.Component{
         password: password
       }, (error, data) => {
         if (!error) {
+          setup(User.access_token);
           console.log('success')
         } else {
           alert('error in login');
@@ -36,9 +38,9 @@ class Login extends React.Component{
       <div>
         <div className="login">
           <h3>Login</h3>
-          <span>E-Mail:</span>
+          <span className="inputLabel">E-Mail:</span>
             <input ref="email" type="text" className="username" placeholder="E-Mail..."></input>
-          <span>Password:</span>
+          <span className="inputLabel">Password:</span>
             <input ref="password" type="password" className="username" placeholder="Password..."></input>
           <button value="Submit" onClick={this.handleLogin}>Submit</button>
           <br />

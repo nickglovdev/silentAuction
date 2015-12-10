@@ -37,13 +37,13 @@ class Register extends React.Component {
       <div>
         <div className="register">
           <h3>Register</h3>
-          <span>E-Mail:</span>
+          <span className="inputLabel">E-Mail:</span>
             <input ref="email" placeholder="E-Mail..."></input>
-          <span>Confirm E-Mail:</span>
+          <span className="inputLabel">Confirm E-Mail:</span>
             <input ref="confirmEmail"  placeholder="E-Mail..."></input>
-          <span>Password:</span>
+          <span className="inputLabel">Password:</span>
             <input ref="password"  type="password" placeholder="Password..."></input>
-          <span>Confirm Password</span>
+          <span className="inputLabel">Confirm Password</span>
             <input ref="confirmPassword"  type="password" placeholder="Password..."></input>
           <button value="Join" onClick={this.registerUser}>Join</button>
         </div>

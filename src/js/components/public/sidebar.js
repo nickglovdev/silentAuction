@@ -10,7 +10,7 @@ class Sidebar extends React.Component {
       <div className="sidebar">
         <aside>
           <nav>
-            <span class="octicon octicon-home"></span><Link className="navOptions" to="register">Register</Link>
+            <Link className="navOptions" to="register">Register</Link>
             <Link className="navOptions" to="login">Login</Link>
             <Link className="navOptions" to="faq">FAQ</Link>
             <Link className="navOptions" to="#">Home</Link>
