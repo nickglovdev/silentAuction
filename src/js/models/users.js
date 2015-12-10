@@ -37,9 +37,7 @@ class User{
     };
 
     Jquery.ajax(options).then(response =>{
-      done(null, response);
-    }).fail(error => {
-      done(error);
+      console.log(response);
     });
   };
 
