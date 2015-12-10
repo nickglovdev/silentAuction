@@ -26,10 +26,8 @@ class Register extends React.Component {
     alert("Please check fields and try again.")
     } else {
       User.register({
-        username: email,
-        confirmEmail: confirmEmail,
-        password: password,
-        confirmPassword: confirmPassword
+        email: email,
+        password: password
       })
     }
   }

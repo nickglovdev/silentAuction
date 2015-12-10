@@ -37,8 +37,8 @@ class User {
     };
 
     Jquery.ajax(options).then(response =>{
-      console.log(response)
-    })
+      console.log(response);
+    });
   };
 }
 
