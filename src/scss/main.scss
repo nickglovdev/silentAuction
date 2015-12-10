@@ -35,22 +35,23 @@ $desktop: new-breakpoint(min-width 850px);
 }
 
 aside {
-  @include outer-container;
-  @include span-columns(2);
   float: left;
-  position: relative;
   margin: 0;
-  background: rgba(243, 66, 53, 0.93);
+  background: rgba(252, 85, 33, 0.93);
   height: 1000px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
   nav {
     display: block;
+    .navOptions {
+      text-decoration: none;
+      color: #fff;
+    }
   }
 }
 
 .login, .register, .faq {
   width: 100%;
-  @include span-columns(9);
+  @include span-columns(8 of 12);
   @include shift(1);
   margin-top: 32px;
   padding: 10px 0;
@@ -60,6 +61,7 @@ aside {
   color: #202020;
   text-align: center;
   input {
+    width: 25%;
     opacity: .8;
     height: 30px;
     position: relative;
@@ -132,6 +134,9 @@ header {
   margin: 0;
   padding: 0;
   font-size: 22px;
+  input {
+      width: 50%;
+    }
   }
 }
 
@@ -141,6 +146,28 @@ aside {
   height: 40px;
   margin: 0;
   padding: 0;
+  .box-shadow-menu {
+    position: relative;
+    padding-left: 1.25em;
+    .box-shadow-menu:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.25em;
+      width: 1em;
+      height: 0.15em;
+      background: black;
+      box-shadow:
+        0 0.25em 0 0 black,
+        0 0.5em 0 0 black;
+      }
+    }
   }
 }
+
+// nav {
+//   display: block;
+//   .navOptions {
+//     }
+//   }
 // end mobile //
