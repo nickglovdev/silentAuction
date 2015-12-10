@@ -46,10 +46,8 @@ class User{
   //This section is where we are trying to authenicate our token so that we
   //Can log in
   login(data, done) {
-    let url = 'https://silent-auctioner.herokuapp.com/oath/token';
+    let url = 'http://silent-auctioner.herokuapp.com/oauth/token';
     data.grant_type = 'password';
-    username: "USER_EMAIL";
-    password: 'USER_PASSWORD';
 
     let options = {
       url: url,
@@ -58,7 +56,7 @@ class User{
     };
 
     Jquery.ajax(options).then(response =>{
-      let {access_token, refresh_token, expire_in, created_at} = response;
+      let {access_token, refresh_token, expires_in, created_at} = response;
 
       this.access_token = access_token;
       this.refresh_token = refresh_token;
