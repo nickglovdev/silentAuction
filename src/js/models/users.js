@@ -26,7 +26,6 @@ class User{
 
     //Shows use if we where able to log in
     jQuery.ajax(options).then(response =>{
-
       done(null,response);
     }).fail(error => {
       done(error);
