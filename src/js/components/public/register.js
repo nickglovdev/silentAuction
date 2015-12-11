@@ -1,6 +1,8 @@
 import React from 'react'
 import User from '../../models/users'
 
+import setup from '../../setup'
+
 class Register extends React.Component {
   constructor(props){
     super(props);
@@ -21,14 +23,20 @@ class Register extends React.Component {
     let password = this.refs.password.value;
     let confirmPassword = this.refs.confirmPassword.value;
 
-    if (!email || email !== confirmEmail || !password || password !== confirmPassword) {
+    if (email && email === confirmEmail && password &&  password === confirmPassword) {
     console.log(email, confirmEmail, password, confirmPassword)
-    alert("Please check fields and try again.")
-    } else {
       User.register({
         email: email,
         password: password
-      })
+      }, (error, data) => {
+        if (!error) {
+          setup(User.access_token);
+          console.log('success')
+          window.location.href= '#/dashboard'
+        } else {
+          alert('error in login');
+        }
+      });
     }
   }
 
