@@ -1,5 +1,5 @@
 import React from 'react';
-import  Jquery from 'jquery';
+import  jQuery from 'jquery';
 
 class User{
   constructor() {
@@ -23,8 +23,9 @@ class User{
       }
     };
 
+
     //Shows use if we where able to log in
-    Jquery.ajax(options).then(response =>{
+    jQuery.ajax(options).then(response =>{
       console.log(response);
     });
   };
@@ -41,9 +42,9 @@ class User{
       data: data
     };
 
-    Jquery.ajax(options).then(response =>{
+    jQuery.ajax(options).then(response =>{
       let {access_token, refresh_token, expires_in, created_at} = response;
-
+      console.log(response)
       this.access_token = access_token;
       this.refresh_token = refresh_token;
       this.token_expires = expires_in;
