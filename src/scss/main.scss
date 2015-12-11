@@ -12,7 +12,7 @@ $desktop: new-breakpoint(min-width 850px);
 // main/public //
 .pageWrap {
   @include outer-container;
-  width: 100%;
+  max-width: 100%;
 }
 
 .homePage {
@@ -20,14 +20,16 @@ $desktop: new-breakpoint(min-width 850px);
 }
 
 .siteDescription {
+  width: 100%;
   font-family: 'Varela Round', sans-serif;
   @include span-columns(9);
   @include shift(1);
-  padding: 10px;
+  padding: 20px;
   color: #ffffff;
   background: rgba(95, 124, 138, 0.30);
   border: 1px solid rgba(181, 181, 181, 0.30);
   height: 550px;
+  margin-left: 0;
   h2 {
     text-align: center;
     font-size: 65px;
@@ -163,6 +165,20 @@ header {
   }
 }
 
+.siteDescription {
+  @include media($mobile) {
+  @include span-columns(12);
+  @include shift(2);
+  height: 550px;
+  margin: 0;
+  padding: 20px;
+  font-size: 16px;
+  h2 {
+      font-size: 34px;
+    }
+  }
+}
+
 aside {
   @include media($mobile) {
   @include span-columns(12);
@@ -171,10 +187,4 @@ aside {
   padding: 0;
   }
 }
-
-// nav {
-//   display: block;
-//   .navOptions {
-//     }
-//   }
 // end mobile //
