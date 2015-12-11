@@ -24,13 +24,14 @@ class Login extends React.Component{
         if (!error) {
           setup(User.access_token);
           console.log('success')
+          window.location.href= '#/dashboard'
         } else {
           alert('error in login');
         }
       });
-    } else {
+      } else {
       alert('Password or user name is wrong');
-    }
+      }
   }
 
   render () {
@@ -44,7 +45,6 @@ class Login extends React.Component{
             <input ref="password" type="password" className="username" placeholder="Password..."></input>
           <button value="Submit" onClick={this.handleLogin}>Submit</button>
           <br />
-          <Link to="/dashboard">Testing Dashboard by pass</Link>
         </div>
       </div>
     )
