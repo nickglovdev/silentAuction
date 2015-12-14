@@ -31,6 +31,7 @@ class Login extends React.Component{
           //This should allow us to hold onto our token after signing in
           setup(User.access_token);
           console.log('success')
+              // fix this vv !! //
           window.location.href= '#/dashboard'
         } else {
           alert('error in login');

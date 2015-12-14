@@ -40,7 +40,6 @@ class User{
       }
     };
 
-
     //Shows use if we where able to log in
     jQuery.ajax(options).then(response =>{
       done(null,response);
@@ -69,7 +68,7 @@ class User{
       this.token_expires = expires_in;
       this.token_created = created_at;
 
-      localStorage.setItem('user_auth', JSON.stringify({
+      localStorage.setItem('access_token', JSON.stringify({
         access_token: access_token,
         refresh_token: refresh_token,
         expires_in: expires_in,
@@ -87,7 +86,7 @@ class User{
     this.refresh_token = null;
     this.token_expires = null;
     this.token_created = null;
-    localStorage.removeItem('user_auth');
+    localStorage.removeItem('access_token');
   }
 }
 

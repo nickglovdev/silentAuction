@@ -6,6 +6,19 @@ import setup from '../../setup'
 import User from '../../models/users'
 
 class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.onLogout = this.onLogout.bind(this);
+  }
+
+  //Create a function that calls the users current state and logs out
+  // their session and removes their token.
+  onLogout() {
+    User.logout();
+    // fix this vv !! //
+    window.location.href= '#'
+  }
   render() {
     return (
       <div className="dashboard">
@@ -25,7 +38,7 @@ class Dashboard extends React.Component {
           </nav>
           <footer>
             <button className="navOptions"
-                    onClick={this.logout}>Logout</button>
+                    onClick={this.onLogout}>Logout</button>
           </footer>
         </aside>
         <div className="pageWrap">
