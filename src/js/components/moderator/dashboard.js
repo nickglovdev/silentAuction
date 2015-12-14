@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 import setup from '../../setup'
 import User from '../../models/users'
-import ListAuctions from './listAuctions'
+import ListAuctions from '../../models/listAuctions'
 
 class Dashboard extends React.Component {
   constructor(props) {
