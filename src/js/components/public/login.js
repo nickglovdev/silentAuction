@@ -8,8 +8,15 @@ class Login extends React.Component{
   constructor(props){
     super(props);
 
-    this.handleLogin = this.handleLogin.bind(this)
+    /*this.handleKeyPress = this.handleKeyPress.bind(this);*/
+    this.handleLogin = this.handleLogin.bind(this);
   }
+
+/*  handleKeyPress(e){
+    if (e.keyCode == 13) {
+      this.handleLogin();
+    }
+  }*/
 
   handleLogin(e){
     let email = this.refs.email.value;
@@ -36,7 +43,7 @@ class Login extends React.Component{
 
   render () {
     return(
-      <div>
+      <div className="homePage">
         <div className="login">
           <h3>Login</h3>
           <span className="inputLabel">E-Mail:</span>

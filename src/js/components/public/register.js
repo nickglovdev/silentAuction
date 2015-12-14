@@ -1,7 +1,9 @@
 import React from 'react'
-import User from '../../models/users'
 
 import setup from '../../setup'
+
+import User from '../../models/users'
+
 
 class Register extends React.Component {
   constructor(props){
@@ -15,8 +17,8 @@ class Register extends React.Component {
   // take the values entered in the form (given they are filled out correctly),
   // and submits the values to the 'register' function that has been imported
   // from the 'User' model.
-  registerUser(event) {
-    event.preventDefault()
+  registerUser(e) {
+    e.preventDefault()
 
     let email = this.refs.email.value;
     let confirmEmail = this.refs.confirmEmail.value;

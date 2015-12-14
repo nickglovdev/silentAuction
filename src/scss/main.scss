@@ -16,7 +16,10 @@ $desktop: new-breakpoint(min-width 850px);
 }
 
 .homePage {
-  background-image: url('https://raw.githubusercontent.com/jacksaintjack/silentAuction/master/src/assets/pictures/NABHM0L1AB.jpg');
+  background-image: url('https://images.unsplash.com/13/unsplash_5243a2eb2bc02_1.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6b87620ca5fc979794d0d600b5dbcac8');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .siteDescription {
