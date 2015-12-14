@@ -32,7 +32,7 @@ class Login extends React.Component{
           setup(User.access_token);
           console.log('success')
               // fix this vv !! //
-          window.location.href= '#/dashboard'
+          this.props.history.pushState(null,'/dashboard');
         } else {
           alert('error in login');
         }

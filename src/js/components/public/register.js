@@ -30,11 +30,17 @@ class Register extends React.Component {
         email: email,
         password: password
       }, (error, data) => {
+        console.log(data);
         if (!error) {
-          setup(User.access_token);
-          console.log('success')
-              // fix this vv !! //
-          window.location.href= '#/dashboard'
+          User.login({
+            username: email,
+            password: password
+          }, (error, data) => {
+            setup(data.access_token);
+            console.log('success')
+                // fix this vv !! //
+            this.props.history.pushState(null,'/dashboard');
+          })
         } else {
           alert('error in login');
         }

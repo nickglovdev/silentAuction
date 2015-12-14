@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import setup from '../../setup'
-
 import User from '../../models/users'
+import ListAuctions from '../../models/listAuctions'
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Dashboard extends React.Component {
   onLogout() {
     User.logout();
     // fix this vv !! //
-    window.location.href= '#'
+    this.props.history.pushState(null,'#');
   }
   render() {
     return (
@@ -32,10 +32,7 @@ class Dashboard extends React.Component {
           </h1>
         </header>
         <aside>
-          <nav>
-            <Link to="#">Auction</Link>
-            <Link to="#">Auction2</Link>
-          </nav>
+          <ListAuctions></ListAuctions>
           <footer>
             <button className="navOptions"
                     onClick={this.onLogout}>Logout</button>

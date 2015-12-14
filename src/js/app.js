@@ -15,6 +15,7 @@ import CreateItem from './components/moderator/createitem';
 import EditItem from './components/moderator/edititem';
 import EditAuction from './components/moderator/editauction';
 
+//This will check and see if the user is logged in. This was cuasing the problem in our registration page.
 const requireAuth = (nextState, replaceState) => {
   if (!User.isLoggedIn()){
     replaceState({ nextPathname: nextState.location.pathname }, '/login')
