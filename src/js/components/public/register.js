@@ -32,10 +32,10 @@ class Register extends React.Component {
       }, (error, data) => {
         console.log(data);
         if (!error) {
-          User.login({
+          User.login({ //Do this to bypass the code on app.js. This will allows us to login in on registration
             username: email,
             password: password
-          }, (error, data) => {
+          }, (error, data) => { //Get the Token
             setup(data.access_token);
             console.log('success')
                 // fix this vv !! //
