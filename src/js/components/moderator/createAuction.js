@@ -10,19 +10,24 @@ class CreateAuction extends React.Component {
 
   handleAuction(event){
     event.preventDefault()
+    //Setting all of my data to an object called auction
+    let auction = {
+      title: this.refs.title.value,
+      company: this.refs.company.value,
+      location: this.refs.location.value,
+      time: this.refs.time.value,
+      date: this.refs.date.value,
+      contact: this.refs.contact.value
+    }
+    console.log(auction)
 
-    let title = this.refs.title;
-    let company = this.refs.company;
-    let location = this.refs.location;
-    let time = this.refs.time;
-    let date = this.refs.date;
-    let contact = this.refs.contact;
-
-
-  if(title && company && location && time && date && contact){
-    console.log('success')
+  if(auction.title && auction.company && auction.locaton && auction.time && auction.date && auction.contact){
+    console.log('success');
+    //Call the SaveAuction function and passit the auction object
+    this.saveAuction(auction);
   } else{
     console.log('Problemo')
+    this.saveAuction(auction);
   }
 }
 
@@ -30,18 +35,14 @@ saveAuction(auction){
   let options = {
     method:'POST',
     data: {
-      title: title,
-      company: company,
-      location: location,
-      time: time,
-      date: date,
-      contact:contact
+        auction: auction
     }
   };
   //Passing our data to the servers
-  $.ajax('http://silen-auctioner.herokuapp.com/auctions', options)
+  $.ajax('http://silent-auctioner.herokuapp.com/auctions', options)
     .then(function(response){
-      this.props.handleAdd(response);
+      console.log(response)
+      window.location.href= '#/dashboard'
     });
 }
   render () {
