@@ -32,11 +32,7 @@ class Dashboard extends React.Component {
           </h1>
         </header>
         <aside>
-          <nav className="auctionsList">
-            <ul>
-              <li>{this.props.title}</li>
-            </ul>
-          </nav>
+          <ListAuctions></ListAuctions>
           <footer>
             <button className="navOptions"
                     onClick={this.onLogout}>Logout</button>

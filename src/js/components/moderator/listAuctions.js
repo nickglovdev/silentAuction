@@ -1,9 +1,13 @@
 import React from 'react';
 import jQuery from 'jquery';
+import setup from '../../setup'
+import User from '../../models/users'
 
 class ListAuctions extends React.Component {
   constructor(props){
     super(props);
+    // fix this vv //
+    setup(User.access_token);
     this.state = {
       Loaded: false,
       auction: []
@@ -12,28 +16,26 @@ class ListAuctions extends React.Component {
 
   componentDidMount() {
     jQuery.ajax('http://silent-auctioner.herokuapp.com/auctions')
-          .then(response => {
-
+          .then( (json) => {
             this.setState({
               Loaded: true,
-              auction: response.data
+              auction: json
             })
-            console.log(this.state.auction)
           });
   }
 
 
   render () {
-    console.log("tweet list rendered")
     console.log(this.state.auction)
-    let auction = this.state.auction.map(auction => {
-      return <Auction key={auction.title}
-                    auction={auction}/>
-    })
     return(
-      <div className="auctionList">
-        {auction}
-      </div>
+      <nav className="auctionList">
+        {this.state.auction.map(auction => {
+          return <div key={auction.id}
+                        auction={auction}>
+                        {auction.title}
+          </div>
+        })}
+      </nav>
 
     )
   }

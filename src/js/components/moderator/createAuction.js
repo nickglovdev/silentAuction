@@ -45,6 +45,7 @@ saveAuction(auction){
   $.ajax('http://silent-auctioner.herokuapp.com/auctions', options)
     .then(function(response){
       console.log(response)
+      // fix this vv //
       window.location.href= '#/dashboard'
     });
 }
