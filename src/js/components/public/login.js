@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import setup from '../../setup'
-
 import User from '../../models/users'
 
 class Login extends React.Component{
@@ -21,7 +20,8 @@ class Login extends React.Component{
         username: email,
         password: password
       }, (error, data) => {
-        if (!error) {
+        if (!error) { //This will only run if we successfully login
+          //This should allow us to hold onto our token after signing in
           setup(User.access_token);
           console.log('success')
           window.location.href= '#/dashboard'
