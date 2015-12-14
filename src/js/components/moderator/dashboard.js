@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import setup from '../../setup'
-
 import User from '../../models/users'
+import ListAuctions from './listAuctions'
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -32,9 +32,10 @@ class Dashboard extends React.Component {
           </h1>
         </header>
         <aside>
-          <nav>
-            <Link to="#">Auction</Link>
-            <Link to="#">Auction2</Link>
+          <nav className="auctionsList">
+            <ul>
+              <li>{this.props.title}</li>
+            </ul>
           </nav>
           <footer>
             <button className="navOptions"
