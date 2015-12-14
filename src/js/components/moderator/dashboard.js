@@ -6,7 +6,7 @@ import setup from '../../setup'
 import User from '../../models/users'
 
 class Dashboard extends React.Component {
-render() {
+  render() {
     return (
       <div className="dashboard">
         <header>
