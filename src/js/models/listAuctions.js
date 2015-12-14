@@ -1,6 +1,8 @@
 import React from 'react';
 import jQuery from 'jquery';
+
 import setup from '../setup'
+import User from './users'
 
 class ListAuctions extends React.Component {
   constructor(props){
