@@ -24,8 +24,7 @@ class Dashboard extends React.Component {
             <Link to="#">Auction2</Link>
           </nav>
           <footer>
-            <button className="navOptions"
-                    onClick={this.logout}>Logout</button>
+            <button className="navOptions">Logout</button>
           </footer>
         </aside>
         <div className="pageWrap">
