@@ -34,6 +34,7 @@ class Register extends React.Component {
         if (!error) {
           setup(User.access_token);
           console.log('success')
+              // fix this vv !! //
           window.location.href= '#/dashboard'
         } else {
           alert('error in login');

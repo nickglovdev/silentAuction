@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute} from 'react-router';
+import User from './models/users';
 
 import Sidebar from './components/public/sidebar';
 import Home from './components/public/home';
@@ -12,7 +13,13 @@ import CreateAuction from './components/moderator/createAuction';
 import ItemView from './components/moderator/dashboardItemView';
 import CreateItem from './components/moderator/createitem';
 import EditItem from './components/moderator/edititem';
-import EditAuction from './components/moderator/editauction'
+import EditAuction from './components/moderator/editauction';
+
+const requireAuth = (nextState, replaceState) => {
+  if (!User.isLoggedIn()){
+    replaceState({ nextPathname: nextState.location.pathname }, '/login')
+  }
+};
 
 ReactDOM.render((
   <Router>
@@ -22,7 +29,7 @@ ReactDOM.render((
       <Route path="register" component={Register}/>
       <Route path="faq" component={FAQ}/>
     </Route>
-    <Route path='/dashboard' component={Dashboard}>
+    <Route path='/dashboard' component={Dashboard} onEnter={requireAuth}>
       <IndexRoute component={ItemView} />
       <Route path='/createauction' component={CreateAuction}/>
       <Route path='/createitem' component={CreateItem} />
