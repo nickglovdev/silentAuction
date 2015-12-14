@@ -1,7 +1,6 @@
 import React from 'react'
 
 import setup from '../../setup'
-
 import User from '../../models/users'
 
 
