@@ -32,7 +32,7 @@ class Dashboard extends React.Component {
           </h1>
         </header>
         <aside>
-          <Link to=''><ListAuctions></ListAuctions></Link>
+          <ListAuctions></ListAuctions>
           <footer>
             <button className="navOptions"
                     onClick={this.onLogout}>Logout</button>

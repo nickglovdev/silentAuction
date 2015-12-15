@@ -31,7 +31,7 @@ ReactDOM.render((
       <Route path="faq" component={FAQ}/>
     </Route>
     <Route path='/dashboard' component={Dashboard} onEnter={requireAuth}>
-      <Route path='/ItemView' component={ItemView} />
+      <Route path='/auctions/:id' component={ItemView} />
       <Route path='/createauction' component={CreateAuction}/>
       <Route path='/createitem' component={CreateItem} />
       <Route path='/edititem' component={EditItem} />
