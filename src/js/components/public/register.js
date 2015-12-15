@@ -28,7 +28,7 @@ class Register extends React.Component {
     console.log(email, confirmEmail, password, confirmPassword)
       User.register({
         email: email,
-        password: password
+     password: password
       }, (error, data) => {
         console.log(data);
         if (!error) {

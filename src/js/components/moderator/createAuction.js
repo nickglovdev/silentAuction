@@ -17,17 +17,18 @@ class CreateAuction extends React.Component {
     event.preventDefault()
     //Setting all of my data to an object called auction
     let auction = {
-      title: this.refs.title.value,
+        title: this.refs.title.value,
       company: this.refs.company.value,
-      location: this.refs.location.value,
-      time: this.refs.time.value,
-      date: this.refs.date.value,
+     location: this.refs.location.value,
+         time: this.refs.time.value,
+         date: this.refs.date.value,
       contact: this.refs.contact.value
     }
     console.log(auction)
 
     //Checking to make sure all the fields are filled
-    if(auction.title && auction.company && auction.location && auction.time && auction.date && auction.contact){
+    if(auction.title && auction.company && auction.location
+      && auction.time && auction.date && auction.contact){
       console.log(auction.title);
       //Call the SaveAuction function and pasit the auction object
       this.saveAuction(auction);
@@ -41,7 +42,8 @@ class CreateAuction extends React.Component {
     let options = {
       method:'POST',
       data: {
-          //The first auction is how it looks like in the API and the second one is call the auction from this.saveAuction(auction).
+          //The first auction is how it looks like in the API and the second
+          // one is call the auction from this.saveAuction(auction).
           // the auction in saveAuction function come from handleAuction.
           auction: auction
       }

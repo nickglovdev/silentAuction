@@ -1,5 +1,5 @@
 @import '../../dist/bower_components/bourbon/app/assets/stylesheets/_bourbon.scss';
-$visual-grid:true;
+// $visual-grid:true;
 @import '../../dist/bower_components/neat/app/assets/stylesheets/_neat.scss';
 
 $mobile: new-breakpoint(max-width 768px);
@@ -40,9 +40,11 @@ $desktop: new-breakpoint(min-width 850px);
 }
 
 aside {
+  @include outer-container;
+  width: 190px;
+  font-family: 'Varela Round', sans-serif;
   float: left;
   margin: 0;
-  width: 15%;
   background: rgba(252, 85, 33, 0.93);
   height: 1000px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
@@ -101,7 +103,8 @@ aside {
 // end main/public //
 
 // moderator dashboard //
-header {
+.head {
+  font-family: 'Varela Round', sans-serif;
   width: 100%;
   margin: 0;
   background: #CED7DB;
@@ -109,7 +112,20 @@ header {
   h1 {
     margin: 0;
     text-align: center;
+    padding: 5px;
   }
+}
+
+.dashboardView {
+  @include span-columns(8);
+  @include shift(1);
+  position: relative;
+  text-align: center;
+}
+
+header.welcome {
+  background: pink;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .options {
@@ -186,7 +202,7 @@ header {
 aside {
   @include media($mobile) {
   @include span-columns(12);
-  height: 40px;
+  height: 60px;
   margin: 0;
   padding: 0;
   }

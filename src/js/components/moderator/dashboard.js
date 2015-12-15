@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import setup from '../../setup'
 import User from '../../models/users'
 import ListAuctions from '../../models/listAuctions'
+import DashboardView from './dashboardView'
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -16,13 +17,13 @@ class Dashboard extends React.Component {
   // their session and removes their token.
   onLogout() {
     User.logout();
-
     this.props.history.pushState(null,'#');
   }
+
   render() {
     return (
       <div className="dashboard">
-        <header>
+        <header className="head">
           <h1>Aucion Silencio
             <nav className="options">
               <Link to="/createauction">Create</Link>

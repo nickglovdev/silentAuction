@@ -14,8 +14,10 @@ import ItemView from './components/moderator/dashboardItemView';
 import CreateItem from './components/moderator/createitem';
 import EditItem from './components/moderator/edititem';
 import EditAuction from './components/moderator/editauction';
+import DashboardView from './components/moderator/dashboardView';
 
-//This will check and see if the user is logged in. This was cuasing the problem in our registration page.
+//This will check and see if the user is logged in.
+//This was causing the problem in our registration page.
 const requireAuth = (nextState, replaceState) => {
   if (!User.isLoggedIn()){
     replaceState({ nextPathname: nextState.location.pathname }, '/login')
@@ -31,6 +33,7 @@ ReactDOM.render((
       <Route path="faq" component={FAQ}/>
     </Route>
     <Route path='/dashboard' component={Dashboard} onEnter={requireAuth}>
+      <IndexRoute component={DashboardView}/>
       <Route path='/ItemView' component={ItemView} />
       <Route path='/createauction' component={CreateAuction}/>
       <Route path='/createitem' component={CreateItem} />
