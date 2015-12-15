@@ -1,5 +1,6 @@
 import React from 'react';
 import jQuery from 'jquery';
+import {Link} from 'react-router';
 
 import setup from '../setup'
 import User from './users'
@@ -27,13 +28,13 @@ class ListAuctions extends React.Component {
 
 
   render () {
-    console.log(this.state.auction)
     return( //returns a map of all the auctions for the current user
       <nav className="auctionList">
         {this.state.auction.map(auction => {
+          let link = "/auctions/" + auction.id;
           return <div key={auction.id}
                         auction={auction}>
-                        {auction.title}
+                        <Link to={link}>{auction.title}</Link>
                 </div>
         })}
       </nav>
