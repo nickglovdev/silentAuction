@@ -16,7 +16,7 @@ class Dashboard extends React.Component {
   // their session and removes their token.
   onLogout() {
     User.logout();
-    // fix this vv !! //
+
     this.props.history.pushState(null,'#');
   }
   render() {
@@ -32,7 +32,7 @@ class Dashboard extends React.Component {
           </h1>
         </header>
         <aside>
-          <ListAuctions></ListAuctions>
+          <Link to=''><ListAuctions></ListAuctions></Link>
           <footer>
             <button className="navOptions"
                     onClick={this.onLogout}>Logout</button>

@@ -38,7 +38,6 @@ class Register extends React.Component {
           }, (error, data) => { //Get the Token
             setup(data.access_token);
             console.log('success')
-                // fix this vv !! //
             this.props.history.pushState(null,'/dashboard');
           })
         } else {
