@@ -31,7 +31,7 @@ class CreateItem extends React.Component {
   }
 
   saveItem(item){
-    let id = this.props.params.id;
+    let id = this.props.params.id; //Assigning the id from params to id
     let options = {
       method: 'POST',
       data: {
