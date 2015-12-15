@@ -13,14 +13,17 @@ $desktop: new-breakpoint(min-width 850px);
 .pageWrap {
   @include outer-container;
   max-width: 100%;
-}
 
-.homePage {
+}
+main {
+  width: 100%;
   background-image: url('https://images.unsplash.com/13/unsplash_5243a2eb2bc02_1.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6b87620ca5fc979794d0d600b5dbcac8');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: 1000px;
 }
+
 
 .siteDescription {
   width: 100%;
@@ -59,7 +62,7 @@ aside {
 
 .login, .register {
   width: 100%;
-  @include span-columns(8 of 12);
+  @include span-columns(7 of 12);
   @include shift(1);
   margin-top: 32px;
   padding: 10px 0;
@@ -105,7 +108,9 @@ aside {
 // moderator dashboard //
 .head {
   font-family: 'Varela Round', sans-serif;
+  font-size: 9px;
   width: 100%;
+  height: 30px;
   margin: 0;
   background: #CED7DB;
   color: #202020;
@@ -116,20 +121,15 @@ aside {
   }
 }
 
-.dashboardView {
-  @include span-columns(8);
-  @include shift(1);
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-}
-
-header.welcome {
-  background: pink;
-  font-family: 'Varela Round', sans-serif;
+.toolBar {
+  @include outer-container;
 }
 
 .options {
+  @include span-columns(3);
+  @include shift(8);
+  background: pink;
+  position: fixed;
   float: right;
   nav {
     text-decoration: none;
@@ -174,6 +174,17 @@ header.welcome {
 
 
 // mobile //
+main {
+  @include media($mobile) {
+  @include span-columns(12);
+  margin: 0;
+  padding: 0;
+  height: 660px;
+  }
+}
+
+
+
 .login, .register, .faq {
   @include media($mobile) {
   @include span-columns(12);

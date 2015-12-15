@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 import setup from '../../setup'
 import User from '../../models/users'
 import ListAuctions from '../../models/listAuctions'
-import DashboardView from './dashboardView'
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -25,12 +24,13 @@ class Dashboard extends React.Component {
       <div className="dashboard">
         <header className="head">
           <h1>Aucion Silencio</h1>
-            <nav className="options">
-              <Link to='/auctions/create'>Create</Link>
-              <Link to="/dashboard">Current</Link>
-              <Link to="#">Past</Link>
-            </nav>
         </header>
+        <section className="toolBar">
+          <nav className="options">
+            <Link to="/profileEdit">*Profile*</Link>
+            <Link to='/auctions/create'>Create Auction</Link>
+          </nav>
+        </section>
         <aside>
           <ListAuctions></ListAuctions>
           <footer>

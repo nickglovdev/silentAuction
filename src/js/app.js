@@ -14,7 +14,6 @@ import ItemView from './components/moderator/dashboardItemView';
 import CreateItem from './components/moderator/createitem';
 import EditItem from './components/moderator/edititem';
 import EditAuction from './components/moderator/editauction';
-import DashboardView from './components/moderator/dashboardView';
 import ProfileEdit from './components/moderator/profileEdit';
 
 //This will check and see if the user is logged in.
@@ -34,7 +33,6 @@ ReactDOM.render((
       <Route path="faq" component={FAQ}/>
     </Route>
     <Route path='/dashboard' component={Dashboard} onEnter={requireAuth}>
-      <IndexRoute component={DashboardView}/>
       <Route path='/profileEdit' component={ProfileEdit}/>
       <Route path='/auctions/create' component={CreateAuction}/>
       <Route path='/auctions/:id' component={ItemView}/>
