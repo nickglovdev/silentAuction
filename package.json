@@ -19,8 +19,6 @@
     "gulp": "^3.9.0",
     "gulp-jscs": "^1.6.0",
     "gulp-sass": "^2.0.4",
-    "jquery": "^2.1.4",
-    "lodash": "^3.10.1",
     "history": "^1.13.1",
     "jquery": "^2.1.4",
     "lodash": "^3.10.1",
