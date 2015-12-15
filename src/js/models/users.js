@@ -88,6 +88,23 @@ class User{
     this.token_created = null;
     localStorage.removeItem('access_token');
   }
+
+  /*editProfile() {
+    let url = 'http://silent-auctioner.herokuapp.com/users/'
+    let options = {
+      url: url,
+      method: 'PATCH',
+      data: {
+        user: data
+      }
+    };
+
+    jQuery.ajax(options).then(response =>{
+      done(null,response);
+    }).fail(error => {
+      done(error);
+    });
+  }; */
 }
 
 export default new User();

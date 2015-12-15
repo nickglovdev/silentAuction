@@ -8,7 +8,7 @@ class ItemView extends React.Component {
         <header className="itemViewHeader">
           <Link to="/editauction">Edit Auction</Link>
           <h3>Guest View Url</h3>
-          <input type="text" value="Test" readonly/>
+          <input type="text" value="Test"/>
           <button>Copy URL</button>
         </header>
 

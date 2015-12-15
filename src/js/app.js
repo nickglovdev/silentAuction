@@ -15,6 +15,7 @@ import CreateItem from './components/moderator/createitem';
 import EditItem from './components/moderator/edititem';
 import EditAuction from './components/moderator/editauction';
 import DashboardView from './components/moderator/dashboardView';
+import ProfileEdit from './components/moderator/profileEdit';
 
 //This will check and see if the user is logged in.
 //This was causing the problem in our registration page.
@@ -34,6 +35,7 @@ ReactDOM.render((
     </Route>
     <Route path='/dashboard' component={Dashboard} onEnter={requireAuth}>
       <IndexRoute component={DashboardView}/>
+      <Route path='/profileEdit' component={ProfileEdit}/>
       <Route path='/ItemView' component={ItemView} />
       <Route path='/createauction' component={CreateAuction}/>
       <Route path='/createitem' component={CreateItem} />

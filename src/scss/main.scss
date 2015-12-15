@@ -110,7 +110,7 @@ aside {
   background: #CED7DB;
   color: #202020;
   h1 {
-    margin: 0;
+    margin: 0 10px;
     text-align: center;
     padding: 5px;
   }
@@ -121,6 +121,7 @@ aside {
   @include shift(1);
   position: relative;
   text-align: center;
+  text-decoration: none;
 }
 
 header.welcome {

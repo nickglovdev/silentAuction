@@ -24,16 +24,21 @@ class Dashboard extends React.Component {
     return (
       <div className="dashboard">
         <header className="head">
-          <h1>Aucion Silencio
+          <h1>Aucion Silencio</h1>
             <nav className="options">
               <Link to="/createauction">Create</Link>
               <Link to="/dashboard">Current</Link>
               <Link to="#">Past</Link>
             </nav>
-          </h1>
         </header>
         <aside>
-          <Link to=''><ListAuctions></ListAuctions></Link>
+          <ul>
+            <li>
+              <Link to=''>
+                <ListAuctions><li></li></ListAuctions>
+              </Link>
+            </li>
+          </ul>
           <footer>
             <button className="navOptions"
                     onClick={this.onLogout}>Logout</button>
