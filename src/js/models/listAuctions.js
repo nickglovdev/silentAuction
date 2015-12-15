@@ -28,13 +28,13 @@ class ListAuctions extends React.Component {
 
   render () {
     console.log(this.state.auction)
-    return(
+    return( //returns a map of all the auctions for the current user
       <nav className="auctionList">
         {this.state.auction.map(auction => {
           return <div key={auction.id}
                         auction={auction}>
                         {auction.title}
-          </div>
+                </div>
         })}
       </nav>
 

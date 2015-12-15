@@ -1,7 +1,6 @@
 import React from 'react'
 
 import setup from '../../setup'
-
 import User from '../../models/users'
 
 
@@ -31,11 +30,16 @@ class Register extends React.Component {
         email: email,
         password: password
       }, (error, data) => {
+        console.log(data);
         if (!error) {
-          setup(User.access_token);
-          console.log('success')
-              // fix this vv !! //
-          window.location.href= '#/dashboard'
+          User.login({ //Do this to bypass the code on app.js. This will allows us to login in on registration
+            username: email,
+            password: password
+          }, (error, data) => { //Get the Token
+            setup(data.access_token);
+            console.log('success')
+            this.props.history.pushState(null,'/dashboard');
+          })
         } else {
           alert('error in login');
         }

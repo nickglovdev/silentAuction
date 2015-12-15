@@ -1,10 +1,14 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import $ from 'jquery';
+
+import setup from '../../setup'
+import User from '../../models/users'
 
 class CreateAuction extends React.Component {
   constructor(props) {
     super(props);
 
+    setup(User.access_token);
     this.handleAuction = this.handleAuction.bind(this)
   }
 
@@ -23,56 +27,56 @@ class CreateAuction extends React.Component {
     console.log(auction)
 
     //Checking to make sure all the fields are filled
-  if(auction.title && auction.company && auction.location && auction.time && auction.date && auction.contact){
-    console.log(auction.title);
-    //Call the SaveAuction function and pasit the auction object
-    this.saveAuction(auction);
-  } else{
-    console.log('Problemo')
-  }
-}
-
-saveAuction(auction){
-  let options = {
-    method:'POST',
-    data: {
-        //The first auction is how it looks like in the API and the second one is call the auction from this.saveAuction(auction).
-        // the auction in saveAuction function come from handleAuction.
-        auction: auction
+    if(auction.title && auction.company && auction.location && auction.time && auction.date && auction.contact){
+      console.log(auction.title);
+      //Call the SaveAuction function and pasit the auction object
+      this.saveAuction(auction);
+    } else{
+      console.log('Problemo')
     }
-  };
-  //Passing our data to the servers
-  $.ajax('http://silent-auctioner.herokuapp.com/auctions', options)
-    .then(function(response){
-      console.log(response)
-      // fix this vv //
-      window.location.href= '#/dashboard'
-    });
-}
-  render () {
-    return(
-      <div className="auctionCreate">
-        <h1>Create Auction</h1>
-        <section className="auctionFormLeft">
-          <h3>Auction Name</h3>
-            <input type='text' ref='title' placeholder='Auction Title'></input>
-          <h3>Company/Organization Name</h3>
-            <input type='text' ref='company' placeholder='Company/Organization Name'></input>
-          <h3>Event Location</h3>
-            <input type='text' ref="location" placeholder='Location'></input>
-        </section>
-        <section className="auctionFormRight">
-          <h3>Date of Event</h3>
-            <input ref='time' type='date'></input>
-          <h3>Time of Event</h3>
-            <input ref='date' type='time'></input>
-          <h3>Phone Number</h3>
-            <input type='text' ref="contact" placeholder='Phone Number'></input>
-          <button className="auctionCreateBtn" onClick={this.handleAuction}>Submit</button>
-        </section>
-      </div>
-    )
   }
-}
+
+  saveAuction(auction){
+    let self = this;
+    let options = {
+      method:'POST',
+      data: {
+          //The first auction is how it looks like in the API and the second one is call the auction from this.saveAuction(auction).
+          // the auction in saveAuction function come from handleAuction.
+          auction: auction
+      }
+    };
+    //Passing our data to the servers
+    $.ajax('http://silent-auctioner.herokuapp.com/auctions', options)
+      .then(function(response){
+        console.log(response)
+        self.props.history.pushState(null,'/dashboard');
+      });
+  }
+    render () {
+      return(
+        <div className="auctionCreate">
+          <h1>Create Auction</h1>
+          <section className="auctionFormLeft">
+            <h3>Auction Name</h3>
+              <input type='text' ref='title' placeholder='Auction Title'></input>
+            <h3>Company/Organization Name</h3>
+              <input type='text' ref='company' placeholder='Company/Organization Name'></input>
+            <h3>Event Location</h3>
+              <input type='text' ref="location" placeholder='Location'></input>
+          </section>
+          <section className="auctionFormRight">
+            <h3>Date of Event</h3>
+              <input ref='time' type='date'></input>
+            <h3>Time of Event</h3>
+              <input ref='date' type='time'></input>
+            <h3>Phone Number</h3>
+              <input type='text' ref="contact" placeholder='Phone Number'></input>
+            <button className="auctionCreateBtn" onClick={this.handleAuction}>Submit</button>
+          </section>
+        </div>
+      )
+    }
+  }
 
 export default CreateAuction;
