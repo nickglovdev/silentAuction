@@ -34,7 +34,7 @@ class CreateAuction extends React.Component {
     } else{
       console.log('Problemo')
     }
-  }
+  };
 
   saveAuction(auction){
     let self = this;
@@ -45,7 +45,7 @@ class CreateAuction extends React.Component {
           // the auction in saveAuction function come from handleAuction.
           auction: auction
       }
-    };
+    }
     //Passing our data to the servers
     $.ajax('http://silent-auctioner.herokuapp.com/auctions', options)
       .then(function(response){

@@ -31,11 +31,12 @@ ReactDOM.render((
       <Route path="faq" component={FAQ}/>
     </Route>
     <Route path='/dashboard' component={Dashboard} onEnter={requireAuth}>
-      <Route path='/auctions/:id' component={ItemView} />
-      <Route path='/createauction' component={CreateAuction}/>
-      <Route path='/createitem' component={CreateItem} />
-      <Route path='/edititem' component={EditItem} />
-      <Route path='/editauction' component={EditAuction} />
+      <Route path='/auctions/create' component={CreateAuction}/>
+      <Route path='/auctions/:id' component={ItemView}/>
+      <Route path='/auctions/:id/edit' component={EditAuction}/>
+      <Route path='/auctions/:id/items' component={CreateItem}/>
+      <Route path='/auctions/:id/items/:itemId' component={EditItem}/>
+      <Route path='/auctions/:id/items/:itemId/edit' component={EditItem}/>
     </Route>
   </Router>
 ), document.getElementById('app'));
