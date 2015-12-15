@@ -1,5 +1,6 @@
 import React from 'react'
-import $ from'jquery'
+import $ from 'jquery'
+import filepicker from 'filepicker-js'
 
 import setup from '../../setup'
 import User from '../../models/users'
@@ -12,6 +13,18 @@ class CreateItem extends React.Component {
     this.handleItem = this.handleItem.bind(this)
   }
 
+
+  componentDidMount() {
+    this.refs.filepicker.addEventListener('change', filepickerdata => {
+      console.log(filepickerdata.fpfile.url);
+    })
+  }
+  componentWillUnmount() {
+    this.refs.filepicker.removeEventListener('change', filepickerdata => {
+      console.log(filepickerdata.fpfile.url);
+    })
+  }
+
   handleItem(event){
     event.preventDefault()
 
@@ -20,7 +33,7 @@ class CreateItem extends React.Component {
       description: this.refs.description.value,
       starting_bid: this.refs.bid.value
     }
-    console.log(item)
+    console.log(filepickerdata.fpfile.url)
 
     if(item.name && item.description && item.starting_bid){
       this.saveItem(item)
@@ -52,7 +65,6 @@ class CreateItem extends React.Component {
         <h1>Add Items </h1>
 
         <section className="itemForm">
-          <img src='http://placecage.com/c/200/200'/>
 
           <h3>Item Name:</h3>
           <input type='text' placeholder="Item Name" ref="name"/>
@@ -62,7 +74,13 @@ class CreateItem extends React.Component {
 
           <h3>Starting Price</h3>
           <input type='text' placeholder='Starting Price' ref="bid"/>
+
+        <h3>Add Photo</h3>
+          <input type="filepicker"
+                 ref="filepicker"
+                 data-fp-apikey="AUvdBf1ynT0STNVd104jSz"/>
         </section>
+
 
         <button onClick={this.handleItem}>Submit</button>
       </section>
