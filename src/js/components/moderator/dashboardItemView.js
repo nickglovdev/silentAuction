@@ -1,9 +1,11 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router';
 
+import ListItems from '../../models/ListItems'
+
 class ItemView extends React.Component {
   render () {
-    let id = this.props.params.id; //grabs our id from params
+    let id = this.props.params.id; //grabs our id from params the ${id} below is getting it's information from this
 
     return(
       <section className="dashboardItem">
@@ -14,24 +16,10 @@ class ItemView extends React.Component {
           <button>Copy URL</button>
         </header>
 
-        <Link to={`/auctions/${id}/items`}>Add Items</Link>//Using this to add the id into our URL
+        <Link to={`/auctions/${id}/items`}>Add Items</Link>
         <Link to={`/auctions/${id}/edit`}>Edit Items</Link>
 
-        <section className="itemListView">
-          <h3>Item Title One</h3>
-          <img src='http://placecage.com/c/200/300' />
-          <h3>Current Highest Bid:<span>Put bid number here</span></h3>
-        </section>
-        <section className="itemListView">
-          <h3>Item Title Two</h3>
-          <img src='http://placecage.com/c/200/300' />
-          <h3>Current Highest Bid:<span>Put bid number here</span></h3>
-        </section>
-        <section className="itemListView">
-          <h3>Item Title Three</h3>
-          <img src='http://placecage.com/c/200/300' />
-          <h3>Current Highest Bid:<span>Put bid number here</span></h3>
-        </section>
+      <ListItems id={this.props.params.id}></ListItems> {/* id in this is setting the params for listitemst */}
       </section>
     )
   }
