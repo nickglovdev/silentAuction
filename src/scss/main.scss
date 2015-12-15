@@ -22,10 +22,12 @@ main {
   background-size: cover;
   background-position: center;
   height: 1000px;
+  color: #fff;
 }
 
 
 .siteDescription {
+  @include outer-container;
   width: 100%;
   font-family: 'Varela Round', sans-serif;
   @include span-columns(9);
