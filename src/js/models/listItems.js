@@ -19,9 +19,7 @@ class ListItems extends React.Component {
     }
 
     componentDidMount(hello) {
-       $.ajax('http://520a8a75.ngrok.io/auctions/'+ this.props.id + '/items')
-       // used this.props.id to get the id. the this.props.params.id is
-       // on dashboarditemview
+       $.ajax('http://silent-auctioner.herokuapp.com/auctions/'+ this.props.id + '/items') //used this.props.id to get the id. the this.props.params.id is on dashboarditemview
         .then( (response) => {
            this.setState({
             loaded: true,
