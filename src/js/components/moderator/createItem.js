@@ -8,39 +8,38 @@ import User from '../../models/users'
 class CreateItem extends React.Component {
   constructor(props) {
     super(props)
-
+    this.state={} // Setting state to be an empty object so we can pass in a url
     setup(User.access_token);
     this.handleItem = this.handleItem.bind(this)
+    this.handleImageUpload = this.handleImageUpload.bind(this)
   }
 
-
   componentDidMount() {
-    this.refs.filepicker.addEventListener('change', filepickerdata => {
-      console.log(filepickerdata.fpfile.url);
-    })
+    if (this.refs.filepicker.style['display'] !== 'none') {
+      filepicker.constructWidget(this.refs.filepicker);
+    }
+    this.refs.filepicker.addEventListener('change', this.handleImageUpload);
   }
 
   componentWillUnmount() {
-    this.refs.filepicker.removeEventListener('change', filepickerdata => {
-      console.log(filepickerdata.fpfile.url);
-    })
+    this.refs.filepicker.removeEventListener('change', this.handleImageUpload);
+  }
+
+  handleImageUpload(filepickerdata) {
+    this.setState({image_url: filepickerdata.fpfile.url })
   }
 
   handleItem(event){
     event.preventDefault()
 
-    let fileUrl = this.refs.filepicker.addEventListener('change', filepickerdata => {
-        return filepickerdata.fpfile.url
-      })
-      console.log(fileUrl)
     let item = {
       name: this.refs.name.value,
       description: this.refs.description.value,
       starting_bid: this.refs.bid.value,
-      image_url: fileUrl
+      image_url: this.state.image_url
     }
 
-    if(item.name && item.description && item.starting_bid){
+    if(item.name && item.description && item.starting_bid && item.image_url){
       this.saveItem(item)
       console.log('Successo')
     } else {
