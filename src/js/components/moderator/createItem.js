@@ -67,25 +67,18 @@ class CreateItem extends React.Component {
     return (
       <section className="auctionCreateItem">
         <h1>Add Items </h1>
-
-        <section className="itemForm">
-
-          <h3>Item Name:</h3>
-          <input type='text' placeholder="Item Name" ref="name"/>
-
-          <h3>Description:</h3>
-          <input type='text' placeholder='Item Description' ref="description"/>
-
-          <h3>Starting Price</h3>
-          <input type='text' placeholder='Starting Price' ref="bid"/>
-
-        <h3>Add Photo</h3>
-          <input type="filepicker"
-                 ref="filepicker"
-                 data-fp-apikey="AUvdBf1ynT0STNVd104jSz"/>
-        </section>
-
-
+          <section className="itemForm">
+            <h3>Item Name:</h3>
+              <input type='text' placeholder="Item Name" ref="name"/>
+            <h3>Description:</h3>
+              <input type='text' placeholder='Item Description' ref="description"/>
+            <h3>Starting Price</h3>
+              <input type='text' placeholder='Starting Price' ref="bid"/>
+            <h3>Add Photo</h3>
+            <input type="filepicker"
+                   ref="filepicker"
+                   data-fp-apikey="AUvdBf1ynT0STNVd104jSz"/>
+          </section>
         <button onClick={this.handleItem}>Submit</button>
       </section>
     )
