@@ -31,7 +31,7 @@ class User{
   // component and make an AJAX request. The AJAX request should specify the
   // POST method so that is known we are asking for a token in response.
   register(data, done){
-    let url = 'http://520a8a75.ngrok.io/'
+    let url = 'http://520a8a75.ngrok.io/users'
     let options = {
       url: url,
       method: 'POST',
@@ -51,7 +51,7 @@ class User{
   //This section is where we are trying to authenicate our token so that we
   //Can log in
   login(data, done) {
-    let url = 'http://520a8a75.ngrok.io/';
+    let url = 'http://520a8a75.ngrok.io/oauth/token';
     data.grant_type = 'password';
 
     let options = {
@@ -90,7 +90,7 @@ class User{
   }
 
   /*editProfile() {
-    let url = 'http://silent-auctioner.herokuapp.com/users/'
+    let url = 'http://520a8a75.ngrok.io/users'
     let options = {
       url: url,
       method: 'PATCH',

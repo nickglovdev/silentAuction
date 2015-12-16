@@ -17,7 +17,7 @@ class ListAuctions extends React.Component {
   }
 
   componentDidMount() {
-    jQuery.ajax('http://silent-auctioner.herokuapp.com/auctions')
+    jQuery.ajax('http://520a8a75.ngrok.io/auctions')
           .then( (json) => {
             this.setState({
               Loaded: true,
