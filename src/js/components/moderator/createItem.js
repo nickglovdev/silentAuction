@@ -19,6 +19,7 @@ class CreateItem extends React.Component {
       console.log(filepickerdata.fpfile.url);
     })
   }
+
   componentWillUnmount() {
     this.refs.filepicker.removeEventListener('change', filepickerdata => {
       console.log(filepickerdata.fpfile.url);
@@ -28,12 +29,16 @@ class CreateItem extends React.Component {
   handleItem(event){
     event.preventDefault()
 
+    let fileUrl = this.refs.filepicker.addEventListener('change', filepickerdata => {
+        return filepickerdata.fpfile.url
+      })
+      console.log(fileUrl)
     let item = {
       name: this.refs.name.value,
       description: this.refs.description.value,
-      starting_bid: this.refs.bid.value
+      starting_bid: this.refs.bid.value,
+      image_url: fileUrl
     }
-    console.log(filepickerdata.fpfile.url)
 
     if(item.name && item.description && item.starting_bid){
       this.saveItem(item)
