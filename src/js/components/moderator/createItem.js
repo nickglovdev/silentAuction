@@ -39,7 +39,7 @@ class CreateItem extends React.Component {
       image_url: this.state.image_url
     }
 
-    if(item.name && item.description && item.starting_bid){
+    if(item.name && item.description && item.starting_bid && item.image_url){
       this.saveItem(item)
       console.log('Successo')
     } else {
@@ -64,7 +64,6 @@ class CreateItem extends React.Component {
   }
 
   render () {
-    console.log(this.state.image_url);
     return (
       <section className="auctionCreateItem">
         <h1>Add Items </h1>
