@@ -36,6 +36,7 @@ class ListItems extends React.Component {
                       {item.name}
                       {item.description}
                       {item.starting_bid}
+                    <img  src={item.image_url}/>
                   </div>
           })}
         </section>
