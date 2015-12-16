@@ -17,12 +17,11 @@ $desktop: new-breakpoint(min-width 850px);
 }
 main {
   width: 100%;
-  background-image: url('https://images.unsplash.com/13/unsplash_5243a2eb2bc02_1.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6b87620ca5fc979794d0d600b5dbcac8');
+  // background-image: url('https://images.unsplash.com/13/unsplash_5243a2eb2bc02_1.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6b87620ca5fc979794d0d600b5dbcac8');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 1000px;
-  color: #fff;
 }
 
 
@@ -62,7 +61,7 @@ aside {
   }
 }
 
-.login, .register {
+.login, .register, .auctionCreateItem, .auctionCreate {
   width: 100%;
   @include span-columns(7 of 12);
   @include shift(1);
