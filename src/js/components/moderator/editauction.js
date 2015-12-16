@@ -1,29 +1,27 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 
 class EditAuction extends React.Component {
   render () {
-    //When a moderator goes to this page. All the fills will have the older
-    //Information already in the input areas
     return(
-      <div>
-        <h1>Create Auction</h1><br />
-
-        <h3>Auction Name</h3><br />
-        <input type='text' placeholder='Auction Title'></input>
-
-        <h3>Company/Organization Name</h3>
-        <input type='text' placeholder='Auction Title'></input>
-
-        <h3>Event Location</h3>
-        <input type='text' placeholder='Auction Title'></input>
-
-        <h3>Date of Event</h3>
-        <input type='date'></input>
-
-        <h3>Time of Event</h3>
-        <input type='time'></input><br />
-
-        <button>Submit Changes</button>
+      <div className="auctionEdit">
+        <h1>Edit Auction</h1>
+        <section className="auctionFormLeft">
+          <h3>Auction Name</h3>
+            <input type='text' ref='title' placeholder='Auction Title'></input>
+          <h3>Company/Organization Name</h3>
+            <input type='text' ref='company' placeholder='Company/Organization Name'></input>
+          <h3>Event Location</h3>
+            <input type='text' ref="location" placeholder='Location'></input>
+        </section>
+        <section className="auctionFormRight">
+          <h3>Date of Event</h3>
+            <input ref='time' type='date'></input>
+          <h3>Time of Event</h3>
+            <input ref='date' type='time'></input>
+          <h3>Phone Number</h3>
+            <input type='text' ref="contact" placeholder='Phone Number'></input>
+          <button className="auctionCreateBtn" onClick={this.handleAuction}>Save</button>
+        </section>
       </div>
     )
   }

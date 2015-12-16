@@ -1,5 +1,5 @@
 @import '../../dist/bower_components/bourbon/app/assets/stylesheets/_bourbon.scss';
-// $visual-grid:true;
+$visual-grid:true;
 @import '../../dist/bower_components/neat/app/assets/stylesheets/_neat.scss';
 
 $mobile: new-breakpoint(max-width 768px);
@@ -61,7 +61,7 @@ aside {
   }
 }
 
-.login, .register, .auctionCreateItem, .auctionCreate {
+.login, .register {
   width: 100%;
   @include span-columns(7 of 12);
   @include shift(1);
@@ -127,19 +127,43 @@ aside {
 }
 
 .options {
-  @include span-columns(3);
+  @include span-columns(4);
   @include shift(8);
-  background: pink;
+  font-family: 'Varela Round', sans-serif;
+  text-decoration: none;
   position: fixed;
   float: right;
-  nav {
+}
+
+.options, .tools {
+  padding-left: 0;
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+  display: inline;
+  padding: 0 10px;
+  li {
+    border-left: 1px solid #fff;
+    padding: 5px 5px;
     text-decoration: none;
+    list-style: none;
+    display: inline;
   }
+}
+
+.navBG {
+  border-radius: 3.5px;
+  margin-top: 0;
+  margin-left: 48PX;
+  margin-bottom: 0;
+  padding: 5px 0;
+  background:#327FB7;
+  height: 30px;
 }
 // end moderator dashboard //
 
 // moderator Create //
-.auctionCreate {
+.auctionCreate, .auctionEdit {
   width: 100%;
   @include span-columns(9);
   @include shift(1);

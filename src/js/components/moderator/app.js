@@ -5,7 +5,7 @@ import setup from '../../setup'
 import User from '../../models/users'
 import ListAuctions from '../../models/listAuctions'
 
-class Dashboard extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
 
@@ -27,8 +27,10 @@ class Dashboard extends React.Component {
         </header>
         <section className="toolBar">
           <nav className="options">
-            <Link to="/profileEdit">*Profile*</Link>
-            <Link to='/auctions/create'>Create Auction</Link>
+            <ul className="navBG">
+              <li><Link className="tools" to="/profileEdit">*Profile*</Link></li>
+              <li><Link className="tools" to='/auctions/create'>Create Auction</Link></li>
+            </ul>
           </nav>
         </section>
         <aside>
@@ -48,4 +50,4 @@ class Dashboard extends React.Component {
   }
 }
 
-export default Dashboard;
+export default App;
