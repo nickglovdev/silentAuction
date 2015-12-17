@@ -5,8 +5,6 @@ import { Link } from 'react-router';
 import setup from '../setup'
 import User from './users'
 
-import SingleItemView from '../components/moderator/auctionItemIndividualView'
-
 class ListItems extends React.Component {
   constructor(props) {
     super(props)
@@ -20,8 +18,7 @@ class ListItems extends React.Component {
 
   fetchItems(nextId) {
     nextId = nextId || this.props.id
-    $.ajax('http://silent-auctioner.herokuapp.com/auctions/'+ nextId + '/items')
-    //used this.props.id to get the id. the this.props.params.id is on dashboarditemview
+    $.ajax('http://silent-auctioner.herokuapp.com/auctions/'+ nextId + '/items') //used this.props.id to get the id. the this.props.params.id is on dashboarditemview
      .then( (response) => {
         this.setState({
          loaded: true,
@@ -42,8 +39,8 @@ class ListItems extends React.Component {
     return(
       <section className='itemList'>
         {this.state.item.map(item => {
-          return <div key={item.id} item={item}>
-                    <Link to='#'>
+          return <div key= {item.id} item={item}>
+                    <Link to={`/auctions/${this.props.id}/items/${item.id}`}>
                       {item.name}
                       {item.description}
                       {item.starting_bid}
