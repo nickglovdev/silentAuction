@@ -29,7 +29,6 @@ class ListItems extends React.Component {
 
   componentWillReceiveProps(){
     this.fetchItems();
-    location.reload();
   }
 
   componentDidMount(hello) {
