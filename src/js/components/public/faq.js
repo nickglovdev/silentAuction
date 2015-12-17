@@ -6,27 +6,29 @@ class FAQ extends React.Component {
 
     this.state = {
       open: false,
-     class: "section"
+     yolo: "section"
    }
+
+   this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
     if (this.state.open) {
-      this.SetState({
+      this.setState({
         open: false,
-        class: "section"
+        yolo: "section"
       })
     } else {
       this.setState({
         open: true,
-        class: "open"
+        yolo: "section open"
       })
     }
   }
 
   render () {
     return(
-      <div className={this.state.class}>
+      <div className={this.state.yolo}>
         <button>toggle</button>
         <div className="sectionhead"
                onClick={this.handleClick}>

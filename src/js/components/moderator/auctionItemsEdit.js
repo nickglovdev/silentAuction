@@ -4,7 +4,7 @@ import setup from '../../setup'
 import User from '../../models/users'
 
 class AuctionItemEdit extends React.Component {
-  constructor(props) {
+  /*constructor(props) {
     super(props)
     this.state={} // Setting state to be an empty object so we can pass in a url
     setup(User.access_token);
@@ -60,7 +60,7 @@ class AuctionItemEdit extends React.Component {
         console.log(response)
         alert('item added.')
       });
-  }
+  }*/
 
   render () {
     //Inside the inputs for this section should be the last infomration

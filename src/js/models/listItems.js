@@ -18,7 +18,7 @@ class ListItems extends React.Component {
   }
 
   fetchItems(nextId) {
-    nextId = nextId || this.props.params.id
+    nextId = nextId || this.props.id
     $.ajax('http://silent-auctioner.herokuapp.com/auctions/'+ nextId + '/items') //used this.props.id to get the id. the this.props.params.id is on dashboarditemview
      .then( (response) => {
         this.setState({
