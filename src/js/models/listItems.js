@@ -17,8 +17,9 @@ class ListItems extends React.Component {
     this.fetchItems = this.fetchItems.bind(this);
   }
 
-  fetchItems() {
-    $.ajax('http://silent-auctioner.herokuapp.com/auctions/'+ this.props.id + '/items') //used this.props.id to get the id. the this.props.params.id is on dashboarditemview
+  fetchItems(nextId) {
+    nextId = nextId || this.props.params.id
+    $.ajax('http://silent-auctioner.herokuapp.com/auctions/'+ nextId + '/items') //used this.props.id to get the id. the this.props.params.id is on dashboarditemview
      .then( (response) => {
         this.setState({
          loaded: true,
@@ -27,8 +28,8 @@ class ListItems extends React.Component {
      });
   }
 
-  componentWillReceiveProps(){
-    this.fetchItems();
+  componentWillReceiveProps(nextProps){
+    this.fetchItems(nextProps.id); // Having it check for the
   }
 
   componentDidMount(hello) {
