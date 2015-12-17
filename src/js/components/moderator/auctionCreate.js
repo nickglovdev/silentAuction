@@ -4,7 +4,7 @@ import $ from 'jquery';
 import setup from '../../setup'
 import User from '../../models/users'
 
-class CreateAuction extends React.Component {
+class AuctionCreate extends React.Component {
   constructor(props) {
     super(props);
 
@@ -81,4 +81,4 @@ class CreateAuction extends React.Component {
     }
   }
 
-export default CreateAuction;
+export default AuctionCreate;

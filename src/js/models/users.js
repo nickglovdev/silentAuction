@@ -89,8 +89,8 @@ class User{
     localStorage.removeItem('access_token');
   }
 
-  /*editProfile() {
-    let url = 'http://silent-auctioner.herokuapp.com/users/'
+  editProfile(data, done) {
+    let url = 'http://silent-auctioner.herokuapp.com/users'
     let options = {
       url: url,
       method: 'PATCH',
@@ -100,11 +100,25 @@ class User{
     };
 
     jQuery.ajax(options).then(response =>{
+      let {access_token, refresh_token, expires_in, created_at} = response;
+      console.log(response)
+      this.access_token = access_token;
+      this.refresh_token = refresh_token;
+      this.token_expires = expires_in;
+      this.token_created = created_at;
+
+      localStorage.setItem('access_token', JSON.stringify({
+        access_token: access_token,
+        refresh_token: refresh_token,
+        expires_in: expires_in,
+        created_at: created_at
+      }));
+
       done(null,response);
     }).fail(error => {
       done(error);
     });
-  }; */
+  };
 }
 
 export default new User();

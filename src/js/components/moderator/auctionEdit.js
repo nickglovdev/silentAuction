@@ -1,6 +1,9 @@
 import React from 'react'
 
-class EditAuction extends React.Component {
+import setup from '../../setup'
+import User from '../../models/users'
+
+class AuctionEdit extends React.Component {
   render () {
     return(
       <div className="auctionEdit">
@@ -27,4 +30,4 @@ class EditAuction extends React.Component {
   }
 }
 
-export default EditAuction;
+export default AuctionEdit;

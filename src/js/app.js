@@ -10,11 +10,11 @@ import Register from './components/public/register';
 import FAQ from './components/public/faq'
 
 import App from './components/moderator/app';
-import CreateAuction from './components/moderator/createAuction';
+import AuctionCreate from './components/moderator/auctionCreate';
+import AuctionEdit from './components/moderator/auctionEdit';
+import AuctionItemAdd from './components/moderator/auctionItemAdd';
+import AuctionItemsEdit from './components/moderator/auctionItemsEdit'
 import AuctionItemsView from './components/moderator/auctionItemsView';
-import CreateItem from './components/moderator/createitem';
-import EditItem from './components/moderator/edititem';
-import EditAuction from './components/moderator/editauction';
 import ProfileEdit from './components/moderator/profileEdit';
 
 //This will check and see if the user is logged in.
@@ -35,12 +35,11 @@ ReactDOM.render((
     </Route>
     <Route path='/dashboard' component={App} onEnter={requireAuth}>
       <Route path='/profileEdit' component={ProfileEdit}/>
-      <Route path='/auctions/create' component={CreateAuction}/>
+      <Route path='/auctions/create' component={AuctionCreate}/>
+      <Route path='/auctions/:id/edit' component={AuctionEdit}/>
+      <Route path='/auctions/:id/items' component={AuctionItemAdd}/>
+      <Route path='/auctions/:id/items/:itemId/edit' component={AuctionItemsEdit}/>
       <Route path='/auctions/:id' component={AuctionItemsView}/>
-      <Route path='/auctions/:id/edit' component={EditAuction}/>
-      <Route path='/auctions/:id/items' component={CreateItem}/>
-      <Route path='/auctions/:id/items/:itemId' component={EditItem}/>
-      <Route path='/auctions/:id/items/:itemId/edit' component={EditItem}/>
     </Route>
   </Router>
 ), document.getElementById('app'));

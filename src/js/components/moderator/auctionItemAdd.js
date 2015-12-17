@@ -5,7 +5,7 @@ import filepicker from 'filepicker-js'
 import setup from '../../setup'
 import User from '../../models/users'
 
-class CreateItem extends React.Component {
+class AuctionItemAdd extends React.Component {
   constructor(props) {
     super(props)
     this.state={} // Setting state to be an empty object so we can pass in a url
@@ -15,6 +15,7 @@ class CreateItem extends React.Component {
   }
 
   componentDidMount() {
+    filepicker.constructWidget(this.refs.filepicker)
     if (this.refs.filepicker.style['display'] !== 'none') {
       filepicker.constructWidget(this.refs.filepicker);
     }
@@ -29,8 +30,8 @@ class CreateItem extends React.Component {
     this.setState({image_url: filepickerdata.fpfile.url })
   }
 
-  handleItem(event){
-    event.preventDefault()
+  handleItem(event) {
+    event.preventDefault();
 
     let item = {
       name: this.refs.name.value,
@@ -59,7 +60,7 @@ class CreateItem extends React.Component {
     $.ajax(`http://silent-auctioner.herokuapp.com/auctions/${id}/items`, options)
       .then((response) => {
         console.log(response)
-        this.props.history.pushState(null,'/dashboard');
+        alert('item added.')
       });
   }
 
@@ -80,9 +81,10 @@ class CreateItem extends React.Component {
                    data-fp-apikey="AUvdBf1ynT0STNVd104jSz"/>
           </section>
         <button onClick={this.handleItem}>Submit</button>
+        <button>+</button>
       </section>
     )
   }
 }
 
-export default CreateItem;
+export default AuctionItemAdd;

@@ -5,12 +5,11 @@ class ProfileEdit extends React.Component {
   constructor(props){
     super(props);
 
-    /*this.updateUser = this.updateUser.bind(this);*/
+    this.updateUser = this.updateUser.bind(this);
   }
 
-  /*updateUser(e) {
+  updateUser(e) {
     e.preventDefault();
-
     let email = this.refs.email.value;
     let confirmEmail = this.refs.confirmEmail.value;
     let password = this.refs.password.value;
@@ -27,7 +26,7 @@ class ProfileEdit extends React.Component {
           User.editProfile({
             username: email,
             password: password
-          }, (error, data) => { //Get the Token
+          }, (error, data) => {
             setup(data.access_token);
             alert('Update Successful');
             console.log('success')
@@ -38,7 +37,7 @@ class ProfileEdit extends React.Component {
         }
       });
     }
-  }*/
+  }
   render () {
     return (
       <div className="register">
