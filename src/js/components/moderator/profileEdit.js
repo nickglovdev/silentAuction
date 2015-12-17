@@ -1,4 +1,5 @@
 import React from 'react'
+
 import User from '../../models/users'
 
 class ProfileEdit extends React.Component {
@@ -38,6 +39,7 @@ class ProfileEdit extends React.Component {
       });
     }
   }
+
   render () {
     return (
       <div className="register">

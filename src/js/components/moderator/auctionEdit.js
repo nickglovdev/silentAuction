@@ -1,9 +1,54 @@
 import React from 'react'
+import jQuery from 'jquery';
 
 import setup from '../../setup'
 import User from '../../models/users'
 
 class AuctionEdit extends React.Component {
+  constructor(props) {
+    super(props);
+
+    setup(User.access_token);
+    this.handleAuction = this.handleAuction.bind(this)
+  }
+
+  handleAuction(event){
+    event.preventDefault()
+    let auction = {
+        title: this.refs.title.value,
+      company: this.refs.company.value,
+     location: this.refs.location.value,
+         time: this.refs.time.value,
+         date: this.refs.date.value,
+      contact: this.refs.contact.value
+    }
+    console.log(auction)
+
+    if(auction.title && auction.company && auction.location
+      && auction.time && auction.date && auction.contact){
+      console.log(auction.title);
+    } else{
+      console.log('Problemo')
+    }
+
+    let id = this.props.params.id;
+
+    let self = this;
+    let options = {
+      method:'PATCH',
+      data: {
+          auction: auction
+      }
+    }
+
+    // fix me VV // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    jQuery.ajax('http://silent-auctioner.herokuapp.com/auctions/' + id, options)
+      .then(function(response){
+        console.log(response)
+        self.props.history.pushState(null,'/dashboard');
+      });
+  };
+
   render () {
     return(
       <div className="auctionEdit">
