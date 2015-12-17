@@ -18,7 +18,7 @@ class ListItems extends React.Component {
   }
 
   fetchItems(nextId) {
-    nextId = nextId || this.props.params.id
+    nextId = nextId || this.props.id
     $.ajax('http://silent-auctioner.herokuapp.com/auctions/'+ nextId + '/items') //used this.props.id to get the id. the this.props.params.id is on dashboarditemview
      .then( (response) => {
         this.setState({
@@ -41,7 +41,7 @@ class ListItems extends React.Component {
       <section className='itemList'>
         {this.state.item.map(item => {
           return <div key= {item.id} item={item}>
-                    <Link to='#'>
+                    <Link to={`/auctions/${this.props.id}/items/${item.id}`}>
                       {item.name}
                       {item.description}
                       {item.starting_bid}

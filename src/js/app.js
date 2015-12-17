@@ -16,6 +16,7 @@ import AuctionItemAdd from './components/moderator/auctionItemAdd';
 import AuctionItemsEdit from './components/moderator/auctionItemsEdit'
 import AuctionItemsView from './components/moderator/auctionItemsView';
 import ProfileEdit from './components/moderator/profileEdit';
+import IndivdualItemView from './components/moderator/individualItemView'
 
 //This will check and see if the user is logged in.
 //This was causing the problem in our registration page.
@@ -39,6 +40,7 @@ ReactDOM.render((
       <Route path='/auctions/:id/edit' component={AuctionEdit}/>
       <Route path='/auctions/:id/items' component={AuctionItemAdd}/>
       <Route path='/auctions/:id/items/:itemId/edit' component={AuctionItemsEdit}/>
+      <Route path='/auctions/:id/items/:itemId' component={IndivdualItemView} />
       <Route path='/auctions/:id' component={AuctionItemsView}/>
     </Route>
   </Router>
