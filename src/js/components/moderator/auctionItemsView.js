@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import setup from '../../setup'
 import User from '../../models/users'
 
-import ListItems from '../../models/ListItems'
+import ListItems from './listItems'
 import AuctionEdit from './auctionEdit'
 
 class AuctionsItemView extends React.Component {
