@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import {link} from 'react-router'
+import { Link } from 'react-router';
 
 import setup from '../setup'
 import User from './users'
@@ -29,6 +29,7 @@ class ListItems extends React.Component {
 
   componentWillReceiveProps(){
     this.fetchItems();
+    location.reload();
   }
 
   componentDidMount(hello) {
@@ -40,11 +41,13 @@ class ListItems extends React.Component {
       <section className='itemList'>
         {this.state.item.map(item => {
           return <div key= {item.id} item={item}>
-                    <a href="#">ROUTE THIS TO ITEM -- NEEDS EDIT{item.name}</a>
-                    {item.description}
-                    {item.starting_bid}
-                  <img  src={item.image_url}/>
-                </div>
+                    <Link to='#'>
+                      {item.name}
+                      {item.description}
+                      {item.starting_bid}
+                    </Link>
+                    <img  src={item.image_url}/>
+                  </div>
         })}
       </section>
     )
