@@ -8,6 +8,7 @@ import Home from './components/public/home';
 import Login from './components/public/login';
 import Register from './components/public/register';
 import FAQ from './components/public/faq'
+import Answers from './components/public/faq'
 
 import App from './components/moderator/app';
 import AuctionCreate from './components/moderator/auctionCreate';
@@ -32,6 +33,7 @@ ReactDOM.render((
       <Route path="login" component={Login}/>
       <Route path="register" component={Register}/>
       <Route path="faq" component={FAQ}/>
+      <Route path="faq" component={Answers}/>
     </Route>
     <Route path='/dashboard' component={App} onEnter={requireAuth}>
       <Route path='/profileEdit' component={ProfileEdit}/>
