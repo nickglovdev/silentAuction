@@ -11,8 +11,7 @@ $desktop: new-breakpoint(min-width 850px);
 
 // main/public //
 .pageWrap {
-  @include span-columns(6 of 12);
-  @include shift(1);
+  @include outer-container;
   max-width: 100%;
 }
 
@@ -51,7 +50,7 @@ aside {
   font-family: 'Varela Round', sans-serif;
   float: left;
   margin: 0;
-  background: rgba(252, 85, 33, 0.93);
+  background: rgba(68, 89, 99, 0.93);
   height: 1000px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
   nav {
@@ -65,6 +64,11 @@ aside {
 
 .homePage {
   @include outer-container;
+}
+
+.homeScroll {
+  @include span-columns(8);
+  @include shift(1);
 }
 
 .login, .register {
@@ -163,7 +167,7 @@ aside {
 }
 
 .navBG {
-  border-radius: 3.5px;
+  border-left: 5px solid rgba(252, 85, 33, 0.93);
   margin-top: 0;
   margin-left: 48PX;
   margin-bottom: 0;
@@ -176,7 +180,7 @@ aside {
 // moderator Create //
 .auctionCreate, .auctionEdit {
   width: 100%;
-  @include span-columns(9);
+  @include span-columns(8);
   @include shift(1);
   margin-top: 32px;
   padding: 10px 0;
@@ -212,6 +216,29 @@ aside {
 }
 // end moderator Create //
 
+.editProfile{
+  @include span-columns(8 of 12);
+  @include shift(1);
+  margin-top: 32px;
+  padding: 10px 0;
+  height: 550px;
+  border-radius: 2px;
+  background: rgba(95, 124, 138, 0.65);
+  color: #202020;
+  text-align: center;
+  input {
+    width: 25%;
+    opacity: .8;
+    height: 30px;
+    position: relative;
+    display: block;
+    margin: 20px auto;
+  }
+}
+
+
+
+
 
 // mobile //
 main {
@@ -225,7 +252,7 @@ main {
 
 
 
-.login, .register, .faq {
+.login, .register, .faq, .editProfile {
   @include media($mobile) {
   @include span-columns(12);
   margin: 0;

@@ -42,17 +42,19 @@ class ProfileEdit extends React.Component {
 
   render () {
     return (
-      <div className="register">
-        <h3>Edit Profile</h3>
-        <span className="inputLabel">E-Mail:</span>
-          <input ref="email" placeholder="E-Mail..."></input>
-        <span className="inputLabel">Confirm E-Mail:</span>
-          <input ref="confirmEmail"  placeholder="E-Mail..."></input>
-        <span className="inputLabel">Password:</span>
-          <input ref="password"  type="password" placeholder="Password..."></input>
-        <span className="inputLabel">Confirm Password</span>
-          <input ref="confirmPassword"  type="password" placeholder="Password..."></input>
-        <button value="Save" onClick={this.updateUser}>Save</button>
+      <div className="homePage">
+        <div className="editProfile">
+          <h3>Edit Profile</h3>
+          <span className="inputLabel">E-Mail:</span>
+            <input ref="email" placeholder="E-Mail..."></input>
+          <span className="inputLabel">Confirm E-Mail:</span>
+            <input ref="confirmEmail"  placeholder="E-Mail..."></input>
+          <span className="inputLabel">Password:</span>
+            <input ref="password"  type="password" placeholder="Password..."></input>
+          <span className="inputLabel">Confirm Password</span>
+            <input ref="confirmPassword"  type="password" placeholder="Password..."></input>
+          <button value="Save" onClick={this.updateUser}>Save</button>
+        </div>
       </div>
     )
   }
