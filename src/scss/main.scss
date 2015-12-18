@@ -11,9 +11,9 @@ $desktop: new-breakpoint(min-width 850px);
 
 // main/public //
 .pageWrap {
-  @include outer-container;
+  @include span-columns(6 of 12);
+  @include shift(1);
   max-width: 100%;
-
 }
 
 main {
@@ -27,13 +27,14 @@ main {
 
 
 .siteDescription {
-  @include outer-container;
   width: 100%;
   font-family: 'Varela Round', sans-serif;
-  @include span-columns(9);
+  position: fixed;
+  @include span-columns(8);
   @include shift(1);
+  margin-top: 35px;
   padding: 20px;
-  color: #ffffff;
+  color: #202020;
   background: rgba(95, 124, 138, 0.30);
   border: 1px solid rgba(181, 181, 181, 0.30);
   height: 550px;
@@ -62,10 +63,14 @@ aside {
   }
 }
 
+.homePage {
+  @include outer-container;
+}
+
 .login, .register {
   width: 100%;
-  @include span-columns(7 of 12);
-  @include shift(1);
+  @include span-columns(8 of 12);
+  @include shift(2);
   margin-top: 32px;
   padding: 10px 0;
   height: 550px;
@@ -233,7 +238,7 @@ main {
 
 .siteDescription {
   @include media($mobile) {
-  @include span-columns(12);
+  @include span-columns(10);
   @include shift(2);
   height: 550px;
   margin: 0;
@@ -259,19 +264,19 @@ $lightred: #fff;
 $red: #FC602F;
 $darkred: #FC602F;
 
+.faqWrap {
+  @include outer-container;
+}
+
 .mainStuff {
-  position: absolute;
+  margin-top: 35px;
+  @include span-columns(8 of 12);
+  @include shift(1);
   background: $lightred;
-  top: 50%;
-  left: 50%;
-  width: 40%;
-  max-width: 30em;
-  min-width: 15em;
-  transform: translate(-50%, -50%);
   overflow: hidden;
   .title {
     color: #fff;
-    background: $darkred;
+    background: #94A7B1;
     text-align: center;
     font-weight: 700;
     line-height: 1.2em;
@@ -282,9 +287,9 @@ $darkred: #FC602F;
 .section {
   position: relative;
   width: 100%;
-  border-bottom: 5px solid $darkred;
-  border-left: 2px solid $darkred;
-  border-right: 2px solid $darkred;
+  border-bottom: 5px solid #94A7B1;
+  border-left: 3px solid #94A7B1;
+  border-right: 3px solid #94A7B1;
   button {
     display: none;
     text-indent: -9999%;

@@ -49,19 +49,21 @@ export default FAQ;
 class Answers extends React.Component {
   render () {
     return (
-      <div className="mainStuff">
-        <div className="title">FAQ</div>
-        <FAQ title="FAQ Title One">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Amet nemo harum voluptas aliquid rem possimus nostrum
-          excepturi!
-        </FAQ>
-        <FAQ title="FAQ Title Two">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Amet nemo harum voluptas aliquid rem possimus nostrum
-          excepturi!
-        </FAQ>
-      </div>
+      <section className="faqWrap">
+        <div className="mainStuff">
+          <div className="title">FAQ</div>
+          <FAQ title="FAQ Title One">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Amet nemo harum voluptas aliquid rem possimus nostrum
+            excepturi!
+          </FAQ>
+          <FAQ title="FAQ Title Two">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Amet nemo harum voluptas aliquid rem possimus nostrum
+            excepturi!
+          </FAQ>
+        </div>
+      </section>
     )
   }
 }
