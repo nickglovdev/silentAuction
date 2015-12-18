@@ -16,9 +16,9 @@ $desktop: new-breakpoint(min-width 850px);
   max-width: 100%;
 }
 
-main {
+.public {
   width: 100%;
-  // background-image: url('https://images.unsplash.com/13/unsplash_5243a2eb2bc02_1.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6b87620ca5fc979794d0d600b5dbcac8');
+  background-image: url('https://images.unsplash.com/13/unsplash_5243a2eb2bc02_1.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6b87620ca5fc979794d0d600b5dbcac8');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -34,7 +34,7 @@ main {
   @include shift(1);
   margin-top: 35px;
   padding: 20px;
-  color: #202020;
+  color: #fff;
   background: rgba(95, 124, 138, 0.30);
   border: 1px solid rgba(181, 181, 181, 0.30);
   height: 550px;
@@ -68,6 +68,7 @@ aside {
 }
 
 .login, .register {
+  position: fixed;
   width: 100%;
   @include span-columns(7 of 12);
   @include shift(2);
@@ -269,7 +270,9 @@ $darkred: #FC602F;
 }
 
 .mainStuff {
+  position: fixed;
   margin-top: 35px;
+  opacity: .7;
   @include span-columns(7 of 12);
   @include shift(2);
   background: $lightred;

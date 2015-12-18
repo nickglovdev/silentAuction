@@ -16,7 +16,7 @@ class Sidebar extends React.Component {
             <Link className="navOptions" to="#">Home</Link>
           </nav>
         </aside>
-        <main>
+        <main className="public">
           {this.props.children}
         </main>
       </div>
