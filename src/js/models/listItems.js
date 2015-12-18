@@ -41,13 +41,13 @@ class ListItems extends React.Component {
       <section className='itemList'>
         {this.state.item.map(item => {
           return <div key= {item.id} item={item}>
-                    <Link to={`/auctions/${this.props.id}/items/${item.id}`}>
-                      {item.name}
-                      {item.description}
-                      {item.starting_bid}
-                    </Link>
+                  <Link to={`/auctions/${this.props.id}/items/${item.id}`}>
                     <img  src={item.image_url}/>
-                  </div>
+                    {item.name}
+                  </Link>
+                  {item.description}
+                  {item.starting_bid}
+                </div>
         })}
       </section>
     )
