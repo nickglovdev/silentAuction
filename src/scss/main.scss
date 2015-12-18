@@ -69,7 +69,7 @@ aside {
 
 .login, .register {
   width: 100%;
-  @include span-columns(8 of 12);
+  @include span-columns(7 of 12);
   @include shift(2);
   margin-top: 32px;
   padding: 10px 0;
@@ -270,8 +270,8 @@ $darkred: #FC602F;
 
 .mainStuff {
   margin-top: 35px;
-  @include span-columns(8 of 12);
-  @include shift(1);
+  @include span-columns(7 of 12);
+  @include shift(2);
   background: $lightred;
   overflow: hidden;
   .title {
