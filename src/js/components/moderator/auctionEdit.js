@@ -73,6 +73,7 @@ class AuctionEdit extends React.Component {
       </div>
     )
   }
+
 }
 
 export default AuctionEdit;

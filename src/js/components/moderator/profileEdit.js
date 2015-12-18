@@ -30,10 +30,7 @@ class ProfileEdit extends React.Component {
             username: email,
             password: password
           }, (error, data) => {
-            // setup(data.access_token);
-            alert('Update Successful');
             console.log('success')
-            // function here for update user callback
             this.props.history.pushState(null,'/dashboard');
           })
         } else {

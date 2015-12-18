@@ -13,20 +13,29 @@ class App extends React.Component {
     setup(User.access_token);
     this.state = {
       Loaded: false,
-      user: { id: '',
-            email: ''}
+      user: {
+        id: '',
+        email: ''
+      }
     }
     this.onLogout = this.onLogout.bind(this);
   }
 
+  // Go to our User model and run the function getProfile that lets us
+  // make an ajax request to get the users info.
   componentDidMount() {
-    jQuery.ajax('http://silent-auctioner.herokuapp.com/users')
-      .then( (json) => {
-        this.setState({
-          Loaded: true,
-          user: json
-        })
-      });
+    User.getProfile();
+
+    // Make unsubscribe equal to a function that lets us pass it down to
+    // unmount the subscription after update.
+    this.unsubscribe = User.subscribe(() => {
+      this.forceUpdate();
+    });
+  }
+
+  // Stopping the memory leak.
+  componentWillUnmount() {
+    this.unsubscribe();
   }
 
   //Create a function that calls the users current state and logs out
@@ -44,7 +53,7 @@ class App extends React.Component {
         <section className="toolBar">
           <nav className="options">
             <ul className="navBG">
-              <li><Link className="tools" to="/profileEdit">{this.state.user.email}</Link></li>
+              <li><Link className="tools" to="/profileEdit">{User.email}</Link></li>
               <li><Link className="tools" to="/auctions/create">Create Auction</Link></li>
             </ul>
           </nav>

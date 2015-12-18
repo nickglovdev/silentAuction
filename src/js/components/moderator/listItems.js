@@ -36,18 +36,20 @@ class ListItems extends React.Component {
   }
 
   render() {
+    let items = this.state.item.map(item => {
+      return <div key= {item.id} item={item}>
+              <Link to={`/auctions/${this.props.id}/items/${item.id}`}>
+                <img  src={item.image_url}/>
+                {item.name}
+              </Link>
+              {item.description}
+              {item.starting_bid}
+            </div>
+      });
+
     return(
       <section className='itemList'>
-        {this.state.item.map(item => {
-          return <div key={item.id} item={item}>
-                    <Link to={`/auctions/${this.props.id}/items/${item.id}`}>
-                      {item.name}
-                      {item.description}
-                      {item.starting_bid}
-                    </Link>
-                    <img src={item.image_url}/>
-                  </div>
-        })}
+        {items}
       </section>
     )
   }

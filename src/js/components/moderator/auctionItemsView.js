@@ -30,7 +30,6 @@ class AuctionsItemView extends React.Component {
           <button>Copy URL</button>
         </header>
         <Link to={`/auctions/${id}/items`}>Add Items</Link>
-        <Link to={`/auctions/${id}/items/${id}/edit`}>Edit Items</Link>
         <ListItems id={this.props.params.id}></ListItems>
         {/* id in this is setting the params for listitems */}
       </section>
