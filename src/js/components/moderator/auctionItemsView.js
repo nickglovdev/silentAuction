@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import setup from '../../setup'
 import User from '../../models/users'
 
-import ListItems from '../../models/ListItems'
+import ListItems from './listItems'
 import AuctionEdit from './auctionEdit'
 
 class AuctionsItemView extends React.Component {
@@ -30,9 +30,8 @@ class AuctionsItemView extends React.Component {
           <button>Copy URL</button>
         </header>
         <Link to={`/auctions/${id}/items`}>Add Items</Link>
-        <Link to={`/auctions/${id}/items/${id}/edit`}>Edit Items</Link>
         <ListItems id={this.props.params.id}></ListItems>
-        {/* id in this is setting the params for listitemst */}
+        {/* id in this is setting the params for listitems */}
       </section>
     )
   }

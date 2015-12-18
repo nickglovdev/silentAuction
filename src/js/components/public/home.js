@@ -8,7 +8,7 @@ class Home extends React.Component {
   render () {
     return(
       <div className="homePage">
-        <div className="pageWrap">
+        <div className="homeScroll">
           <section className="siteDescription">
             <h2>Silence!</h2>
             <p>Hoodie bespoke kickstarter 90's seitan venmo godard poutine ramps.

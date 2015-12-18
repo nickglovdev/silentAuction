@@ -4,8 +4,6 @@ import { Link } from 'react-router';
 
 import setup from './../../setup'
 import User from './../../models/users'
-import AuctionItemBids from './auctionitemBids'
-
 
 class IndividualItemView extends React.Component {
   constructor(props) {
@@ -13,7 +11,7 @@ class IndividualItemView extends React.Component {
     setup(User.access_token)
     this.state = {
       loaded: false,
-      item: {}
+      item: {bids: []}
     }
     this.fetchItems = this.fetchItems.bind(this);
   }
@@ -29,8 +27,9 @@ class IndividualItemView extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    this.fetchItems(nextProps.params.id, nextProps.params.itemId);
+    this.fetchItems(nextProps.id, nextProps.itemId);
   }
+
 
   //Grabbing our auction id and item id from our params. Then we are passing them into fetchItems as options.
   componentDidMount(hello) {
@@ -38,13 +37,24 @@ class IndividualItemView extends React.Component {
   }
 
   render() {
+    let id = this.props.params.id;
+    let itemId =this.props.params.itemId
+    let bids = this.state.item.bids.map(bid => {
+      return <div key={bid.id} bid={bid}>
+            {bid.amount}
+           </div>
+    });
+    console.log(this.state.item.bids)
     return(
       <section className='individualItemView'>
+      <Link to={`/auctions/${id}/items/${itemId}/edit`}>Edit Items</Link>
         <h1>{this.state.item.name}</h1>
+        <Link to='#'>Edit Item</Link>
         <img  src={this.state.item.image_url}/>
         {this.state.item.description}
+        {this.state.item.starting_bid}
+        {bids}
 
-        <AuctionItemBids id={this.props.params.id}></AuctionItemBids>
       </section>
     )
   }

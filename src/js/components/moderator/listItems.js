@@ -2,9 +2,8 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router';
 
-import setup from '../setup'
-import User from './users'
-
+import setup from './../../setup'
+import User from './../../models/users'
 
 class ListItems extends React.Component {
   constructor(props) {
@@ -33,22 +32,24 @@ class ListItems extends React.Component {
   }
 
   componentDidMount(hello) {
-    this.fetchItems();
+    this.fetchItems(this.props.id);
   }
 
   render() {
+    let items = this.state.item.map(item => {
+      return <div key= {item.id} item={item}>
+              <Link to={`/auctions/${this.props.id}/items/${item.id}`}>
+                <img  src={item.image_url}/>
+                {item.name}
+              </Link>
+              {item.description}
+              {item.starting_bid}
+            </div>
+      });
+
     return(
       <section className='itemList'>
-        {this.state.item.map(item => {
-          return <div key= {item.id} item={item}>
-                  <Link to={`/auctions/${this.props.id}/items/${item.id}`}>
-                    <img  src={item.image_url}/>
-                    {item.name}
-                  </Link>
-                  {item.description}
-                  {item.starting_bid}
-                </div>
-        })}
+        {items}
       </section>
     )
   }

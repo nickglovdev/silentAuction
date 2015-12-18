@@ -13,12 +13,11 @@ $desktop: new-breakpoint(min-width 850px);
 .pageWrap {
   @include outer-container;
   max-width: 100%;
-
 }
 
-main {
+.public {
   width: 100%;
-  // background-image: url('https://images.unsplash.com/13/unsplash_5243a2eb2bc02_1.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6b87620ca5fc979794d0d600b5dbcac8');
+  background-image: url('https://images.unsplash.com/13/unsplash_5243a2eb2bc02_1.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6b87620ca5fc979794d0d600b5dbcac8');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -27,13 +26,14 @@ main {
 
 
 .siteDescription {
-  @include outer-container;
   width: 100%;
   font-family: 'Varela Round', sans-serif;
-  @include span-columns(9);
+  position: fixed;
+  @include span-columns(8);
   @include shift(1);
+  margin-top: 35px;
   padding: 20px;
-  color: #ffffff;
+  color: #fff;
   background: rgba(95, 124, 138, 0.30);
   border: 1px solid rgba(181, 181, 181, 0.30);
   height: 550px;
@@ -50,7 +50,7 @@ aside {
   font-family: 'Varela Round', sans-serif;
   float: left;
   margin: 0;
-  background: rgba(252, 85, 33, 0.93);
+  background: rgba(68, 89, 99, 0.93);
   height: 1000px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
   nav {
@@ -62,10 +62,20 @@ aside {
   }
 }
 
+.homePage {
+  @include outer-container;
+}
+
+.homeScroll {
+  @include span-columns(8);
+  @include shift(1);
+}
+
 .login, .register {
+  position: fixed;
   width: 100%;
   @include span-columns(7 of 12);
-  @include shift(1);
+  @include shift(2);
   margin-top: 32px;
   padding: 10px 0;
   height: 550px;
@@ -157,7 +167,7 @@ aside {
 }
 
 .navBG {
-  border-radius: 3.5px;
+  border-left: 5px solid rgba(252, 85, 33, 0.93);
   margin-top: 0;
   margin-left: 48PX;
   margin-bottom: 0;
@@ -170,7 +180,7 @@ aside {
 // moderator Create //
 .auctionCreate, .auctionEdit {
   width: 100%;
-  @include span-columns(9);
+  @include span-columns(8);
   @include shift(1);
   margin-top: 32px;
   padding: 10px 0;
@@ -206,6 +216,29 @@ aside {
 }
 // end moderator Create //
 
+.editProfile{
+  @include span-columns(8 of 12);
+  @include shift(1);
+  margin-top: 32px;
+  padding: 10px 0;
+  height: 550px;
+  border-radius: 2px;
+  background: rgba(95, 124, 138, 0.65);
+  color: #202020;
+  text-align: center;
+  input {
+    width: 25%;
+    opacity: .8;
+    height: 30px;
+    position: relative;
+    display: block;
+    margin: 20px auto;
+  }
+}
+
+
+
+
 
 // mobile //
 main {
@@ -219,7 +252,7 @@ main {
 
 
 
-.login, .register, .faq {
+.login, .register, .faq, .editProfile {
   @include media($mobile) {
   @include span-columns(12);
   margin: 0;
@@ -233,7 +266,7 @@ main {
 
 .siteDescription {
   @include media($mobile) {
-  @include span-columns(12);
+  @include span-columns(10);
   @include shift(2);
   height: 550px;
   margin: 0;
@@ -254,3 +287,77 @@ aside {
   }
 }
 // end mobile //
+
+$lightred: #fff;
+$red: #FC602F;
+$darkred: #FC602F;
+
+.faqWrap {
+  @include outer-container;
+}
+
+.mainStuff {
+  position: fixed;
+  margin-top: 35px;
+  opacity: .7;
+  @include span-columns(7 of 12);
+  @include shift(2);
+  background: $lightred;
+  overflow: hidden;
+  .title {
+    color: #fff;
+    background: #94A7B1;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.2em;
+    padding: 1em;
+  }
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  border-bottom: 5px solid #94A7B1;
+  border-left: 3px solid #94A7B1;
+  border-right: 3px solid #94A7B1;
+  button {
+    display: none;
+    text-indent: -9999%;
+  }
+}
+
+.open {
+  button {
+    &:before, &:after {
+      height: 14px;
+    }
+  }
+  .articlewrap {
+    height: 120px;
+  }
+}
+
+.articlewrap {
+  height: 0;
+  overflow: hidden;
+  transition: all .2s ease-in;
+}
+
+.sectionhead {
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  cursor: pointer;
+  font-weight: 700;
+  color: #888;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 1em;
+  padding-right: 2.1em;
+}
+
+.article {
+  padding: 1em;
+  color: #333;
+  line-height: 1.3;
+}

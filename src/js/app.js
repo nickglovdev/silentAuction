@@ -8,6 +8,7 @@ import Home from './components/public/home';
 import Login from './components/public/login';
 import Register from './components/public/register';
 import FAQ from './components/public/faq'
+import Answers from './components/public/faq'
 
 import App from './components/moderator/app';
 import AuctionCreate from './components/moderator/auctionCreate';
@@ -16,7 +17,7 @@ import AuctionItemAdd from './components/moderator/auctionItemAdd';
 import AuctionItemsEdit from './components/moderator/auctionItemsEdit'
 import AuctionItemsView from './components/moderator/auctionItemsView';
 import ProfileEdit from './components/moderator/profileEdit';
-import IndivdualItemView from './components/moderator/individualItemView'
+import IndividualItemView from './components/moderator/individualItemView'
 
 //This will check and see if the user is logged in.
 //This was causing the problem in our registration page.
@@ -33,14 +34,15 @@ ReactDOM.render((
       <Route path="login" component={Login}/>
       <Route path="register" component={Register}/>
       <Route path="faq" component={FAQ}/>
+      <Route path="faq" component={Answers}/>
     </Route>
     <Route path='/dashboard' component={App} onEnter={requireAuth}>
       <Route path='/profileEdit' component={ProfileEdit}/>
       <Route path='/auctions/create' component={AuctionCreate}/>
       <Route path='/auctions/:id/edit' component={AuctionEdit}/>
       <Route path='/auctions/:id/items' component={AuctionItemAdd}/>
+      <Route path='/auctions/:id/items/:itemId' component={IndividualItemView}/>
       <Route path='/auctions/:id/items/:itemId/edit' component={AuctionItemsEdit}/>
-      <Route path='/auctions/:id/items/:itemId' component={IndivdualItemView} />
       <Route path='/auctions/:id' component={AuctionItemsView}/>
     </Route>
   </Router>
