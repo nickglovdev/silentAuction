@@ -39,7 +39,7 @@ class ListItems extends React.Component {
     return(
       <section className='itemList'>
         {this.state.item.map(item => {
-          return <div key= {item.id} item={item}>
+          return <div key={item.id} item={item}>
                     <Link to={`/auctions/${this.props.id}/items/${item.id}`}>
                       {item.name}
                       {item.description}
