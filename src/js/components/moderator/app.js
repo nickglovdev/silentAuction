@@ -1,4 +1,5 @@
 import React from 'react';
+import jQuery from 'jquery';
 import { Link } from 'react-router';
 
 import setup from '../../setup'
@@ -9,7 +10,23 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    setup(User.access_token);
+    this.state = {
+      Loaded: false,
+      user: { id: '',
+            email: ''}
+    }
     this.onLogout = this.onLogout.bind(this);
+  }
+
+  componentDidMount() {
+    jQuery.ajax('http://silent-auctioner.herokuapp.com/users')
+      .then( (json) => {
+        this.setState({
+          Loaded: true,
+          user: json
+        })
+      });
   }
 
   //Create a function that calls the users current state and logs out
@@ -20,16 +37,15 @@ class App extends React.Component {
   }
 
   render() {
-    return (
-      <div className="dashboard">
+    return ( <div className="dashboard">
         <header className="head">
           <h1>Aucion Silencio</h1>
         </header>
         <section className="toolBar">
           <nav className="options">
             <ul className="navBG">
-              <li><Link className="tools" to="/profileEdit">*Profile*</Link></li>
-              <li><Link className="tools" to='/auctions/create'>Create Auction</Link></li>
+              <li><Link className="tools" to="/profileEdit">{this.state.user.email}</Link></li>
+              <li><Link className="tools" to="/auctions/create">Create Auction</Link></li>
             </ul>
           </nav>
         </section>
@@ -38,7 +54,7 @@ class App extends React.Component {
           <footer>
             <button className="navOptions"
                     onClick={this.onLogout}>Logout</button>
-          </footer>
+                </footer>
         </aside>
         <div className="pageWrap">
           <main>
