@@ -1,7 +1,6 @@
 @import '../../dist/bower_components/bourbon/app/assets/stylesheets/_bourbon.scss';
+$visual-grid:true;
 @import '../../dist/bower_components/neat/app/assets/stylesheets/_neat.scss';
-// $visual-grid:true;
-
 
 * {
   box-sizing: border-box;
@@ -10,6 +9,25 @@
 .pageWrap {
   @include outer-container;
   width: 100%;
+}
+
+.siteDescription {
+  font-family: 'Varela Round', sans-serif;
+  @include span-columns(9);
+  @include shift(1);
+  padding: 10px;
+  color: #ffffff;
+  background: rgba(95, 124, 138, 0.30);
+  border: 1px solid rgba(181, 181, 181, 0.30);
+  height: 550px;
+  h2 {
+    text-align: center;
+    font-size: 65px;
+  }
+}
+
+.homePage {
+  background-image: url('https://raw.githubusercontent.com/jacksaintjack/silentAuction/master/src/assets/pictures/NABHM0L1AB.jpg');
 }
 
 header {
@@ -35,22 +53,23 @@ aside {
   @include span-columns(2);
   float: left;
   margin: 0;
-  background: #F34235;
+  background: rgba(243, 66, 53, 0.93);
   height: 1000px;
+  border-right: 2px solid rgba(181, 181, 181, 0.47);
   nav {
     display: block;
   }
 }
 
-.login, .register {
+.login, .register, .faq {
   width: 100%;
-  @include span-columns(8);
+  @include span-columns(9);
   @include shift(1);
   margin-top: 32px;
   padding: 10px 0;
-  height: 400px;
+  height: 450px;
   border-radius: 2px;
-  background: #5F7C8A;
+  background: rgba(95, 124, 138, 0.65);
   color: #202020;
   text-align: center;
   input {
