@@ -23,6 +23,22 @@ class User{
     }
   }
 
+  // Create a function that lets us listen for changes and subscribe to them.
+  // Pass in callback so that we can apply to other areas of our application.
+  subscribe(callback) {
+    this.listeners.push(callback);
+
+    // unsubscribe function, so that we can turn off what is being listened.
+    return () => {
+      return this.listeners.filter(listener => listener != callback);
+    }
+  }
+
+  dispatch() {
+    this.listeners.forEach((callback) => callback());
+    // Keep rerendering so that all changes are captured.
+  }
+
   isLoggedIn() {
     return this.access_token !== null;
   }
@@ -41,10 +57,15 @@ class User{
     };
 
     //Shows use if we where able to log in
-    jQuery.ajax(options).then(response =>{
-      done(null,response);
+    jQuery.ajax(options).then(response => {
+      if (done) {
+        done(null, response);
+      }
+      this.dispatch();
     }).fail(error => {
-      done(error);
+      if (done) {
+        done(error);
+      }
     });
   };
 
@@ -75,9 +96,15 @@ class User{
         created_at: created_at
       }));
       //Shows use if we where able to log in and runs through our errors if there are any.
-      done(null,response);
+      if (done) {
+        done(null,response);
+      }
+
+      this.dispatch();
     }).fail(error => {
-      done(error);
+      if (done) {
+        done(error);
+      }
     });
   };
 
@@ -87,6 +114,29 @@ class User{
     this.token_expires = null;
     this.token_created = null;
     localStorage.removeItem('access_token');
+    this.dispatch();
+  }
+
+  updateAttributes(json) {
+    this.email = json.email;
+    this.id = json.id;
+  }
+
+  getProfile(done) {
+    jQuery.ajax('http://silent-auctioner.herokuapp.com/users')
+      .then( (json) => {
+        this.updateAttributes(json);
+
+        if (done) {
+          done(null, json);
+        }
+
+        this.dispatch();
+      }).fail(error => {
+        if (done) {
+          done(error)
+        }
+      });
   }
 
   editProfile(data, done) {
@@ -99,8 +149,14 @@ class User{
       }
     };
 
-    jQuery.ajax(options).then(response =>{
-      done(null,response);
+    jQuery.ajax(options).then(response => {
+      this.updateAttributes(response);
+
+      if (done) {
+        done(null, response);
+      }
+
+      this.dispatch();
     }).fail(error => {
       done(error);
     });
