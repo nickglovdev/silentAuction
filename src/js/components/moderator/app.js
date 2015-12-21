@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 import setup from '../../setup'
 import User from '../../models/users'
-import ListAuctions from '../../models/listAuctions'
+import ListAuctions from './listAuctions'
 
 class App extends React.Component {
   constructor(props) {
