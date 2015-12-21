@@ -1,14 +1,15 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import jQuery from 'jquery'
 
 import setup from '../../setup'
 import User from '../../models/users'
 
 class AuctionItemEdit extends React.Component {
-  /*constructor(props) {
+  constructor(props) {
     super(props)
     this.state={} // Setting state to be an empty object so we can pass in a url
     setup(User.access_token);
-    this.handleItem = this.handleItem.bind(this)
+    this.updateItem = this.updateItem.bind(this)
     this.handleImageUpload = this.handleImageUpload.bind(this)
   }
 
@@ -28,9 +29,8 @@ class AuctionItemEdit extends React.Component {
     this.setState({image_url: filepickerdata.fpfile.url })
   }
 
-  handleItem(event) {
+  updateItem(event) {
     event.preventDefault();
-
     let item = {
       name: this.refs.name.value,
       description: this.refs.description.value,
@@ -39,15 +39,14 @@ class AuctionItemEdit extends React.Component {
     }
 
     if(item.name && item.description && item.starting_bid && item.image_url){
-      this.updateItem(item)
-      console.log('Successo')
+      console.log(item.name);
     } else {
-      console.log('Problemo')
+      alert('there was an error updating this item.')
     }
-  }
 
-  updateItem(item){
-    let id = this.props.params.id; //Assigning the id from params to id
+    let id = this.props.params.id;
+
+    let self = this;
     let options = {
       method: 'PATCH',
       data: {
@@ -55,12 +54,15 @@ class AuctionItemEdit extends React.Component {
       }
     }
 
-    $.ajax(`http://silent-auctioner.herokuapp.com/auctions/${id}/items`, options)
-      .then((response) => {
+
+    jQuery.ajax('http://silent-auctioner.herokuapp.com/items/' + id, options)
+      .then(function(response) {
         console.log(response)
+        self.props.history.pushState(null,'/dashboard');
         alert('item added.')
       });
-  }*/
+  }
+
 
   render () {
     //Inside the inputs for this section should be the last infomration
@@ -80,8 +82,7 @@ class AuctionItemEdit extends React.Component {
                    ref="filepicker"
                    data-fp-apikey="AUvdBf1ynT0STNVd104jSz"/>
           </section>
-        <button onClick={this.handleItem}>Submit</button>
-        <button>+</button>
+        <button onClick={this.updateItem}>Submit</button>
       </section>
     )
   }

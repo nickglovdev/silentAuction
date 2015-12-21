@@ -47,9 +47,8 @@ class IndividualItemView extends React.Component {
     console.log(this.state.item.bids)
     return(
       <section className='individualItemView'>
-      <Link to={`/auctions/${id}/items/${itemId}/edit`}>Edit Items</Link>
         <h1>{this.state.item.name}</h1>
-        <Link to='#'>Edit Item</Link>
+        <Link to={`/auctions/${id}/items/${itemId}/edit`}>Edit Item</Link>
         <img  src={this.state.item.image_url}/>
         {this.state.item.description}
         {this.state.item.starting_bid}

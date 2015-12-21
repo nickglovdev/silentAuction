@@ -6,6 +6,7 @@ import User from '../../models/users'
 
 import ListItems from './listItems'
 import AuctionEdit from './auctionEdit'
+import PublicView from './publicView'
 
 class AuctionsItemView extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class AuctionsItemView extends React.Component {
         <header className="itemViewHeader">
           <Link to={`/auctions/${id}/edit`}>Edit Auction</Link>
           <h3>Guest View Url</h3>
+          <Link to={`/publicView`}>*Public View*</Link>
           <input type="text" value="Test"/>
           <button>Copy URL</button>
         </header>
