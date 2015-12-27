@@ -7,6 +7,7 @@ import setup from '../../setup'
 import User from '../../models/users'
 import ListItems from './listItems'
 import AuctionEdit from './auctionEdit'
+import PublicView from './publicView'
 
 class AuctionsItemView extends React.Component {
   constructor(props) {
@@ -24,12 +25,14 @@ class AuctionsItemView extends React.Component {
     return(
       <section className="dashboardItem">
         <header className="itemViewHeader">
+          
           <Link to={`/auctions/${id}/edit`}>Edit Auction</Link>
           <h3>Guest View Url</h3>
           <input id='publicURL' type="text" value={`http://localhost:8000/#/public/auctions/${id}/items`} readOnly/>
           <ClipboardButton data-clipboard-text={`http://localhost:8000/#/public/auctions/${id}/items`}>
             copy to clipboard
           </ClipboardButton>
+
         </header>
         <Link to={`/auctions/${id}/items`}>Add Items</Link>
         <ListItems id={this.props.params.id}></ListItems>

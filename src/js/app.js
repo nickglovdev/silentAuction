@@ -14,10 +14,11 @@ import App from './components/moderator/app';
 import AuctionCreate from './components/moderator/auctionCreate';
 import AuctionEdit from './components/moderator/auctionEdit';
 import AuctionItemAdd from './components/moderator/auctionItemAdd';
-import AuctionItemsEdit from './components/moderator/auctionItemsEdit'
+import AuctionItemEdit from './components/moderator/auctionItemEdit'
 import AuctionItemsView from './components/moderator/auctionItemsView';
 import ProfileEdit from './components/moderator/profileEdit';
 import IndividualItemView from './components/moderator/individualItemView'
+import PublicView from './components/moderator/publicView'
 
 
 //This will check and see if the user is logged in.
@@ -39,11 +40,12 @@ ReactDOM.render((
     </Route>
     <Route path='/dashboard' component={App} onEnter={requireAuth}>
       <Route path='/profileEdit' component={ProfileEdit}/>
+      <Route path='/publicView' component={PublicView}/>
       <Route path='/auctions/create' component={AuctionCreate}/>
       <Route path='/auctions/:id/edit' component={AuctionEdit}/>
       <Route path='/auctions/:id/items' component={AuctionItemAdd}/>
       <Route path='/auctions/:id/items/:itemId' component={IndividualItemView}/>
-      <Route path='/auctions/:id/items/:itemId/edit' component={AuctionItemsEdit}/>
+      <Route path='/auctions/:id/items/:itemId/edit' component={AuctionItemEdit}/>
       <Route path='/auctions/:id' component={AuctionItemsView}/>
     </Route>
   </Router>
