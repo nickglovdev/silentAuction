@@ -62,11 +62,11 @@ class AuctionCreate extends React.Component {
             <h1>Create Auction</h1>
             <section className="auctionFormLeft">
               <h3>Auction Name</h3>
-                <input type='text' ref='title' placeholder='Auction Title'></input>
+                <input type='text' ref='title' placeholder='(MaxChar:16)' maxLength="16"></input>
               <h3>Company/Organization Name</h3>
-                <input type='text' ref='company' placeholder='Company/Organization Name'></input>
+                <input type='text' ref='company' placeholder='(MaxChar:16)' maxLength="16"></input>
               <h3>Event Location</h3>
-                <input type='text' ref="location" placeholder='Location'></input>
+                <input type='text' ref="location" placeholder='(MaxChar:16)' maxLength="16"></input>
             </section>
             <section className="auctionFormRight">
               <h3>Date of Event</h3>
@@ -74,7 +74,7 @@ class AuctionCreate extends React.Component {
               <h3>Time of Event</h3>
                 <input ref='date' type='time'></input>
               <h3>Phone Number</h3>
-                <input type='text' ref="contact" placeholder='Phone Number'></input>
+                <input type='text' ref="contact" placeholder='ex (615) 555-5555' maxLength="14"></input>
               <button className="auctionCreateBtn" onClick={this.handleAuction}>Submit</button>
             </section>
           </div>
