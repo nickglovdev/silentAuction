@@ -101,7 +101,6 @@ class AuctionsItemView extends React.Component {
     });
   };
 
-
   render () {
     let id = this.props.params.id; //grabs our id from params
     // the ${id} below is getting it's information from this
