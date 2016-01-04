@@ -35,6 +35,13 @@ class ListItems extends React.Component {
 
   componentDidMount(hello) {
     this.fetchItems(this.props.id);
+    this.interval = setInterval( () => {
+      this.fetchItems(this.fetchItems(this.props.id))
+    }, 5000);
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.interval);
   }
 
   render() {

@@ -25,9 +25,13 @@ class AuctionsItemView extends React.Component {
     return(
       <section className="dashboardItem">
         <header className="itemViewHeader">
-          
+
           <Link to={`/auctions/${id}/edit`}>Edit Auction</Link>
           <h3>Guest View Url</h3>
+
+
+          <Link to={`/publicView`}>*Public View*</Link>
+
           <input id='publicURL' type="text" value={`http://localhost:8000/#/public/auctions/${id}/items`} readOnly/>
           <ClipboardButton data-clipboard-text={`http://localhost:8000/#/public/auctions/${id}/items`}>
             copy to clipboard

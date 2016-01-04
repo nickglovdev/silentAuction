@@ -27,14 +27,17 @@ class IndividualItemView extends React.Component {
      });
   }
 
-  componentWillReceiveProps(nextProps){
-    this.fetchItems(nextProps.id, nextProps.itemId);
-  }
-
 
   //Grabbing our auction id and item id from our params. Then we are passing them into fetchItems as options.
   componentDidMount(hello) {
     this.fetchItems(this.props.params.id, this.props.params.itemId);
+    this.interval = setInterval( () => {
+      this.fetchItems(this.props.params.id, this.props.params.itemId)
+    }, 5000);
+    }
+
+  componentWillUnmount(){
+    clearInterval(this.interval);
   }
 
   render() {
