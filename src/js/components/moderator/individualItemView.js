@@ -5,6 +5,7 @@ import { Link } from 'react-router'
 import setup from './../../setup'
 import User from './../../models/users'
 
+
 class IndividualItemView extends React.Component {
   constructor(props) {
     super(props)
