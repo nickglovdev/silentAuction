@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 
 import setup from '../../setup'
 import User from '../../models/users'
-import ListAuctions from './listAuctions'
 
 class App extends React.Component {
   constructor(props) {
@@ -16,10 +15,12 @@ class App extends React.Component {
       user: {
         id: '',
         email: ''
-      }
+      },
+      auction: []
     }
     this.onLogout = this.onLogout.bind(this);
   }
+
 
   // Go to our User model and run the function getProfile that lets us
   // make an ajax request to get the users info.
@@ -30,6 +31,14 @@ class App extends React.Component {
     // unmount the subscription after update.
     this.unsubscribe = User.subscribe(() => {
       this.forceUpdate();
+    });
+
+    jQuery.ajax('http://silent-auctioner.herokuapp.com/auctions')
+    .then( (json) => {
+      this.setState({
+        Loaded: true,
+        auction: json
+      })
     });
   }
 
@@ -46,33 +55,40 @@ class App extends React.Component {
   }
 
   render() {
-    return ( <div className="dashboard">
-        <header className="head">
-          <h1>Aucion Silencio</h1>
-        </header>
-        <section className="toolBar">
-          <nav className="options">
-            <ul className="navBG">
-              <li><Link className="tools" to="/profileEdit">{User.email}</Link></li>
-              <li><Link className="tools" to="/auctions/create">Create Auction</Link></li>
-            </ul>
-          </nav>
-        </section>
-        <aside>
-          <ListAuctions></ListAuctions>
-          <footer>
-            <button className="navOptions"
-                    onClick={this.onLogout}>Logout</button>
-          </footer>
-        </aside>
-        <div className="pageWrap">
-          <main>
-            {this.props.children}
-          </main>
-        </div>
+    let auctions = this.state.auction.map(auction => {
+      let link = "/auctions/" + auction.id;
+      return <div key={auction.id}
+        auction={auction}>
+        <Link to={link}>{auction.title}</Link>
       </div>
-    )
-  }
+    })
+    return ( <div className="dashboard">
+    <header className="head">
+      <h1>Aucion Silencio</h1>
+    </header>
+    <section className="toolBar">
+      <nav className="options">
+        <ul className="navBG">
+          <li><Link className="tools" to="/profileEdit">{User.email}</Link></li>
+          <li><Link className="tools" to="/auctions/create">Create Auction</Link></li>
+        </ul>
+      </nav>
+    </section>
+    <aside>
+      {auctions}
+      <footer>
+        <button className="navOptions"
+          onClick={this.onLogout}>Logout</button>
+      </footer>
+    </aside>
+    <div className="pageWrap">
+      <main>
+        {this.props.children}
+      </main>
+    </div>
+  </div>
+)
+}
 }
 
 export default App;

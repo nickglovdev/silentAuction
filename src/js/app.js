@@ -20,6 +20,7 @@ import ProfileEdit from './components/moderator/profileEdit';
 import IndividualItemView from './components/moderator/individualItemView'
 import PublicView from './components/moderator/publicView'
 
+
 //This will check and see if the user is logged in.
 //This was causing the problem in our registration page.
 const requireAuth = (nextState, replaceState) => {

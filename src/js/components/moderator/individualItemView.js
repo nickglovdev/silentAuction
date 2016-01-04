@@ -52,7 +52,7 @@ class IndividualItemView extends React.Component {
         <img  src={this.state.item.image_url}/>
         {this.state.item.description}
         {this.state.item.starting_bid}
-        {bids}
+        {bids.sort().reverse()}
 
       </section>
     )
