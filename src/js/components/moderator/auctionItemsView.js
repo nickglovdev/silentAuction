@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router';
-import $ from 'jQuery';
+import jQuery from 'jQuery';
 import ClipboardButton from 'react-clipboard.js';
 
 import setup from '../../setup'
@@ -17,15 +17,56 @@ class AuctionsItemView extends React.Component {
       loaded: false,
       item: []
     }
+        this.handleAuctionStatus = this.handleAuctionStatus.bind(this)
   }
+
+  handleAuctionStatus(event){
+    event.preventDefault()
+    let auction = {
+        title: this.refs.title,
+      company: this.refs.company,
+     location: this.refs.location,
+         time: this.refs.time,
+         date: this.refs.date,
+      contact: this.refs.contact
+    }
+    console.log(auction)
+
+    let id = this.props.params.id;
+
+    let self = this;
+    let options = {
+      method:'DELETE',
+      data: {
+          auction: auction
+      }
+    }
+
+    jQuery.ajax('http://silent-auctioner.herokuapp.com/auctions/' + id, options)
+      .then(function(response){
+        console.log(response)
+        self.props.history.pushState(null,'/dashboard');
+      });
+  };
+
+
+
+
   render () {
     let id = this.props.params.id; //grabs our id from params
     // the ${id} below is getting it's information from this
-
     return(
       <section className="dashboardItem">
         <header className="itemViewHeader">
+
           <Link to={`/auctions/${id}/edit`}>Edit Auction</Link>
+
+          <div className="statusOpen">
+            <button className="auctionStatusOpen" onClick={this.handleAuctionStatus}>Open</button>
+            <button className="auctionStatusClose" onClick={this.handleAuctionStatus}>Close</button>
+            <button className="auctionStatusDelete" onClick={this.handleAuctionStatus}>Delete</button>
+          </div>
+
           <h3>Guest View Url</h3>
           <Link to={`/publicView`}>*Public View*</Link>
           <input id='publicURL' type="text" value={`http://localhost:8000/#/public/auctions/${id}/items`} readOnly/>

@@ -1,9 +1,10 @@
 import React from 'react';
 import $ from 'jquery';
-import { Link } from 'react-router';
+import { Link } from 'react-router'
 
 import setup from './../../setup'
 import User from './../../models/users'
+
 
 class IndividualItemView extends React.Component {
   constructor(props) {
@@ -44,7 +45,6 @@ class IndividualItemView extends React.Component {
             {bid.amount}
            </div>
     });
-    console.log(this.state.item.bids)
     return(
       <section className='individualItemView'>
         <h1>{this.state.item.name}</h1>
