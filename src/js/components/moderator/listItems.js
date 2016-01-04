@@ -28,7 +28,7 @@ class ListItems extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    this.fetchItems(nextProps.id); // Having it check for the
+    this.fetchItems(nextProps.id);
   }
 
   componentDidMount(hello) {

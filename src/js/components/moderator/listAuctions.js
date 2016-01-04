@@ -37,9 +37,8 @@ class ListAuctions extends React.Component {
       })
     return( //returns a map of all the auctions for the current user
       <nav className="auctionList">
-        {auctions}
+        {auctions.sort().reverse()}
       </nav>
-
     )
   }
 }
