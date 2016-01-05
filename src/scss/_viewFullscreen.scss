@@ -51,6 +51,7 @@ aside {
   background: rgba(68, 89, 99, 0.93);
   height: 1000px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
+  box-shadow: -7px -4px 15px 7px #212121;
   .homeOptions {
     list-style: none;
     margin-top: 11em;
@@ -152,6 +153,7 @@ aside {
 .dashboardItem {
   @include span-columns(8);
   border-left: 1px solid rgba(252, 85, 33, 0.93);
+  margin-top: 5px;
 }
 
 .statusOpen {
@@ -290,6 +292,7 @@ aside {
   background: #CED7DB;
   color: #202020;
   border-bottom: 1px solid #212121;
+  box-shadow: -7px -4px 15px 2.5px #212121;
   .logOut{
     @include span-columns(2.15);
     font-size:2em;
@@ -311,9 +314,12 @@ aside {
   margin-right: 5em;
   padding: 0;
   h2{
-    text-align:center;
-    color:#909BA0;
+    text-align: center;
+    color: #909BA0;
     text-shadow: 1px 1px black;
+    border-bottom: 2px groove #5783B9;
+    padding: 10px 0;
+    margin-top: 0px;
   }
   nav{
     div{
@@ -370,7 +376,7 @@ aside {
     margin-bottom: 0;
     padding: 5px 25px;
     background:#327FB7;
-    height:2.55em;
+    height:2.44em;
     font-size: 1.3em;
     li{
       a{
@@ -398,7 +404,7 @@ aside {
   float: none;
   padding: 30px 0;
   box-shadow: -7px -4px 15px -8px #212121;
-  margin-top: 10px;
+  // margin-top: 10px;
   font-family: 'Varela Round', sans-serif;
   input {
     opacity: 10.8;
@@ -451,10 +457,33 @@ aside {
   @include span-columns(4);
   margin-right: 12px;
   border: 1px solid #CBCBCB;
+  width: 47.76157%;
   img {
     height: 200px;
     width: 250px;
     display: flex;
+  }
+}
+
+.individualItemWrap {
+  @include span-columns(8);
+  @include shift(1);
+}
+
+.individualItemView {
+  @include span-columns(9);
+  margin-right: 12px;
+  border: 1px solid #CBCBCB;
+  width: 47.76157%;
+  img {
+    height: 200px;
+    width: 250px;
+    display: flex;
+  }
+  h1 {
+    margin: 0;
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
   }
 }
 // end moderator Create //
@@ -472,7 +501,7 @@ aside {
   float: none;
   padding: 30px 0;
   box-shadow: -7px -4px 15px -8px #212121;
-  margin-top: 10px;
+  // margin-top: 10px;
   font-family: 'Varela Round', sans-serif;
   input {
     width: 25%;
