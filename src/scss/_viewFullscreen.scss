@@ -26,7 +26,6 @@
   font-family: 'Varela Round', sans-serif;
   position: fixed;
   @include span-columns(8);
-  @include shift(1);
   margin-top: 35px;
   padding: 20px;
   color: #fff;
@@ -35,8 +34,13 @@
   height: 550px;
   margin-left: 0;
   h2 {
+    font-family: 'Crimson Text', serif;
     text-align: center;
-    font-size: 65px;
+    font-size: 95px;
+    margin: 50px;
+  }
+  p {
+    font-size: 30px;
   }
 }
 
@@ -47,23 +51,20 @@ aside {
   background: rgba(68, 89, 99, 0.93);
   height: 1000px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
-
   .homeOptions {
     list-style: none;
     margin-top: 11em;
     padding-left:15%;
-    margin-top: 14em;
+    margin-top: 5.5em;
     padding-right:15%;
     text-decoration:none;
+    padding: 0;
   }
-
     nav {
       @include span-columns(12);
       padding:0;
       position:relative;
-      right:2em;
     }
-
     li{
       @include span-columns(12);
       padding-top:15%;
@@ -101,7 +102,7 @@ aside {
 .login, .register {
   width: 100%;
   @include span-columns(7 of 12);
-  @include shift(2);
+  @include shift(1);
   margin-top: 32px;
   padding: 10px 0;
   height: 550px;
@@ -122,13 +123,16 @@ aside {
 .faq {
   width: 100%;
   @include span-columns(8 of 12);
-  @include shift(1);
+  @include shift(2);
   margin-top: 32px;
   padding: 10px 0;
-  height: 550px;
+  height: 650px;
   border-radius: 2px;
-  background: rgba(95, 124, 138, 0.65);
+  background: rgba(95, 124, 138, 1);
   color: #202020;
+  .article {
+    height: 500px;
+  }
 }
 
 .faqList {
@@ -498,8 +502,8 @@ $darkred: #FC602F;
 .mainStuff {
   position: fixed;
   margin-top: 35px;
-  opacity: .7;
-  @include span-columns(7 of 12);
+  opacity: .85;
+  @include span-columns(8 of 12);
   @include shift(2);
   background: $lightred;
   overflow: hidden;
@@ -532,7 +536,7 @@ $darkred: #FC602F;
     }
   }
   .articlewrap {
-    height: 120px;
+    height: 150px;
   }
 }
 

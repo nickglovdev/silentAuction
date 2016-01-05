@@ -10,18 +10,10 @@ class Home extends React.Component {
       <div className="homePage">
         <div className="homeScroll">
           <section className="siteDescription">
-            <h2>Silence!</h2>
-            <p>Hoodie bespoke kickstarter 90's seitan venmo godard poutine ramps.
-              Taxidermy waistcoat butcher, iPhone meh 90's retro kale chips food
-              truck hammock squid polaroid trust fund chambray affogato. Try-hard
-              wayfarers brooklyn ramps kale chips, shoreditch scenester mlkshk
-              pour-over roof party health goth pickled green juice sriracha.
-              Lumbersexual paleo whatever, distillery drinking vinegar chicharrones
-              sartorial chillwave. Small batch meggings occupy, food truck blog migas
-              butcher schlitz. Readymade authentic sriracha, food truck lomo migas
-              typewriter flannel raw denim pug you probably haven't heard of them
-              williamsburg fanny pack photo booth art party. Letterpress fap
-              farm-to-table +1 tacos flannel.
+            <h2>iBid</h2>
+            <p>The better silent auctioner. Place bids via text message,
+              get notifications when you are outbid and when the auction is over.
+               Moderators can view everything with real-time updates.
             </p>
           </section>
         </div>
