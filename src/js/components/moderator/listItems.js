@@ -11,8 +11,7 @@ class ListItems extends React.Component {
     setup(User.access_token)
     this.state = {
       loaded: false,
-      item: [],
-      itemBids: {bids: []}
+      item: []
     }
     this.fetchItems = this.fetchItems.bind(this);
   }
@@ -48,10 +47,10 @@ class ListItems extends React.Component {
     //For individual auction information
     let items = this.state.item.map(item => {
       console.log(item)
-      return <div key= {item.id} item={item}>
+      return <div className='listItem' key= {item.id} item={item}>
               <Link to={`/auctions/${this.props.id}/items/${item.id}`}>
-                <img  src={item.image_url}/>
                 <h2>{item.name}</h2>
+                <img  src={item.image_url}/>
               </Link>
               <h3>Description</h3>{item.description}
               <h3>Starting Bid</h3>{item.starting_bid}

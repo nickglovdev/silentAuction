@@ -38,7 +38,7 @@
 }
 
 aside {
-  @include span-columns(2);
+  @include span-columns(2.15);
   font-family: 'Varela Round', sans-serif;
   margin: 0;
   background: rgba(68, 89, 99, 0.93);
@@ -46,27 +46,44 @@ aside {
   border-right: 2px solid rgba(181, 181, 181, 0.47);
   .homeOptions{
     list-style: none;
-    margin-top: 18em;
-    padding-left:15%;
+    margin-top: 14em;
+    padding-right:15%;
+    text-decoration:none;
 
     nav {
       @include span-columns(12);
+      padding:0;
+      position:relative;
+      right:2em;
     }
 
     li{
       @include span-columns(12);
       padding-top:15%;
+
+      a{
+        @include span-columns(12);
+        font-size:1.4em;
+        padding-left:0;
+        text-align:center;
+      }
     }
   }
 }
 
 .navOptions{
-  color:white;
+  color:black;
   text-decoration:none;
-  padding-left:10%;
+  position:absolute;
+  width:5em;
+  top:0.2em;
+  left:0.2em;
 }
 .mega-octicon {
+  @include span-columns(12);
   color: #fff;
+  font-size:3em;
+  text-align:center;
 }
 
 .homePage {
@@ -179,6 +196,7 @@ aside {
   padding: 5px 0;
   background:#327FB7;
   height: 30px;
+  font-size: 1.3em;
 }
 // end moderator dashboard //
 
@@ -350,4 +368,28 @@ $darkred: #FC602F;
   opacity: .8;
   color: #212121;
   margin-right: 0;
+}
+
+//**Start of listItems/auctionItemsView**//
+//Header Portion
+.itemViewHeader{
+}
+//
+.listItem{
+  @include span-columns(3);
+  border: 2px solid #50646D;
+  margin-bottom:1em;
+
+  a{
+    img{
+      height:15em;
+      width:90%;
+      padding-left:2.7em;
+    }
+    h2{
+      @include span-columns(12);
+      text-align:center;
+      color:black;
+    }
+  }
 }

@@ -123,8 +123,8 @@ render () {
         <ClipboardButton data-clipboard-text={`http://localhost:8000/#/public/auctions/${id}/items`}>
           copy to clipboard
         </ClipboardButton>
+        <Link to={`/auctions/${id}/items`}>Add Items</Link>
       </header>
-      <Link to={`/auctions/${id}/items`}>Add Items</Link>
       <ListItems id={this.props.params.id}></ListItems>
       {/* id in this is setting the params for listitems */}
     </section>
