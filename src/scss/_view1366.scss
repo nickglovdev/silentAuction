@@ -2,12 +2,14 @@
   * {
     box-sizing: border-box;
   }
+
   // main/public //
   //Home Page
   .pageWrap {
     @include outer-container(100%);
     background-color:#909BA0;
   }
+
   .public {
     width: 100%;
     background-image: url('https://images.unsplash.com/13/unsplash_5243a2eb2bc02_1.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6b87620ca5fc979794d0d600b5dbcac8');
@@ -16,6 +18,7 @@
     background-position: center;
     height: 1000px;
   }
+
   .siteDescription {
     width: 100%;
     font-family: 'Varela Round', sans-serif;
@@ -34,6 +37,7 @@
       font-size: 65px;
     }
   }
+
   aside {
     @include span-columns(2.15);
     font-family: 'Varela Round', sans-serif;
@@ -51,11 +55,10 @@
         padding:0;
         position:relative;
         right:2em;
-      }
       li{
         @include span-columns(12);
         padding-top:15%;
-        a{
+        a {
           @include span-columns(12);
           font-size:1.4em;
           padding-left:0;
@@ -64,10 +67,12 @@
       }
     }
   }
+
   .navOptions{
     color:white;
     text-decoration:none;
   }
+
   .mega-octicon {
     @include span-columns(12);
     color: #fff;
@@ -77,10 +82,12 @@
   .homePage {
     @include outer-container;
   }
+
   .homeScroll {
     @include span-columns(8);
     @include shift(1);
   }
+
   .login, .register {
     width: 100%;
     @include span-columns(7 of 12);
@@ -101,6 +108,7 @@
       margin: 20px auto;
     }
   }
+
   .faq {
     width: 100%;
     @include span-columns(8 of 12);
@@ -112,6 +120,7 @@
     background: rgba(95, 124, 138, 0.65);
     color: #202020;
   }
+
   .faqList {
     list-style-type: none;
     float: left;
@@ -123,6 +132,9 @@
     }
   }
   // end main/public //
+
+  // end main/public //
+
   // moderator dashboard //
   .head {
     opacity: .6;
@@ -149,6 +161,7 @@
       width:20%;
     }
   }
+
   .appAside{
     float: left;
     padding: 0;
@@ -167,17 +180,20 @@
       }
     }
   }
+
   .toolBar {
     @include span-columns(8);
     float:right;
     position:relative;
     bottom:4.5em;
+
     .options {
       width: 20%;
       font-family: 'Varela Round', sans-serif;
       font-size: 14px;
       text-decoration: none;
     }
+
     .options, .tools {
       width: 33.2331%;
       padding-left: 0;
@@ -209,6 +225,7 @@
         padding:0;
       }
     }
+
     .navBG {
       border-left: 5px solid rgba(252, 85, 33, 0.93);
       margin-top: 0;
@@ -228,6 +245,7 @@
     padding-top:10%;
   }
   // end moderator dashboard //
+
   // moderator Create //
   .auctionCreate, .auctionEdit {
     width: 100%;
@@ -247,6 +265,7 @@
       margin: 20px auto;
     }
   }
+
   .auctionCreateBtn {
     float: right;
     margin: 0 auto;
@@ -255,14 +274,17 @@
     @include span-columns(5);
     float: left;
   }
+
   .auctionFormRight{
     @include span-columns(5);
     float: right;
   }
+
   .fp__btn:nth-of-type(2) {
     display: none;
   }
   // end moderator Create //
+
   .editProfile{
     @include span-columns(8 of 12);
     @include shift(1);
@@ -288,6 +310,16 @@
   .faqWrap {
     @include outer-container;
   }
+
+
+  $lightred: #fff;
+  $red: #FC602F;
+  $darkred: #FC602F;
+
+  .faqWrap {
+    @include outer-container;
+  }
+
   .mainStuff {
     position: fixed;
     margin-top: 35px;
@@ -305,6 +337,7 @@
       padding: 1em;
     }
   }
+
   .section {
     position: relative;
     width: 100%;
@@ -316,6 +349,7 @@
       text-indent: -9999%;
     }
   }
+
   .open {
     button {
       &:before, &:after {
@@ -326,11 +360,13 @@
       height: 120px;
     }
   }
+
   .articlewrap {
     height: 0;
     overflow: hidden;
     transition: all .2s ease-in;
   }
+
   .sectionhead {
     width: 100%;
     overflow: hidden;
@@ -343,17 +379,20 @@
     padding: 1em;
     padding-right: 2.1em;
   }
+
   .article {
     padding: 1em;
     color: #333;
     line-height: 1.3;
   }
+
   .publicWrap {
     @include outer-container;
     @include shift(2);
     background: #CED7DB;
     opacity: .9;
   }
+
   .publicView, .publicView2, .publicView3, .publicView4 {
     @include span-columns(9 of 12);
     @include shift(1);
@@ -362,6 +401,7 @@
     margin-top: 30px;
     display: inline-flex;
   }
+
   .column1, .column4, .column7, .column10 {
     @include span-columns(3)
     width: 30%;
@@ -370,6 +410,7 @@
     color: #212121;
     margin-right: 0;
   }
+
   .column2, .column3, .column5, .column6, .column8, .column9, .column11, .column12 {
     @include span-columns(3)
     @include shift(1);
@@ -379,4 +420,6 @@
     color: #212121;
     margin-right: 0;
   }
+}
+
 }
