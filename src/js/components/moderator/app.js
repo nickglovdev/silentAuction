@@ -76,7 +76,7 @@ class App extends React.Component {
           <button className="logOut"
             onClick={this.onLogout}>Logout
           </button>
-          <h1>Aucion Silencio</h1>
+          <h1>iBid</h1>
           <section className="toolBar">
             <nav className="options">
               <ul className="navBG">
@@ -87,9 +87,9 @@ class App extends React.Component {
           </section>
         </header>
 
-        <aside>
+        <aside className="appAside">
           <h3>Auctions</h3>
-          <ListAuctions auctions={ this.state.auctions } />
+          <ListAuctions auctions={this.state.auctions } />
         </aside>
         <div className="pageWrap">
           <main>

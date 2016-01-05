@@ -140,11 +140,10 @@ aside {
 // moderator dashboard //
 .head {
   opacity: .6;
-  position: fixed;
   font-family: 'Varela Round', sans-serif;
   font-size: 9px;
   width: 100%;
-  height: 30px;
+  height: 5em;
   margin: 0;
   background: #CED7DB;
   color: #202020;
@@ -152,6 +151,7 @@ aside {
   .logOut{
     @include span-columns(1);
     font-size:1.5em;
+    height:2em;
   }
   h1 {
     @include span-columns(2);
@@ -160,8 +160,13 @@ aside {
     text-align: center;
     padding: 5px;
     width:20%;
-    float:left
   }
+}
+
+.appAside{
+  float: left;
+  margin-right: 20em;
+  padding: 0;
 }
 
 .toolBar {
@@ -170,14 +175,15 @@ aside {
     font-family: 'Varela Round', sans-serif;
     font-size: 12px;
     text-decoration: none;
-    float:left
+    float:left;
   }
 
   .options, .tools {
-    @include span-columns(3);
+    @include span-columns(4);
     padding-left: 0;
     list-style-type: none;
     text-decoration: none;
+    float:right;
     color: black;
     display: inline;
     li {
@@ -196,15 +202,16 @@ aside {
     @include span-columns(12);
     border-left: 5px solid rgba(252, 85, 33, 0.93);
     margin-top: 0;
-    margin-left: 48PX;
     margin-bottom: 0;
     padding: 5px 0;
     background:#327FB7;
-    height: 30px;
+    height:2.9em;;
     font-size: 1.3em;
   }
 }
-
+.tools{
+  padding-top:5%;
+}
 // end moderator dashboard //
 
 // moderator Create //
