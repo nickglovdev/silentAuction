@@ -6,6 +6,7 @@
 //Home Page
 .pageWrap {
   @include outer-container(100%);
+  // @include shift(1);
 }
 
 .public {
@@ -38,39 +39,56 @@
 }
 
 aside {
-  @include span-columns(2);
+  @include span-columns(2.15);
   font-family: 'Varela Round', sans-serif;
   margin: 0;
   background: rgba(68, 89, 99, 0.93);
   height: 1000px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
-  .homeOptions{
+
+  .homeOptions {
     list-style: none;
     margin-top: 11em;
     padding-left:15%;
+    margin-top: 14em;
+    padding-right:15%;
+    text-decoration:none;
+  }
 
     nav {
       @include span-columns(12);
+      padding:0;
+      position:relative;
+      right:2em;
     }
 
     li{
       @include span-columns(12);
       padding-top:15%;
+
+      a{
+        @include span-columns(12);
+        font-size:1.4em;
+        padding-left:0;
+        text-align:center;
+      }
     }
   }
-}
+
 
 .navOptions{
   color:white;
   text-decoration:none;
-  padding-left:10%;
 }
 .mega-octicon {
+  @include span-columns(12);
   color: #fff;
+  font-size:3em;
+  text-align:center;
 }
 
 .homePage {
-  @include outer-container;
+  @include outer-container(100%);
 }
 
 .homeScroll {
@@ -127,93 +145,132 @@ aside {
 // moderator dashboard //
 .head {
   opacity: .6;
-  position: fixed;
   font-family: 'Varela Round', sans-serif;
   font-size: 9px;
   width: 100%;
-  height: 30px;
+  height: 5em;
   margin: 0;
   background: #CED7DB;
   color: #202020;
+
+  .logOut{
+    @include span-columns(1);
+    font-size:1.5em;
+    height:2em;
+  }
   h1 {
-    margin: 0 10px;
+    @include span-columns(2);
+    margin: 0 0 0 0;
+    @include shift(3);
     text-align: center;
     padding: 5px;
+    width:20%;
   }
+}
+
+.appAside{
+  float: left;
+  margin-right: 20em;
+  padding: 0;
 }
 
 .toolBar {
-  @include outer-container;
-  margin-bottom: 30px;
-}
-
-.options {
-  width: 20%;
-  @include span-columns(4);
-  @include shift(8);
-  font-family: 'Varela Round', sans-serif;
-  font-size: 12px;
-  text-decoration: none;
-  position: fixed;
-}
-
-.options, .tools {
-  padding-left: 0;
-  list-style-type: none;
-  text-decoration: none;
-  color: black;
-  display: inline;
-  li {
-    padding: 10px 25px;
+  .options {
+    width: 20%;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 12px;
     text-decoration: none;
-    list-style: none;
+    float:left;
+  }
+
+  .options, .tools {
+    @include span-columns(4);
+    padding-left: 0;
+    list-style-type: none;
+    text-decoration: none;
+    float:right;
+    color: black;
     display: inline;
+    li {
+      text-decoration: none;
+      list-style: none;
+      display: inline;
+      float:left;
+      width:40%;
+      a{
+        width:100%;
+      }
+    }
+  }
+
+  .navBG {
+    @include span-columns(12);
+    border-left: 5px solid rgba(252, 85, 33, 0.93);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 5px 25px;
+    background:#327FB7;
+    height:2.9em;;
+    font-size: 1.3em;
   }
 }
-
-.navBG {
-  border-left: 5px solid rgba(252, 85, 33, 0.93);
-  margin-top: 0;
-  margin-left: 48PX;
-  margin-bottom: 0;
-  padding: 5px 0;
-  background:#327FB7;
-  height: 30px;
+.tools{
+  padding-top:5%;
 }
 // end moderator dashboard //
 
 // moderator Create //
 .auctionCreate, .auctionEdit {
   width: 100%;
-  @include span-columns(8);
-  @include shift(1);
-  margin-top: 32px;
+  @include span-columns(7);
+  @include shift(2);
   padding: 10px 0;
-  height: 450px;
+  height: 700px;
   border-radius: 2px;
+  border: 1px solid #56646D;
   background: rgba(95, 124, 138, 0.65);
   color: #202020;
+  float: none;
+  padding: 30px 0;
+  box-shadow: -7px -4px 15px -8px #212121;
+  margin-top: 10px;
+  font-family: 'Varela Round', sans-serif;
   input {
-    opacity: .8;
-    height: 30px;
+    opacity: 10.8;
+    height: 25px;
     position: relative;
     display: block;
-    margin: 20px auto;
+    margin: 10px auto;
   }
 }
+
+.auctionCreate, .auctionEdit {
+  h1 {
+    text-align: center;
+    margin: 35px;
+    text-decoration: overline;
+  }
+}
+
+.auctionCreate, .auctionEdit {
+  h3 {
+    margin: 20px;
+    font-size: 14px;
+    color: #D7D7CD;
+  }
+}
+
 
 .auctionCreateBtn {
   float: right;
   margin: 0 auto;
 }
 .auctionFormLeft{
-  @include span-columns(5);
-  float: left;
+  border-left: 2px solid rgba(252, 85, 33, 0.93);
 }
 
 .auctionFormRight{
-  @include span-columns(5);
-  float: right;
+  border-left: 2px solid rgba(252, 85, 33, 0.93);
 }
 
 .fp__btn:nth-of-type(2) {
@@ -221,16 +278,21 @@ aside {
 }
 // end moderator Create //
 
-.editProfile{
-  @include span-columns(8 of 12);
-  @include shift(1);
-  margin-top: 32px;
+.editProfile  {
+  width: 100%;
+  @include span-columns(7);
+  @include shift(2);
   padding: 10px 0;
-  height: 550px;
+  height: 700px;
   border-radius: 2px;
+  border: 1px solid #56646D;
   background: rgba(95, 124, 138, 0.65);
   color: #202020;
-  text-align: center;
+  float: none;
+  padding: 30px 0;
+  box-shadow: -7px -4px 15px -8px #212121;
+  margin-top: 10px;
+  font-family: 'Varela Round', sans-serif;
   input {
     width: 25%;
     opacity: .8;

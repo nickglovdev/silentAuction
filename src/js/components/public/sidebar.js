@@ -11,10 +11,10 @@ class Sidebar extends React.Component {
         <aside>
           <nav>
             <ul className="homeOptions">
-              <li><span className="mega-octicon octicon-home"></span><Link className="navOptions" to="#">Home</Link></li>
-              <li><span className="mega-octicon octicon-repo-push"></span><Link className="navOptions" to="register">Register</Link></li>
-              <li><span className="mega-octicon octicon-sign-in"></span><Link className="navOptions" to="login">Login</Link></li>
-              <li><span className="mega-octicon octicon-question"></span><Link className="navOptions" to="faq">FAQ</Link></li>
+              <li><Link className="navOptions" to="#"><span className="mega-octicon octicon-home"></span>Home</Link></li>
+              <li><Link id="iconFix" className="navOptions" to="register"><span className="mega-octicon octicon-repo-push"></span>Register</Link></li>
+              <li><Link className="navOptions" to="login"><span className="mega-octicon octicon-sign-in"></span>Login</Link></li>
+              <li><Link className="navOptions" to="faq"><span className="mega-octicon octicon-question"></span>FAQ</Link></li>
             </ul>
           </nav>
         </aside>

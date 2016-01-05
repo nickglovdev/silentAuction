@@ -32,23 +32,32 @@
 
   aside {
     @include span-columns(12);
-    height:4em;
+    height:13em;
     nav{
       height:100%;
-    .homeOptions {
-      margin-top: 4.5%;
-      li {
-        width:100%;
-        padding:0;
 
-        a{
-          font-size: 1.2em;
+      .homeOptions {
+        @include span-columns(6.5);
+        @include shift(2.8);
+        display:inline-block;
+        margin-top: 2%;
+        text-align:center;
+        padding:0;
+        li {
+          width:100%;
+          padding-top:1em;
+          background-color:#244148;
+          margin-top:5%;
+          padding:1% 0 1% 0;
+          a{
+            font-size: 2em;
+            padding:0;
+          }
         }
       }
     }
   }
-}
   .mega-octicon {
-    font-size: 21px;
-}
+    display:none;
+  }
 }
