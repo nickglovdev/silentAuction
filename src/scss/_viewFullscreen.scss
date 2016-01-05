@@ -72,12 +72,8 @@ aside {
 }
 
 .navOptions{
-  color:black;
+  color:white;
   text-decoration:none;
-  position:absolute;
-  width:5em;
-  top:0.2em;
-  left:0.2em;
 }
 .mega-octicon {
   @include span-columns(12);
@@ -152,52 +148,63 @@ aside {
   margin: 0;
   background: #CED7DB;
   color: #202020;
+
+  .logOut{
+    @include span-columns(1);
+    font-size:1.5em;
+  }
   h1 {
-    margin: 0 10px;
+    @include span-columns(2);
+    margin: 0 0 0 0;
+    @include shift(3);
     text-align: center;
     padding: 5px;
+    width:20%;
+    float:left
   }
 }
 
 .toolBar {
-  @include outer-container;
-  margin-bottom: 30px;
-}
-
-.options {
-  width: 20%;
-  @include span-columns(4);
-  @include shift(8);
-  font-family: 'Varela Round', sans-serif;
-  font-size: 12px;
-  text-decoration: none;
-  position: fixed;
-}
-
-.options, .tools {
-  padding-left: 0;
-  list-style-type: none;
-  text-decoration: none;
-  color: black;
-  display: inline;
-  li {
-    padding: 10px 25px;
+  .options {
+    width: 20%;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 12px;
     text-decoration: none;
-    list-style: none;
+    float:left
+  }
+
+  .options, .tools {
+    @include span-columns(3);
+    padding-left: 0;
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
     display: inline;
+    li {
+      text-decoration: none;
+      list-style: none;
+      display: inline;
+      float:left;
+      width:40%;
+      a{
+        width:100%;
+      }
+    }
+  }
+
+  .navBG {
+    @include span-columns(12);
+    border-left: 5px solid rgba(252, 85, 33, 0.93);
+    margin-top: 0;
+    margin-left: 48PX;
+    margin-bottom: 0;
+    padding: 5px 0;
+    background:#327FB7;
+    height: 30px;
+    font-size: 1.3em;
   }
 }
 
-.navBG {
-  border-left: 5px solid rgba(252, 85, 33, 0.93);
-  margin-top: 0;
-  margin-left: 48PX;
-  margin-bottom: 0;
-  padding: 5px 0;
-  background:#327FB7;
-  height: 30px;
-  font-size: 1.3em;
-}
 // end moderator dashboard //
 
 // moderator Create //
@@ -368,28 +375,4 @@ $darkred: #FC602F;
   opacity: .8;
   color: #212121;
   margin-right: 0;
-}
-
-//**Start of listItems/auctionItemsView**//
-//Header Portion
-.itemViewHeader{
-}
-//
-.listItem{
-  @include span-columns(3);
-  border: 2px solid #50646D;
-  margin-bottom:1em;
-
-  a{
-    img{
-      height:15em;
-      width:90%;
-      padding-left:2.7em;
-    }
-    h2{
-      @include span-columns(12);
-      text-align:center;
-      color:black;
-    }
-  }
 }

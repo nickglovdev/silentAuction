@@ -73,19 +73,20 @@ class App extends React.Component {
     return (
       <div className="dashboard">
         <header className="head">
+          <button className="logOut"
+            onClick={this.onLogout}>Logout
+          </button>
           <h1>Aucion Silencio</h1>
+          <section className="toolBar">
+            <nav className="options">
+              <ul className="navBG">
+                <li><Link className="tools" to="/profileEdit">{User.email}</Link></li>
+                <li><Link className="tools" to="/auctions/create">Create Auction</Link></li>
+              </ul>
+            </nav>
+          </section>
         </header>
-        <button className="navOptions"
-          onClick={this.onLogout}>Logout
-        </button>
-        <section className="toolBar">
-          <nav className="options">
-            <ul className="navBG">
-              <li><Link className="tools" to="/profileEdit">{User.email}</Link></li>
-              <li><Link className="tools" to="/auctions/create">Create Auction</Link></li>
-            </ul>
-          </nav>
-        </section>
+
         <aside>
           <h3>Auctions</h3>
           <ListAuctions auctions={ this.state.auctions } />
