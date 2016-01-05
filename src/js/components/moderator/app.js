@@ -88,7 +88,7 @@ class App extends React.Component {
         </header>
 
         <aside className="appAside">
-          <h3>Auctions</h3>
+          <h2>Auctions</h2>
           <ListAuctions auctions={this.state.auctions } />
         </aside>
         <div className="pageWrap">

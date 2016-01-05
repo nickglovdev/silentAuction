@@ -1,12 +1,10 @@
-@media (min-width:1px) and (max-width:860px){
-
+@media (min-width:1px) and (max-width:960px){
   main {
     @include span-columns(12);
     margin: 0;
     padding: 0;
     height: 660px;
   }
-
   .login, .register, .faq, .editProfile {
     @include span-columns(10);
     @include shift(1);
@@ -15,9 +13,7 @@
     input {
       width: 75%;
     }
-
   }
-
   .siteDescription {
     @include span-columns(10);
     @include shift(2);
@@ -30,9 +26,7 @@
       font-size: 34px;
     }
   }
-
   aside {
-
     @include span-columns(12);
     height: 6em;
     margin: 0;
@@ -41,7 +35,7 @@
       width:100%;
       display: inline-flex;
       position: relative;
-      margin: 2% 0 0 0;
+      margin: 1.5% 0 0 6%;
       li {
         @include span-columns(12);
         font-size: 12px;
