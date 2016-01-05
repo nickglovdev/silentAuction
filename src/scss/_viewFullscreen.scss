@@ -45,11 +45,15 @@ aside {
   background: rgba(68, 89, 99, 0.93);
   height: 1000px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
-  .homeOptions{
+
+  .homeOptions {
     list-style: none;
+    margin-top: 11em;
+    padding-left:15%;
     margin-top: 14em;
     padding-right:15%;
     text-decoration:none;
+  }
 
     nav {
       @include span-columns(12);
@@ -70,7 +74,7 @@ aside {
       }
     }
   }
-}
+
 
 .navOptions{
   color:white;
@@ -84,7 +88,7 @@ aside {
 }
 
 .homePage {
-  @include outer-container;
+  @include outer-container(100%);
 }
 
 .homeScroll {
@@ -139,8 +143,139 @@ aside {
 // end main/public //
 
 // moderator dashboard //
+.dashboardItem {
+  @include span-columns(8);
+  border-left: 1px solid rgba(252, 85, 33, 0.93);
+}
+
+.statusOpen {
+  @include span-columns(12);
+  margin-bottom: 25px;
+  display: inline-flex;
+  button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+   button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+}
+
+.auctionStatusOpen {
+   border-top: 1px solid #96d1f8;
+   background: #18a138;
+   background: -webkit-gradient(linear, left top, left bottom, from(#17d479), to(#18a138));
+   background: -webkit-linear-gradient(top, #17d479, #18a138);
+   background: -moz-linear-gradient(top, #17d479, #18a138);
+   background: -ms-linear-gradient(top, #17d479, #18a138);
+   background: -o-linear-gradient(top, #17d479, #18a138);
+   padding: 11.5px 23px;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   border-radius: 4px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 16px;
+   font-family: 'Varela Round', sans-serif;
+   text-decoration: underline;
+   vertical-align: middle;
+   width: 34%;
+   .auctionStatusOpen:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   .auctionStatusOpen:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+ }
+}
+
+.auctionStatusClose {
+  border-top: 1px solid #96d1f8;
+  background: #ffac54;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f5e26a), to(#ffac54));
+  background: -webkit-linear-gradient(top, #f5e26a, #ffac54);
+  background: -moz-linear-gradient(top, #f5e26a, #ffac54);
+  background: -ms-linear-gradient(top, #f5e26a, #ffac54);
+  background: -o-linear-gradient(top, #f5e26a, #ffac54);
+  padding: 11.5px 23px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: white;
+  font-size: 16px;
+  font-family: 'Varela Round', sans-serif;
+  text-decoration: underline;
+  vertical-align: middle;
+  width: 34%;
+  .auctionStatusClose:hover {
+    border-top-color: #28597a;
+    background: #28597a;
+    color: #ccc;
+    .auctionStatusClose:active {
+      border-top-color: #1b435e;
+      background: #1b435e;
+    }
+  }
+}
+
+.auctionStatusDelete {
+  border-top: 1px solid #96d1f8;
+  background: #b52d32;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e33b3b), to(#b52d32));
+  background: -webkit-linear-gradient(top, #e33b3b, #b52d32);
+  background: -moz-linear-gradient(top, #e33b3b, #b52d32);
+  background: -ms-linear-gradient(top, #e33b3b, #b52d32);
+  background: -o-linear-gradient(top, #e33b3b, #b52d32);
+  padding: 11.5px 23px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  color: white;
+  font-size: 16px;
+  font-family: 'Varela Round', sans-serif;
+  text-decoration: underline;
+  vertical-align: middle;
+  width: 34%;
+  button:hover {
+    border-top-color: #28597a;
+    background: #212121;
+    color: #ccc;
+    button:active {
+      border-top-color: #1b435e;
+      background: #212121;
+    }
+  }
+}
+
+.itemViewHeader {
+  @include span-columns(12);
+  background: #ccc;
+  border: 2px solid #56646D;
+  border-top: none;
+  h3 {
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+    text-decoration: overline;
+    font-size: 26px;
+  }
+}
+
 .head {
-  opacity: .6;
+  opacity: .95;
   font-family: 'Varela Round', sans-serif;
   font-size: 9px;
   width: 100%;
@@ -149,10 +284,16 @@ aside {
   background: #CED7DB;
   color: #202020;
 
+
   .logOut{
     @include span-columns(1.3);
     font-size:3em;
     float:left;
+    border-bottom: 1px solid #212121;
+  .logOut {
+    @include span-columns(1);
+    font-size:1.5em;
+    height:2em;
   }
   h1 {
     top:0.4em;
@@ -168,6 +309,7 @@ aside {
 
 .appAside{
   float: left;
+  margin-right: 5em;
   padding: 0;
 
   h2{
@@ -226,9 +368,11 @@ aside {
   .navBG {
     width: 20em;
     border-left: 5px solid rgba(252, 85, 33, 0.93);
+    @include span-columns(12);
+    border-left: 4px solid rgba(252, 85, 33, 0.93);
     margin-top: 0;
     margin-bottom: 0;
-    padding: 5px 0;
+    padding: 5px 25px;
     background:#327FB7;
     height:2.55em;
     font-size: 1.3em;
@@ -247,15 +391,95 @@ aside {
 // moderator Create //
 .auctionCreate, .auctionEdit {
   width: 100%;
-  @include span-columns(8);
-  @include shift(1);
-  margin-top: 32px;
+  @include span-columns(7);
+  @include shift(2);
   padding: 10px 0;
-  height: 450px;
+  height: 720px;
   border-radius: 2px;
+  border: 1px solid #56646D;
   background: rgba(95, 124, 138, 0.65);
   color: #202020;
+  float: none;
+  padding: 30px 0;
+  box-shadow: -7px -4px 15px -8px #212121;
+  margin-top: 10px;
+  font-family: 'Varela Round', sans-serif;
   input {
+    opacity: 10.8;
+    height: 25px;
+    position: relative;
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+.auctionCreate, .auctionEdit {
+  h1 {
+    text-align: center;
+    margin: 35px;
+    text-decoration: overline;
+  }
+}
+
+.auctionCreate, .auctionEdit {
+  h3 {
+    margin: 20px;
+    font-size: 14px;
+    color: #D7D7CD;
+  }
+}
+
+
+.auctionCreateBtn {
+  float: right;
+  margin: 0 auto;
+}
+.auctionFormLeft{
+  border-left: 2px solid rgba(252, 85, 33, 0.93);
+}
+
+.auctionFormRight{
+  border-left: 2px solid rgba(252, 85, 33, 0.93);
+}
+
+.fp__btn:nth-of-type(2) {
+  display: none;
+}
+
+.itemList {
+  @include outer-container;
+  padding: 0 20px;
+}
+
+.listItem {
+  @include span-columns(4);
+  margin-right: 12px;
+  border: 1px solid #CBCBCB;
+  img {
+    height: 200px;
+    width: 250px;
+    display: flex;
+  }
+}
+// end moderator Create //
+
+.editProfile  {
+  width: 100%;
+  @include span-columns(7);
+  @include shift(2);
+  padding: 10px 0;
+  height: 700px;
+  border-radius: 2px;
+  border: 1px solid #56646D;
+  background: rgba(95, 124, 138, 0.65);
+  color: #202020;
+  float: none;
+  padding: 30px 0;
+  box-shadow: -7px -4px 15px -8px #212121;
+  margin-top: 10px;
+  font-family: 'Varela Round', sans-serif;
+  input {
+    width: 25%;
     opacity: .8;
     height: 30px;
     position: relative;
@@ -264,42 +488,9 @@ aside {
   }
 }
 
-.auctionCreateBtn {
-  float: right;
-  margin: 0 auto;
-}
-.auctionFormLeft{
-  @include span-columns(5);
-  float: left;
-}
-
-.auctionFormRight{
-  @include span-columns(5);
-  float: right;
-}
-
-.fp__btn:nth-of-type(2) {
-  display: none;
-}
-// end moderator Create //
-
-.editProfile{
-  @include span-columns(8 of 12);
-  @include shift(1);
-  margin-top: 32px;
-  padding: 10px 0;
-  height: 550px;
-  border-radius: 2px;
-  background: rgba(95, 124, 138, 0.65);
-  color: #202020;
-  text-align: center;
-  input {
-    width: 25%;
-    opacity: .8;
-    height: 30px;
-    position: relative;
-    display: block;
-    margin: 20px auto;
+.editProfile {
+  h3 {
+    text-decoration: overline;
   }
 }
 
