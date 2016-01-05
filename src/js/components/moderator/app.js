@@ -90,6 +90,7 @@ class App extends React.Component {
         <aside className="appAside">
           <h2>Auctions</h2>
           <ListAuctions auctions={this.state.auctions } />
+          <div className='arrow'></div>
         </aside>
         <div className="pageWrap">
           <main>
