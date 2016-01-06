@@ -44,7 +44,7 @@ class AuctionItemEdit extends React.Component {
       alert('there was an error updating this item.')
     }
 
-    let id = this.props.params.id;
+    let id = this.props.params.itemId;
 
     let self = this;
     let options = {
