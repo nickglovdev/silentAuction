@@ -8,7 +8,8 @@
 .pageWrap {
   @include outer-container(100%);
   // @include shift(1);
-  background-color: rgba(182, 182, 182, .65);
+  // background-color: rgba(182, 182, 182, .2);
+  background-image: url('../assets/pictures/bg.jpeg');
 }
 
 .public {
@@ -280,15 +281,42 @@ aside {
     color: #fff;
     text-align: center;
     text-decoration: overline;
-    font-size: 26px;
+    font-size: 40px;
     text-shadow: 1px 1.3px #212121;
   }
   a {
+    margin: 10px;
+    display: table-row;
     text-decoration: none;
     color: #fff;
     background: #5783B9;
     border: 1px solid #54616A;
     font-size: 12px;
+    border: 1px solid #212121;
+    text-shadow: 1px 1.3px #212121;
+    color: white;
+    a:hover {
+      color: black;
+      text-decoration: underline;
+    }
+  }
+}
+
+.clipboard {
+  display: table-caption;
+  button {
+    height: 30px;
+    width: 191.399999px;
+    background: #5783B9;
+    border: 1px solid #212121;
+    text-shadow: 1px 1.3px #212121;
+    border-left: none;
+    color: white;
+    box-shadow: -5px 7px 15px -7px #212121;
+    font-family: 'Varela Round', sans-serif;
+  }
+  input {
+    font-family: 'Varela Round', sans-serif;
   }
 }
 
@@ -395,7 +423,7 @@ aside {
       a{
         @include span-columns(12)
         font-shadow:1px 1px black;
-        width: 110%;
+        width: 140%;
       }
     }
   }
