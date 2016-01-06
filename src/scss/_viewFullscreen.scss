@@ -492,9 +492,25 @@ aside {
     border: 1px solid;
     color: #fff;
   }
-  span {
-    font-size: 14px;
+  .itemsDescriptions::after{
+    bottom: 0;
+    content: "";
+    font-weight: bold;
+    padding: 0 20px 1px 45px;
+    position: absolute;
+    right: 0;
+    width: 310px;
+    background: linear-gradient(to right, transparent, rgb(137, 150, 161));
+    height: 23px;
   }
+
+    .itemsDescriptions {
+    height: 5.6em;
+    line-height: 1.4em;
+    overflow: hidden;
+    position: relative;
+  }
+
   img {
     height: 225px;
     width: 300px;

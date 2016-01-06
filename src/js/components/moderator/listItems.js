@@ -52,7 +52,8 @@ class ListItems extends React.Component {
                 <h2>{item.name}</h2>
                 <img  src={item.image_url}/>
               </Link>
-              <h3>Description</h3>{item.description}
+              <h3>Description</h3>
+              <div className='itemsDescriptions'>{item.description}</div>
               <h3>Starting Bid</h3>{item.starting_bid}
               <h3>Current Highest Bid</h3> {item.current_bid}
             </div>
