@@ -15,6 +15,7 @@ class IndividualItemView extends React.Component {
       item: {bids: []}
     }
     this.fetchItems = this.fetchItems.bind(this);
+    this.handleItemDelete = this.handleItemDelete.bind(this)
   }
 
   fetchItems(auctionId, itemId) {
@@ -40,6 +41,25 @@ class IndividualItemView extends React.Component {
     clearInterval(this.interval);
   }
 
+  handleItemDelete(event){
+    event.preventDefault();
+    let id = this.props.params.itemId;
+
+    let self = this;
+    let options = {
+      method:'DELETE',
+      headers: {
+        'Authorization': 'Bearer ' + User.access_token
+      }
+    }
+
+    $.ajax('http://silent-auctioner.herokuapp.com/items/' + id, options)
+    .then(function(response){
+      console.log(response)
+      self.props.history.pushState(null,'/dashboard');
+    });
+  };
+
   render() {
     let id = this.props.params.id;
     let itemId =this.props.params.itemId
@@ -48,16 +68,18 @@ class IndividualItemView extends React.Component {
             {bid.amount}
            </div>
     });
-    return(
+    return( <div className="individualItemWrap">
       <section className='individualItemView'>
         <h1>{this.state.item.name}</h1>
         <Link to={`/auctions/${id}/items/${itemId}/edit`}>Edit Item</Link>
+        <button className="auctionItemDelete" onClick={this.handleItemDelete}>Delete</button>
         <img  src={this.state.item.image_url}/>
         {this.state.item.description}
         {this.state.item.starting_bid}
         {bids.sort().reverse()}
 
       </section>
+    </div>
     )
   }
 }

@@ -7,7 +7,7 @@ import setup from '../../setup'
 import User from '../../models/users'
 import ListItems from './listItems'
 import AuctionEdit from './auctionEdit'
-import publicViewIndividualItems from './publicViewIndividualItems'
+import publicListItems from './publicListItem'
 
 class AuctionsItemView extends React.Component {
   constructor(props) {
@@ -109,20 +109,22 @@ class AuctionsItemView extends React.Component {
         <header className="itemViewHeader">
 
           <Link to={`/auctions/${id}/edit`}>Edit Auction</Link>
+            <Link to={`/public/auctions/${id}`}>Public View</Link>
 
-          <h3>Auction View</h3>
+            <div className="clipboard">
+              <ClipboardButton data-clipboard-text={`http://localhost:8000/#/public/auctions/${id}/items`}>
+                Copy to Clipboard
+              </ClipboardButton>
+              <input id='publicURL' type="text" value={`http://localhost:8000/#/public/auctions/${id}/items`} readOnly/>
+            </div>
+
+          <h3>Manage Auction</h3>
 
           <div className="statusOpen">
             <button className="auctionStatusOpen" onClick={this.handleAuctionOpen}>Open</button>
             <button className="auctionStatusClose" onClick={this.handleAuctionClose}>Close</button>
             <button className="auctionStatusDelete" onClick={this.handleAuctionDelete}>Delete</button>
           </div>
-
-          <Link to={`/public/auctions/${id}/items`}>Public View</Link>
-          <input id='publicURL' type="text" value={`http://localhost:8000/#/public/auctions/${id}/items`} readOnly/>
-          <ClipboardButton data-clipboard-text={`http://localhost:8000/#/public/auctions/${id}/items`}>
-            copy to clipboard
-          </ClipboardButton>
         </header>
         <Link to={`/auctions/${id}/items`}>Add Items</Link>
         <ListItems id={this.props.params.id}></ListItems>

@@ -8,7 +8,7 @@
 .pageWrap {
   @include outer-container(100%);
   // @include shift(1);
-  background-color:#909BA0;
+  background-color: rgba(182, 182, 182, .65);
 }
 
 .public {
@@ -51,6 +51,7 @@ aside {
   background: rgba(68, 89, 99, 0.93);
   height: 1000px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
+  box-shadow: -7px -4px 15px 7px #212121;
   .homeOptions {
     list-style: none;
     margin-top: 11em;
@@ -152,11 +153,12 @@ aside {
 .dashboardItem {
   @include span-columns(8);
   border-left: 1px solid rgba(252, 85, 33, 0.93);
+  margin-top: 0.445px;
 }
 
 .statusOpen {
   @include span-columns(12);
-  margin-bottom: 25px;
+  margin-bottom: -1.55px;
   display: inline-flex;
   button:hover {
    border-top-color: #28597a;
@@ -172,18 +174,13 @@ aside {
 .auctionStatusOpen {
    border-top: 1px solid #96d1f8;
    background: #18a138;
-   background: -webkit-gradient(linear, left top, left bottom, from(#17d479), to(#18a138));
-   background: -webkit-linear-gradient(top, #17d479, #18a138);
-   background: -moz-linear-gradient(top, #17d479, #18a138);
-   background: -ms-linear-gradient(top, #17d479, #18a138);
-   background: -o-linear-gradient(top, #17d479, #18a138);
+   background: -webkit(linear, left top, left bottom, from(#17d479), to(#18a138));
+   background: -webkit-linear(top, #17d479, #18a138);
+   background: -moz-linear(top, #17d479, #18a138);
+   background: -ms-linear(top, #17d479, #18a138);
+   background: -o-linear(top, #17d479, #18a138);
    padding: 11.5px 23px;
-   -webkit-border-radius: 4px;
-   -moz-border-radius: 4px;
-   border-radius: 4px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   border-bottom: none;
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: white;
    font-size: 16px;
@@ -205,19 +202,14 @@ aside {
 .auctionStatusClose {
   border-top: 1px solid #96d1f8;
   background: #ffac54;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f5e26a), to(#ffac54));
-  background: -webkit-linear-gradient(top, #f5e26a, #ffac54);
-  background: -moz-linear-gradient(top, #f5e26a, #ffac54);
-  background: -ms-linear-gradient(top, #f5e26a, #ffac54);
-  background: -o-linear-gradient(top, #f5e26a, #ffac54);
+  background: -webkit(linear, left top, left bottom, from(#f5e26a), to(#ffac54));
+  background: -webkit-linear(top, #f5e26a, #ffac54);
+  background: -moz-lineat(top, #f5e26a, #ffac54);
+  background: -ms-linear(top, #f5e26a, #ffac54);
+  background: -o-linear(top, #f5e26a, #ffac54);
   padding: 11.5px 23px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  border-radius: 7px;
-  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  box-shadow: rgba(0,0,0,1) 0 1px 0;
   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  border-bottom: none;
   color: white;
   font-size: 16px;
   font-family: 'Varela Round', sans-serif;
@@ -238,18 +230,13 @@ aside {
 .auctionStatusDelete {
   border-top: 1px solid #96d1f8;
   background: #b52d32;
-  background: -webkit-gradient(linear, left top, left bottom, from(#e33b3b), to(#b52d32));
-  background: -webkit-linear-gradient(top, #e33b3b, #b52d32);
-  background: -moz-linear-gradient(top, #e33b3b, #b52d32);
-  background: -ms-linear-gradient(top, #e33b3b, #b52d32);
-  background: -o-linear-gradient(top, #e33b3b, #b52d32);
+  background: -webkit(linear, left top, left bottom, from(#e33b3b), to(#b52d32));
+  background: -webkit-linear(top, #e33b3b, #b52d32);
+  background: -moz-linear(top, #e33b3b, #b52d32);
+  background: -ms-linear(top, #e33b3b, #b52d32);
+  background: -o-linear(top, #e33b3b, #b52d32);
   padding: 11.5px 23px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  border-radius: 7px;
-  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  border-bottom: none;
   color: white;
   font-size: 16px;
   font-family: 'Varela Round', sans-serif;
@@ -269,14 +256,23 @@ aside {
 
 .itemViewHeader {
   @include span-columns(12);
-  background: #ccc;
+  background: #677B89;
   border: 2px solid #56646D;
   border-top: none;
   h3 {
-    font-family: 'Varela Round', sans-serif;
+    text-decoration: none;
+    font-family: 'Crimson Text', serif;
+    color: #fff;
     text-align: center;
     text-decoration: overline;
     font-size: 26px;
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+    background: #5783B9;
+    border: 1px solid #54616A;
+    font-size: 12px;
   }
 }
 
@@ -290,6 +286,7 @@ aside {
   background: #CED7DB;
   color: #202020;
   border-bottom: 1px solid #212121;
+  box-shadow: -7px -4px 15px 2.5px #212121;
   .logOut{
     @include span-columns(2.15);
     font-size:2em;
@@ -297,6 +294,9 @@ aside {
     height: 2.45em;
     }
   h1 {
+    font-family: 'Crimson Text', serif;
+    font-size: 16px;
+    text-decoration: underline;
     top:0.4em;
     position:relative;
     @include span-columns(12);
@@ -311,16 +311,19 @@ aside {
   margin-right: 5em;
   padding: 0;
   h2{
-    text-align:center;
-    color:#909BA0;
+    text-align: center;
+    color: #909BA0;
     text-shadow: 1px 1px black;
+    border-bottom: 2px groove #5783B9;
+    padding: 10px 0;
+    margin-top: 0px;
   }
   nav{
     div{
       text-align:center;
       a{
         color:#909BA0;
-        text-decoration: none;
+        text-decoration: underline;
       }
     }
   }
@@ -368,9 +371,9 @@ aside {
     border-left: 4px solid rgba(252, 85, 33, 0.93);
     margin-top: 0;
     margin-bottom: 0;
-    padding: 5px 25px;
+    padding: -1px 25px;
     background:#327FB7;
-    height:2.55em;
+    height:2.44em;
     font-size: 1.3em;
     li{
       a{
@@ -398,7 +401,7 @@ aside {
   float: none;
   padding: 30px 0;
   box-shadow: -7px -4px 15px -8px #212121;
-  margin-top: 10px;
+  // margin-top: 10px;
   font-family: 'Varela Round', sans-serif;
   input {
     opacity: 10.8;
@@ -450,11 +453,34 @@ aside {
 .listItem {
   @include span-columns(4);
   margin-right: 12px;
-  border: 1px solid #CBCBCB;
+  border: 1px solid #5783B9;
+  width: 47.76157%;
   img {
     height: 200px;
     width: 250px;
     display: flex;
+  }
+}
+
+.individualItemWrap {
+  @include span-columns(8);
+  @include shift(1);
+}
+
+.individualItemView {
+  @include span-columns(9);
+  margin-right: 12px;
+  border: 1px solid #CBCBCB;
+  width: 47.76157%;
+  img {
+    height: 200px;
+    width: 250px;
+    display: flex;
+  }
+  h1 {
+    margin: 0;
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
   }
 }
 // end moderator Create //
@@ -472,7 +498,7 @@ aside {
   float: none;
   padding: 30px 0;
   box-shadow: -7px -4px 15px -8px #212121;
-  margin-top: 10px;
+  // margin-top: 10px;
   font-family: 'Varela Round', sans-serif;
   input {
     width: 25%;
@@ -487,6 +513,14 @@ aside {
 .editProfile {
   h3 {
     text-decoration: overline;
+    font-size: 26px;
+    margin-bottom: 100px;
+  }
+  span {
+    padding-left: 100px;
+  }
+  button {
+    float: right;
   }
 }
 
