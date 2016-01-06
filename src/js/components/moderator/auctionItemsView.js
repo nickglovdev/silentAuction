@@ -7,7 +7,7 @@ import setup from '../../setup'
 import User from '../../models/users'
 import ListItems from './listItems'
 import AuctionEdit from './auctionEdit'
-import PublicView from './publicView'
+import publicViewIndividualItems from './publicViewIndividualItems'
 
 class AuctionsItemView extends React.Component {
   constructor(props) {

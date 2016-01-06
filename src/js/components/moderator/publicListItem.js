@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import setup from './../../setup'
 import User from './../../models/users'
 
-class ListItems extends React.Component {
+class publicListItems extends React.Component {
   constructor(props) {
     super(props)
     setup(User.access_token)
@@ -48,7 +48,7 @@ class ListItems extends React.Component {
     let items = this.state.item.map(item => {
       console.log(item)
       return <div className='listItem' key= {item.id} item={item}>
-              <Link to={`auctions/${this.props.id}/items/${item.id}`}>
+              <Link to={`public/auctions/${this.props.id}/items/${item.id}`}>
                 <h2>{item.name}</h2>
                 <img  src={item.image_url}/>
               </Link>
@@ -66,4 +66,4 @@ class ListItems extends React.Component {
   }
 }
 
-export default ListItems;
+export default publicListItems;
