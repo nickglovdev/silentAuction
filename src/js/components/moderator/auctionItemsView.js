@@ -109,7 +109,7 @@ class AuctionsItemView extends React.Component {
         <header className="itemViewHeader">
 
           <Link to={`/auctions/${id}/edit`}>Edit Auction</Link>
-            <Link to={`/publicView`}>Public View</Link>
+            <Link to={`/public/auctions/${id}`}>Public View</Link>
 
             <div className="clipboard">
               <ClipboardButton data-clipboard-text={`http://localhost:8000/#/public/auctions/${id}/items`}>

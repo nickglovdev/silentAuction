@@ -83,6 +83,9 @@ aside {
 .navOptions{
   color:white;
   text-decoration:none;
+  :hover {
+    color: black;
+  }
 }
 .mega-octicon {
   @include span-columns(12);
@@ -155,6 +158,15 @@ aside {
   margin-left: 1.05961%;
   border-left: 1px solid rgba(252, 85, 33, 0.93);
   margin-top: 0.445px;
+  // width: 98%;
+}
+
+.dashboardItem2 {
+  @include span-columns(10);
+  margin-left: 1.05961%;
+  border-left: 1px solid rgba(252, 85, 33, 0.93);
+  margin-top: 0.445px;
+  width: 98%;
 }
 
 .statusOpen {
