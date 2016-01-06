@@ -112,7 +112,6 @@ class App extends React.Component {
             <h2>Auctions</h2>
             <ListAuctions auctions={this.state.auctions } />
             <div className='arrow' onClick={this.toggleOne}></div>
-
           </aside>
         </ToggleDisplay>
 

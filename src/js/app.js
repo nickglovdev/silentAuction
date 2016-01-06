@@ -18,8 +18,8 @@ import AuctionItemEdit from './components/moderator/auctionItemEdit'
 import AuctionItemsView from './components/moderator/auctionItemsView';
 import ProfileEdit from './components/moderator/profileEdit';
 import IndividualItemView from './components/moderator/individualItemView'
-import PublicView from './components/moderator/publicView'
-
+import PublicViewItems from './components/moderator/publicViewItems'
+import publicViewIndividualItems from './components/moderator/publicViewIndividualItems'
 
 //This will check and see if the user is logged in.
 //This was causing the problem in our registration page.
@@ -40,7 +40,6 @@ ReactDOM.render((
     </Route>
     <Route path='/dashboard' component={App} onEnter={requireAuth}>
       <Route path='/profileEdit' component={ProfileEdit}/>
-      <Route path='/public/auctions/:id/items' component={PublicView}/>
       <Route path='/auctions/create' component={AuctionCreate}/>
       <Route path='/auctions/:id/edit' component={AuctionEdit}/>
       <Route path='/auctions/:id/items' component={AuctionItemAdd}/>
@@ -48,5 +47,7 @@ ReactDOM.render((
       <Route path='/auctions/:id/items/:itemId/edit' component={AuctionItemEdit}/>
       <Route path='/auctions/:id' component={AuctionItemsView}/>
     </Route>
+    <Route path='/public/auctions/:id' component={PublicViewItems}></Route>
+    <Route path='/public/auctions/:id/items/:itemId' component={publicViewIndividualItems}></Route>
   </Router>
 ), document.getElementById('app'));

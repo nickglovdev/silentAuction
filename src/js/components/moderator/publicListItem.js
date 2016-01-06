@@ -1,12 +1,11 @@
 import React from 'react';
+import $ from 'jquery';
 import { Link } from 'react-router';
-import $ from 'jQuery';
-import setup from '../../setup';
-import User from '../../models/users';
 
-import ListItems from './listItems'
+import setup from './../../setup'
+import User from './../../models/users'
 
-class PublicView extends React.Component {
+class publicListItems extends React.Component {
   constructor(props) {
     super(props)
     setup(User.access_token)
@@ -18,7 +17,7 @@ class PublicView extends React.Component {
   }
 
   fetchItems(nextId) {
-    nextId = nextId || this.props.params.id
+    nextId = nextId || this.props.id
     $.ajax('http://silent-auctioner.herokuapp.com/auctions/'+ nextId + '/items') //used this.props.id to get the id. the this.props.params.id is on dashboarditemview
      .then( (response) => {
         this.setState({
@@ -30,11 +29,11 @@ class PublicView extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    this.fetchItems(nextProps.params.id);
+    this.fetchItems(nextProps.id);
   }
 
   componentDidMount(hello) {
-    this.fetchItems(this.props.params.id);
+    this.fetchItems(this.props.id);
     this.interval = setInterval( () => {
       this.fetchItems(this.fetchItems(this.props.id))
     }, 5000);
@@ -64,8 +63,7 @@ class PublicView extends React.Component {
         {items}
       </section>
     )
-
   }
 }
 
-export default PublicView;
+export default publicListItems;
