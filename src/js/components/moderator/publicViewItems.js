@@ -24,7 +24,7 @@ class PublicViewItems extends React.Component {
     let id = this.props.params.id; //grabs our id from params
     // the ${id} below is getting it's information from this
     return(
-      <section className="dashboardItem">
+      <section className="dashboardItem2">
         <header className="itemViewHeader">
 
           <h3>Auction View</h3>
