@@ -126,7 +126,7 @@ class AuctionsItemView extends React.Component {
             <button className="auctionStatusDelete" onClick={this.handleAuctionDelete}>Delete</button>
           </div>
         </header>
-        <Link to={`/auctions/${id}/items`}>Add Items</Link>
+        <span className="addItems"><Link to={`/auctions/${id}/items`}>Add Items</Link></span>
         <ListItems id={this.props.params.id}></ListItems>
         {/* id in this is setting the params for listitems */}
       </section>

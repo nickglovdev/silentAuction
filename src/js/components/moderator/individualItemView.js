@@ -74,10 +74,14 @@ class IndividualItemView extends React.Component {
         <Link to={`/auctions/${id}/items/${itemId}/edit`}>Edit Item</Link>
         <button className="auctionItemDelete" onClick={this.handleItemDelete}>Delete</button>
         <img  src={this.state.item.image_url}/>
-        {this.state.item.description}
-        {this.state.item.starting_bid}
+
+        <article><h4>Description</h4>{this.state.item.description}</article>
+        <article><h4>Starting Bid</h4>{this.state.item.starting_bid}</article>
+        
+        <div className="bidFeedWrap">
         {bids.sort().reverse()}
 
+        </div>
       </section>
     </div>
     )
