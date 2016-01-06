@@ -40,7 +40,7 @@ ReactDOM.render((
     </Route>
     <Route path='/dashboard' component={App} onEnter={requireAuth}>
       <Route path='/profileEdit' component={ProfileEdit}/>
-      <Route path='/publicView' component={PublicView}/>
+      <Route path='/public/auctions/:id/items' component={PublicView}/>
       <Route path='/auctions/create' component={AuctionCreate}/>
       <Route path='/auctions/:id/edit' component={AuctionEdit}/>
       <Route path='/auctions/:id/items' component={AuctionItemAdd}/>

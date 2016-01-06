@@ -51,35 +51,52 @@
     }
   }
 
-//For side bar on app
+  //For side bar on app
   .appAside{
-    float: left;
+    height:100%;
     margin-right: 5em;
-    padding: 0;
-    width: 15em;
-    height:40em;
+    width: 100%;
 
     h2{
+      font-size:2.5em;
       text-align:center;
       color:#909BA0;
       text-shadow: 1px 1px black;
     }
     nav{
+      float:none;
+      margin-bottom: 0.3%;
       div{
         text-align:center;
+        margin-bottom:2%;
         a{
-          color:#909BA0;
+          color:white;
           text-decoration: none;
+          font-size:2em;
         }
       }
     }
     .arrow {
-    	width: 0;
-    	height: 0;
-    	border-top: 60px solid transparent;
-    	border-bottom: 60px solid transparent;
-
-    	border-left: 60px solid green;
+      width:0;
+      height:0em;
+      border-left: 6em solid transparent;
+      border-right: 6em solid transparent;
+      border-bottom: 2em solid black;
+      @include shift(4.4)
     }
+  }
+  .noAside{
+    width:100%;
+    padding:0;
+    height:0;
+  }
+  .arrowDown{
+    width: 0;;
+    height: 0;
+    border-left: 6em solid transparent;
+    border-right: 6em solid transparent;
+    border-top: 2em solid black;
+    left: 18.3em;
+    position:relative;
   }
 }

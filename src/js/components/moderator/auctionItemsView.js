@@ -118,7 +118,7 @@ class AuctionsItemView extends React.Component {
             <button className="auctionStatusDelete" onClick={this.handleAuctionDelete}>Delete</button>
           </div>
 
-          <Link to={`/publicView`}>Public View</Link>
+          <Link to={`/public/auctions/${id}/items`}>Public View</Link>
           <input id='publicURL' type="text" value={`http://localhost:8000/#/public/auctions/${id}/items`} readOnly/>
           <ClipboardButton data-clipboard-text={`http://localhost:8000/#/public/auctions/${id}/items`}>
             copy to clipboard

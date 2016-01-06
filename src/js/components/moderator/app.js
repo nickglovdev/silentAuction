@@ -2,6 +2,7 @@ import React from 'react';
 import jQuery from 'jquery';
 import { Link } from 'react-router';
 import _isEqual from 'lodash/lang/isequal';
+import ToggleDisplay from 'react-toggle-display';
 
 import setup from '../../setup';
 import User from '../../models/users';
@@ -20,12 +21,31 @@ class App extends React.Component {
       user: {
         id: '',
         email: ''
-      }
+      },
+      isAuthorizedOne: true,
+      isAuthorizedTwo: false
     }
 
-    this.onLogout = this.onLogout.bind(this);
+    this.onLogout = this.onLogout.bind(this),
+    this.toggleOne = this.toggleOne.bind(this),
+    this.toggleTwo = this.toggleTwo.bind(this)
   }
 
+  toggleOne(event){
+    event.preventDefault()
+    this.setState({
+      isAuthorizedOne: false,
+      isAuthorizedTwo: true
+    });
+  }
+
+  toggleTwo(event){
+    event.preventDefault()
+    this.setState({
+      isAuthorizedOne: true,
+      isAuthorizedTwo: false
+    });
+  }
 
   componentWillReceiveProps(nextProps) {
     if (_isEqual(this.props.location, nextProps.location)) {
@@ -87,11 +107,20 @@ class App extends React.Component {
           </section>
         </header>
 
-        <aside className="appAside">
-          <h2>Auctions</h2>
-          <ListAuctions auctions={this.state.auctions } />
-          <div className='arrow'></div>
-        </aside>
+        <ToggleDisplay show={this.state.isAuthorizedOne}>
+          <aside className="appAside">
+            <h2>Auctions</h2>
+            <ListAuctions auctions={this.state.auctions } />
+            <div className='arrow' onClick={this.toggleOne}></div>
+
+          </aside>
+        </ToggleDisplay>
+
+        <ToggleDisplay show={this.state.isAuthorizedTwo}>
+          <aside className="noAside">
+            <div className='arrowDown' onClick={this.toggleTwo}></div>
+          </aside>
+        </ToggleDisplay>
         <div className="pageWrap">
           <main>
             {this.props.children}

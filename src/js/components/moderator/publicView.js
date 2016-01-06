@@ -1,64 +1,70 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router';
-
-import setup from '../../setup'
-import User from '../../models/users'
+import $ from 'jQuery';
+import setup from '../../setup';
+import User from '../../models/users';
 
 import ListItems from './listItems'
 
 class PublicView extends React.Component {
-  render () {
-    return (
-      <div className="homePage">
-        <div className="publicWrap">
-                  <h1>Public View</h1>
-          <div className="publicView">
-            <section className="column1">
-              <h1>box1</h1>
-            </section>
-            <section className="column2">
-              <h1>box2</h1>
-            </section>
-            <section className="column3">
-              <h1>box3</h1>
-            </section>
-          </div>
-          <div className="publicView2">
-            <section className="column4">
-              <h1>box4</h1>
-            </section>
-            <section className="column5">
-              <h1>box5</h1>
-            </section>
-            <section className="column6">
-              <h1>box6</h1>
-            </section>
-          </div>
-          <div className="publicView3">
-            <section className="column7">
-              <h1>box7</h1>
-            </section>
-            <section className="column8">
-              <h1>box8</h1>
-            </section>
-            <section className="column9">
-              <h1>box9</h1>
-            </section>
-          </div>
-          <div className="publicView4">
-            <section className="column10">
-              <h1>box10</h1>
-            </section>
-            <section className="column11">
-              <h1>box11</h1>
-            </section>
-            <section className="column12">
-              <h1>box12</h1>
-            </section>
-          </div>
-        </div>
-      </div>
+  constructor(props) {
+    super(props)
+    setup(User.access_token)
+    this.state = {
+      loaded: false,
+      item: []
+    }
+    this.fetchItems = this.fetchItems.bind(this);
+  }
+
+  fetchItems(nextId) {
+    nextId = nextId || this.props.params.id
+    $.ajax('http://silent-auctioner.herokuapp.com/auctions/'+ nextId + '/items') //used this.props.id to get the id. the this.props.params.id is on dashboarditemview
+     .then( (response) => {
+        this.setState({
+         loaded: true,
+         item: response,
+         itemBids: response
+        })
+     });
+  }
+
+  componentWillReceiveProps(nextProps){
+    this.fetchItems(nextProps.params.id);
+  }
+
+  componentDidMount(hello) {
+    this.fetchItems(this.props.params.id);
+    this.interval = setInterval( () => {
+      this.fetchItems(this.fetchItems(this.props.id))
+    }, 5000);
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.interval);
+  }
+
+  render() {
+    //For individual auction information
+    let items = this.state.item.map(item => {
+      console.log(item)
+      return <div className='listItem' key= {item.id} item={item}>
+              <Link to={`public/auctions/${this.props.id}/items/${item.id}`}>
+                <h2>{item.name}</h2>
+                <img  src={item.image_url}/>
+              </Link>
+              <h3>Description</h3>{item.description}
+              <h3>Starting Bid</h3>{item.starting_bid}
+              <h3>Current Highest Bid</h3> {item.current_bid}
+            </div>
+      });
+
+    return(
+      <section className='itemList'>
+        {items}
+      </section>
     )
+
   }
 }
 
