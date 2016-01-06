@@ -515,7 +515,7 @@ aside {
   border: 2px groove #5783B9;
   box-shadow: -5px 7px 15px -7px #212121;
   width: 47.76157%;
-  background: #8996A1;
+  background: rgba(139, 148, 160, .8);
   font-family: 'Varela Round', sans-serif;
   h3 {
     text-align: center;
@@ -600,6 +600,7 @@ aside {
 .individualItemWrap {
   @include span-columns(9);
   margin-left: 1.05961%;
+    background: rgba(139, 148, 160, .8);
 }
 
 .individualItemView {
