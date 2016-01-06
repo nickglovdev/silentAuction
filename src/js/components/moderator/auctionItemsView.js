@@ -7,7 +7,7 @@ import setup from '../../setup'
 import User from '../../models/users'
 import ListItems from './listItems'
 import AuctionEdit from './auctionEdit'
-import publicViewIndividualItems from './publicViewIndividualItems'
+import publicListItems from './publicListItem'
 
 class AuctionsItemView extends React.Component {
   constructor(props) {
@@ -125,7 +125,6 @@ class AuctionsItemView extends React.Component {
             <button className="auctionStatusClose" onClick={this.handleAuctionClose}>Close</button>
             <button className="auctionStatusDelete" onClick={this.handleAuctionDelete}>Delete</button>
           </div>
-
         </header>
         <span className="addItems"><Link to={`/auctions/${id}/items`}>Add Items</Link></span>
         <ListItems id={this.props.params.id}></ListItems>
