@@ -110,9 +110,9 @@ aside {
 .login, .register {
   width: 100%;
   @include span-columns(7 of 12);
-  @include shift(1);
   margin-top: 32px;
   padding: 10px 0;
+  margin-left: 14%;
   height: 550px;
   border-radius: 2px;
   background: rgba(95, 124, 138, 0.65);
