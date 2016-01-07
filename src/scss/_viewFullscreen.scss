@@ -169,6 +169,9 @@ aside {
 .dashboardItem2 {
   @include span-columns(10);
   background-image: url('https://images.unsplash.com/photo-1439737567250-e9ea931e97a4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6f360f09a234426c238233a742060faa');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   margin-left: 1.05961%;
   border-left: 1px solid rgba(252, 85, 33, 0.93);
   margin-top: 0.445px;
@@ -591,7 +594,7 @@ aside {
   margin-right: 25px;
   border: 2px groove #5783B9;
   box-shadow: -5px 7px 15px -7px #212121;
-  width: 47.76157%;
+  width: 48.26157%;
   background: rgba(139, 148, 160, .8);
   font-family: 'Varela Round', sans-serif;
   h3 {
