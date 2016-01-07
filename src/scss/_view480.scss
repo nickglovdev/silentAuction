@@ -6,6 +6,11 @@
     height: 660px;
   }
 
+  .pageWrap {
+    height: 1500px;
+  }
+
+
   .login, .register, .faq, .editProfile {
     @include span-columns(12);
     margin: 0;

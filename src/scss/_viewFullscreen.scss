@@ -53,7 +53,7 @@ aside {
   font-family: 'Varela Round', sans-serif;
   margin: 0;
   background: rgba(68, 89, 99, 0.93);
-  height: 1000px;
+  height: 1055px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
   box-shadow: -7px -4px 15px 7px #212121;
   .homeOptions {
@@ -688,6 +688,7 @@ aside {
     text-decoration: none;
     font-size: 14px;
     color: #5783B9;
+    margin: 0 30px;
     :hover {
       color: white;
       text-decoration: underline;
@@ -714,7 +715,7 @@ aside {
     display: flex;
   }
   h1 {
-    margin: 0;
+    margin: 30px;
     font-family: 'Varela Round', sans-serif;
     text-align: center;
     background: #D1D8DB;
