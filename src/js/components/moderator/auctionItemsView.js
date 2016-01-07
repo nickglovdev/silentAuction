@@ -115,10 +115,10 @@ class AuctionsItemView extends React.Component {
 
 
             <div className="clipboard">
-              <ClipboardButton data-clipboard-text={`http://localhost:8000/#/public/auctions/${id}/items`}>
+              <ClipboardButton data-clipboard-text={`http://localhost:8000/#/public/auctions/${id}`}>
                 Copy to Clipboard
               </ClipboardButton>
-              <input id='publicURL' type="text" value={`http://localhost:8000/#/public/auctions/${id}/items`} readOnly/>
+              <input id='publicURL' type="text" value={`http://localhost:8000/#/public/auctions/${id}`} readOnly/>
             </div>
             
           <div className="statusOpen">

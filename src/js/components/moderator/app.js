@@ -96,7 +96,7 @@ class App extends React.Component {
           <button className="logOut"
             onClick={this.onLogout}>Logout
           </button>
-          <h1>iBid</h1>
+          <h1><Link to="/dashboard">iBid</Link></h1>
           <section className="toolBar">
             <nav className="options">
               <ul className="navBG">
