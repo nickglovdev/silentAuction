@@ -117,8 +117,9 @@ class App extends React.Component {
 
         <ToggleDisplay show={this.state.isAuthorizedTwo}>
           <aside className="noAside">
-            <div className='arrowDown' onClick={this.toggleTwo}></div>
+            <div className='arrowDown' onClick={this.toggleTwo}><span>Expand</span></div>
           </aside>
+          <div className='divSpace'></div>
         </ToggleDisplay>
         <div className="pageWrap">
           <main>

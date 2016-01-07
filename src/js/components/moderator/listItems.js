@@ -54,8 +54,8 @@ class ListItems extends React.Component {
               </Link>
               <h3>Description</h3>
               <div className='itemsDescriptions'>{item.description}</div>
-              <h3>Starting Bid</h3>{item.starting_bid}
-              <h3>Current Highest Bid</h3> {item.current_bid}
+              <h3>Starting Bid</h3><p>${item.starting_bid}</p>
+              <h3>Current Highest Bid</h3><p>${item.current_bid}</p>
             </div>
       });
 

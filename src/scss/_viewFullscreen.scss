@@ -60,7 +60,7 @@ aside {
     list-style: none;
     margin-top: 11em;
     padding-left:15%;
-    margin-top: 5.5em;
+    margin-top: 11em;
     padding-right:15%;
     text-decoration:none;
     padding: 0;
@@ -168,6 +168,7 @@ aside {
 
 .dashboardItem2 {
   @include span-columns(10);
+  background-image: url('https://images.unsplash.com/photo-1439737567250-e9ea931e97a4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6f360f09a234426c238233a742060faa');
   margin-left: 1.05961%;
   border-left: 1px solid rgba(252, 85, 33, 0.93);
   margin-top: 0.445px;
@@ -406,6 +407,17 @@ aside {
   }
 }
 
+.divSpace{
+  width: 100%;
+  background: #677B89;
+  height: 5em;
+  display:none;
+
+  span{
+    text-color:none;
+  }
+}
+
 .toolBar {
   float:right;
   bottom:4.5em;
@@ -587,6 +599,9 @@ aside {
     background: #D1D8DB;
     border: 1px solid;
     color: #fff;
+  }
+  p{
+    text-align:center;
   }
   .itemsDescriptions::after{
     bottom: 0;
@@ -829,15 +844,15 @@ $red: #FC602F;
 $darkred: #FC602F;
 
 .faqWrap {
-  @include outer-container;
+  @include outer-container(100%);
 }
 
 .mainStuff {
   position: fixed;
   margin-top: 35px;
   opacity: .85;
-  @include span-columns(8 of 12);
-  @include shift(2);
+  width:50%;
+  margin-left:34%;
   background: $lightred;
   overflow: hidden;
   .title {
@@ -847,6 +862,12 @@ $darkred: #FC602F;
     font-weight: 700;
     line-height: 1.2em;
     padding: 1em;
+  }
+}
+
+@media (max-width:1700){
+  .arrow{
+    margin-left: 33%;
   }
 }
 
