@@ -53,7 +53,7 @@ aside {
   font-family: 'Varela Round', sans-serif;
   margin: 0;
   background: rgba(68, 89, 99, 0.93);
-  height: 1000px;
+  height: 1055px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
   box-shadow: -7px -4px 15px 7px #212121;
   .homeOptions {
@@ -388,6 +388,7 @@ aside {
   float: left;
   margin-right: 5em;
   padding: 0;
+  box-shadow:none;
   h2{
     text-align: center;
     color: #909BA0;
@@ -616,15 +617,16 @@ aside {
   }
 
     .itemsDescriptions {
-    height: 5.6em;
-    line-height: 1.4em;
-    overflow: hidden;
-    position: relative;
+      height: 5.6em;
+      line-height: 1.4em;
+      overflow: hidden;
+      position: relative;
   }
 
   img {
     height: 225px;
-    width: 300px;
+    width: 100%;
+    padding:0 1% 0 1%;
     display: flex;
     margin: auto;
     border: 2px solid #5783B9;
@@ -688,6 +690,7 @@ aside {
     text-decoration: none;
     font-size: 14px;
     color: #5783B9;
+    margin: 0 30px;
     :hover {
       color: white;
       text-decoration: underline;
@@ -714,7 +717,7 @@ aside {
     display: flex;
   }
   h1 {
-    margin: 0;
+    margin: 30px;
     font-family: 'Varela Round', sans-serif;
     text-align: center;
     background: #D1D8DB;
