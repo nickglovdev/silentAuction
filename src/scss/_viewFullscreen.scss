@@ -815,10 +815,11 @@ $red: #FC602F;
 $darkred: #FC602F;
 
 .faqWrap {
-  @include outer-container;
+  @include outer-container(100%);
 }
 
 .mainStuff {
+  display:block;
   position: fixed;
   margin-top: 35px;
   opacity: .85;
