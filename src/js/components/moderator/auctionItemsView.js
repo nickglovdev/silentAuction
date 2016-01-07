@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import { Link } from 'react-router';
 import jQuery from 'jQuery';
 import ClipboardButton from 'react-clipboard.js';
+import ToggleDisplay from 'react-toggle-display';
 
 import setup from '../../setup'
 import User from '../../models/users'
@@ -15,13 +16,28 @@ class AuctionsItemView extends React.Component {
     setup(User.access_token);
     this.state = {
       loaded: false,
-      item: []
+      item: [],
+      isAuthorizedOne: false,
+      isAuthorizedTwo: true
     }
+    this.statusOpen = this.statusOpen.bind(this)
+    this.statusClosed = this.statusClosed.bind(this)
     this.handleAuctionDelete = this.handleAuctionDelete.bind(this)
     this.handleAuctionOpen = this.handleAuctionOpen.bind(this)
     this.handleAuctionClose = this.handleAuctionClose.bind(this)
   }
-
+  statusOpen(){
+    this.setState({
+      isAuthorizedOne: true,
+      isAuthorizedTwo: false
+    })
+  }
+  statusClosed(){
+    this.setState({
+      isAuthorizedOne: false,
+      isAuthorizedTwo: true
+    })
+  }
   handleAuctionDelete(event){
     event.preventDefault();
     let id = this.props.params.id;
@@ -122,10 +138,19 @@ class AuctionsItemView extends React.Component {
           <button className="viewbtns"><Link to={`/public/auctions/${id}`}>Public View</Link></button>
 
           <div className="statusOpen">
-            <button className="auctionStatusOpen" onClick={this.handleAuctionOpen}>Open</button>
-            <button className="auctionStatusClose" onClick={this.handleAuctionClose}>Close</button>
+            <button className="auctionStatusOpen" onClick={this.handleAuctionOpen} onClick={this.statusOpen}>Open</button>
+            <button className="auctionStatusClose" onClick={this.handleAuctionClose} onClick={this.statusClosed}>Close</button>
             <button className="auctionStatusDelete" onClick={this.handleAuctionDelete}>Delete</button>
           </div>
+          <section className="currentStatus">
+            <h4>Current Status</h4>
+              <ToggleDisplay show={this.state.isAuthorizedOne}>
+                <p>Open</p>
+              </ToggleDisplay>
+              <ToggleDisplay show={this.state.isAuthorizedTwo}>
+                <p>Closed</p>
+              </ToggleDisplay>
+          </section>
         </header>
         <span className="addItems"><Link to={`/auctions/${id}/items`}>Add Items</Link></span>
         <ListItems id={this.props.params.id}></ListItems>

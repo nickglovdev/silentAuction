@@ -8,6 +8,10 @@
 
   .listItem {
     width: 47.56157%;
+    img {
+      height: 235px;
+      width: 100%;
+    }
   }
 
   .pageWrap {
@@ -618,6 +622,10 @@
     @include span-columns(12);
     border-left: 1px solid rgba(252, 85, 33, 0.93);
     margin-top: 0.445px;
+  }
+
+  .dashboardItem2 {
+    height: 1027px;
   }
 
   .itemViewHeader {

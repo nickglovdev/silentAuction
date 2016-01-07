@@ -176,6 +176,7 @@ aside {
   border-left: 1px solid rgba(252, 85, 33, 0.93);
   margin-top: 0.445px;
   width: 98%;
+  height: 1027px;
 }
 
 .statusOpen {
@@ -194,6 +195,7 @@ aside {
    background: #1b435e;
    }
 }
+
 
 .auctionStatusOpen {
    border-top: 1px solid #96d1f8;
@@ -281,6 +283,23 @@ aside {
       border-top-color: #1b435e;
       background: #212121;
     }
+  }
+}
+
+.currentStatus{
+  margin-top: 5%;
+  h4{
+    text-align:center;
+    color:white;
+    font-size:2em;
+    margin-bottom:0;
+  }
+  p{
+    text-align:center;
+    color:white;
+    font-size:2em;
+    margin-top:0.5%;
+    margin-bottom:1em;
   }
 }
 
@@ -627,8 +646,8 @@ aside {
   }
 
   img {
-    height: 225px;
-    width: 100%;
+    height: 235px;
+    width: 80%;
     padding:0 1% 0 1%;
     display: flex;
     margin: auto;
@@ -642,6 +661,7 @@ aside {
     border: 1px solid;
     box-shadow: 5px 3px 15px -6px #212121;
     text-shadow: 1px .5px beige;
+    font-size: 18px;
   }
   a {
     text-decoration: none;
@@ -728,6 +748,15 @@ aside {
     color: #fff;
   }
 }
+
+.companyWrap {
+  @include span-columns(4);
+  margin: 50px 18px;
+  font-family: helvetica;
+  color: #fff;
+  margin-bottom: 0;
+}
+
 
 .addItems {
   background: #6481B8;
