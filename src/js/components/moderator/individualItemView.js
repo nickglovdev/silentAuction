@@ -65,7 +65,12 @@ class IndividualItemView extends React.Component {
     let itemId =this.props.params.itemId
     let bids = this.state.item.bids.map(bid => {
       return <div key={bid.id} bid={bid}>
-            {bid.amount}
+            ${bid.amount}
+           </div>
+    });
+    let guests = this.state.item.bids.map(bid => {
+      return <div key={bid.id} bid={bid}>
+            #{bid.guest_id}
            </div>
     });
     return( <div className="individualItemWrap">
@@ -77,11 +82,15 @@ class IndividualItemView extends React.Component {
 
         <article><h4>Description</h4>{this.state.item.description}</article>
         <article><h4>Starting Bid</h4>{this.state.item.starting_bid}</article>
-        
-        <div className="bidFeedWrap">
-        {bids.sort().reverse()}
 
+        <div className="bids">
+        <h5>Bid Feed</h5>
+          <div className="bidFeedWrap">
+          <span>Guest:{guests.sort().reverse()}</span>
+          <span>Bid Amount:{bids.sort().reverse()}</span>
+          </div>
         </div>
+
       </section>
     </div>
     )

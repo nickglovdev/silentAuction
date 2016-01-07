@@ -442,9 +442,9 @@ aside {
 // end moderator dashboard //
 
 // moderator Create //
-.auctionCreate, .auctionEdit, .auctionCreateItem {
+.auctionCreate, .auctionEdit, {
   width: 100%;
-  @include span-columns(7);
+  @include span-columns(9);
   @include shift(2);
   padding: 10px 0;
   height: 720px;
@@ -467,6 +467,40 @@ aside {
   h1 {
     text-decoration: overline;
     margin-left: 25px;
+  }
+}
+
+.auctionCreateItem {
+  width: 100%;
+  @include span-columns(8);
+  @include shift(2);
+  padding: 10px 0;
+  height: 720px;
+  border-radius: 2px;
+  border: 1px solid #56646D;
+  background: rgba(95, 124, 138, 0.65);
+  color: #202020;
+  float: none;
+  padding: 30px 0;
+  box-shadow: -7px -4px 15px -8px #212121;
+  // margin-top: 10px;
+  font-family: 'Varela Round', sans-serif;
+  input{
+    opacity: 10.8;
+    height: 25px;
+    position: relative;
+    display: block;
+    margin: 10px auto;
+  }
+  h3 {
+    margin: 10px auto;
+  }
+  h1 {
+    text-decoration: overline;
+    margin-left: 25px;
+  }
+  .itemDescription {
+    text-overflow: inherit;
   }
 }
 
@@ -540,6 +574,7 @@ aside {
     background: #D6D6CC;
     border: 1px solid;
     box-shadow: 5px 3px 15px -6px #212121;
+    text-shadow: 1px .5px beige;
   }
   a {
     text-decoration: none;
@@ -569,6 +604,7 @@ aside {
   }
   span {
     font-size: 14px;
+    width: 50%;
   }
   img {
     height: 225px;
@@ -642,17 +678,38 @@ aside {
   }
 }
 
+.bids {
+  @include outer-container
+  border: 1px solid #D35F32;
+  border-bottom: none;
+  margin: 50px 0 25px 0;
+  h5 {
+    text-align: center;
+    font-size: 30px;
+    background: #54616B;
+    color: #5783B9;
+    box-shadow: 0px -4px 15px -7px #D35F32;
+    margin: -1px 0px 15px 0px;
+  }
+}
+
 .bidFeedWrap {
   @include span-columns(6);
   @include shift(3);
   border: 1px solid black;
-  margin-top: 50px;
+  margin-bottom: 25px;
+  display: inline-flex;
+  div {
+    border-bottom: 1px solid #fff;
+    color: #6FC769;
+    background: rgba(100, 129, 184, 0.7);
+  }
 }
 // end moderator Create //
 
 .editProfile  {
   width: 100%;
-  @include span-columns(7);
+  @include span-columns(9);
   @include shift(2);
   padding: 10px 0;
   height: 700px;
