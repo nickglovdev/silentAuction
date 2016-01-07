@@ -823,7 +823,7 @@ $darkred: #FC602F;
   margin-top: 35px;
   opacity: .85;
   width:50%;
-  @include shift(2);
+  margin-left:34%;
   background: $lightred;
   overflow: hidden;
   .title {
@@ -833,6 +833,12 @@ $darkred: #FC602F;
     font-weight: 700;
     line-height: 1.2em;
     padding: 1em;
+  }
+}
+
+@media (max-width:1700){
+  .arrow{
+    margin-left: 33%;
   }
 }
 
