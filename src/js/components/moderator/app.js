@@ -119,6 +119,7 @@ class App extends React.Component {
           <aside className="noAside">
             <div className='arrowDown' onClick={this.toggleTwo}></div>
           </aside>
+          <div className='divSpace'></div>
         </ToggleDisplay>
         <div className="pageWrap">
           <main>

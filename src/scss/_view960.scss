@@ -84,7 +84,6 @@
       border-bottom: 2em solid black;
       margin-left: 39.9%;
     }
-
     //Scaling for both of the arrow class
     @media (max-width:940px){
       .arrow{
@@ -252,6 +251,7 @@
     width:100%;
     padding:0;
     height:0;
+
   .arrowDown{
     width: 0;;
     height: 0;
@@ -425,7 +425,11 @@
     }
   }
 }
-
+.divSpace{
+  width: 100%;
+  background: #677B89;
+  height: 2em;
+}
 
 
   .dashboardItem {
