@@ -22,8 +22,8 @@ class App extends React.Component {
         id: '',
         email: ''
       },
-      isAuthorizedOne: true,
-      isAuthorizedTwo: false
+      isAuthorizedOne: false,
+      isAuthorizedTwo: true
     }
 
     this.onLogout = this.onLogout.bind(this),
@@ -117,7 +117,7 @@ class App extends React.Component {
 
         <ToggleDisplay show={this.state.isAuthorizedTwo}>
           <aside className="noAside">
-            <div className='arrowDown' onClick={this.toggleTwo}></div>
+            <div className='arrowDown' onClick={this.toggleTwo}><span>Expand</span></div>
           </aside>
           <div className='divSpace'></div>
         </ToggleDisplay>
