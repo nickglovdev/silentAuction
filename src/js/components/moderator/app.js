@@ -22,8 +22,8 @@ class App extends React.Component {
         id: '',
         email: ''
       },
-      isAuthorizedOne: false,
-      isAuthorizedTwo: true
+      isAuthorizedOne: true,
+      isAuthorizedTwo: false
     }
 
     this.onLogout = this.onLogout.bind(this),
