@@ -22,6 +22,10 @@
 
   }
 
+  .dashboardItem2 {
+    height: 100%;
+  }
+
   .siteDescription {
     @include span-columns(10);
     @include shift(2);
