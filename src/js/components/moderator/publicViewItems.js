@@ -27,7 +27,7 @@ class PublicViewItems extends React.Component {
       <section className="dashboardItem2">
         <header className="itemViewHeader">
 
-          <h3>Auction View</h3>
+          <h3>Public Auction View</h3>
 
         </header>
         <ListItems id={this.props.params.id}></ListItems>
