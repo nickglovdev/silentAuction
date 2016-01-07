@@ -48,6 +48,12 @@ class ListItems extends React.Component {
     let items = this.state.item.map(item => {
       console.log(item)
       return <div className='listItem' key= {item.id} item={item}>
+                <h4>Title:{item.auction.title}</h4>
+                <h4>Host: {item.auction.company}</h4>
+                <h4>Phone Number: {item.auction.contact}</h4>
+                <h4>Date: {item.auction.time}</h4>
+                <h4>Time: {item.auction.date}</h4>
+                <h4>Location: {item.auction.location}</h4>
               <Link to={`auctions/${this.props.id}/items/${item.id}`}>
                 <h2>{item.name}</h2>
                 <img  src={item.image_url}/>
