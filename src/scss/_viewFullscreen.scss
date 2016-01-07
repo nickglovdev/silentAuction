@@ -643,6 +643,7 @@ aside {
     border: 1px solid;
     box-shadow: 5px 3px 15px -6px #212121;
     text-shadow: 1px .5px beige;
+    font-size: 18px;
   }
   a {
     text-decoration: none;
@@ -729,6 +730,15 @@ aside {
     color: #fff;
   }
 }
+
+.companyWrap {
+  @include span-columns(4);
+  margin: 50px 18px;
+  font-family: helvetica;
+  color: #fff;
+  margin-bottom: 0;
+}
+
 
 .addItems {
   background: #6481B8;
