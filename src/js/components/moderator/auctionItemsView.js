@@ -64,8 +64,8 @@ class AuctionsItemView extends React.Component {
 
     jQuery.ajax('http://silent-auctioner.herokuapp.com/auctions/' + id + '/change_state', options)
     .then(function(response){
+      alert('This Auction is now open.')
       console.log(response)
-      self.props.history.pushState(null,'/dashboard');
     });
   };
 
@@ -97,6 +97,7 @@ class AuctionsItemView extends React.Component {
     jQuery.ajax('http://silent-auctioner.herokuapp.com/auctions/' + id + '/close_auction', options)
     .then(function(response){
       console.log(response)
+      alert('This Auction is now closed.')
       self.props.history.pushState(null,'/dashboard');
     });
   };
@@ -120,7 +121,7 @@ class AuctionsItemView extends React.Component {
               </ClipboardButton>
               <input id='publicURL' type="text" value={`http://localhost:8000/#/public/auctions/${id}`} readOnly/>
             </div>
-            
+
           <div className="statusOpen">
             <button className="auctionStatusOpen" onClick={this.handleAuctionOpen}>Open</button>
             <button className="auctionStatusClose" onClick={this.handleAuctionClose}>Close</button>
