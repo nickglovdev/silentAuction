@@ -109,18 +109,17 @@ class AuctionsItemView extends React.Component {
       <section className="dashboardItem">
         <header className="itemViewHeader">
 
-          <Link to={`/auctions/${id}/edit`}>Edit Auction</Link>
-            <Link to={`/public/auctions/${id}`}>Public View</Link>
+          <div className="clipboard">
+            <ClipboardButton data-clipboard-text={`http://localhost:8000/#/public/auctions/${id}`}>
+              Copy to Clipboard
+            </ClipboardButton>
+            <input id='publicURL' type="text" value={`http://localhost:8000/#/public/auctions/${id}`} readOnly/>
+          </div>
 
           <h3>Manage Auction</h3>
 
-
-            <div className="clipboard">
-              <ClipboardButton data-clipboard-text={`http://localhost:8000/#/public/auctions/${id}`}>
-                Copy to Clipboard
-              </ClipboardButton>
-              <input id='publicURL' type="text" value={`http://localhost:8000/#/public/auctions/${id}`} readOnly/>
-            </div>
+          <button className="viewbtns"><Link to={`/auctions/${id}/edit`}>Edit Auction</Link></button>
+          <button className="viewbtns"><Link to={`/public/auctions/${id}`}>Public View</Link></button>
 
           <div className="statusOpen">
             <button className="auctionStatusOpen" onClick={this.handleAuctionOpen}>Open</button>
