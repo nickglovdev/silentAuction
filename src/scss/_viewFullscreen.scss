@@ -679,7 +679,7 @@ aside {
 }
 
 .bids {
-  @include outer-container
+  @include outer-container;
   border: 1px solid #D35F32;
   border-bottom: none;
   margin: 50px 0 25px 0;
@@ -703,6 +703,9 @@ aside {
     border-bottom: 1px solid #fff;
     color: #6FC769;
     background: rgba(100, 129, 184, 0.7);
+    span {
+      font-size: 30px;
+    }
   }
 }
 // end moderator Create //

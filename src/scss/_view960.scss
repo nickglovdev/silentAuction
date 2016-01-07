@@ -483,4 +483,27 @@
   .auctionCreateItem {
     height:580;
   }
+
+  .individualItemWrap{
+    @include span-columns(12);
+    margin-left: 0;
+  }
+
+
+  .bidFeedWrap {
+    @include span-columns(12);
+    margin-left: 0;
+    border: 1px solid black;
+    margin-bottom: 25px;
+    display: inline-flex;
+    div {
+      border-bottom: 1px solid #fff;
+      color: #6FC769;
+      background: rgba(100, 129, 184, 0.7);
+      span {
+        font-size: 30px;
+      }
+    }
+
+  }
 }
