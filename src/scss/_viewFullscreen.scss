@@ -89,6 +89,7 @@ aside {
   text-decoration:none;
   :hover {
     color: black;
+    transition: color 0.25s ease;
   }
 }
 .mega-octicon {
@@ -182,6 +183,8 @@ aside {
    border-top-color: #28597a;
    background: #28597a;
    color: #ccc;
+   transition: background-color 0.25s ease;
+   transition: color 0.25s ease;
    }
    button:active {
    border-top-color: #1b435e;
@@ -210,6 +213,8 @@ aside {
    border-top-color: #28597a;
    background: #28597a;
    color: #ccc;
+   transition: color 0.25s ease;
+   transition: background-color 0.25s ease;
    .auctionStatusOpen:active {
    border-top-color: #1b435e;
    background: #1b435e;
@@ -238,6 +243,8 @@ aside {
     border-top-color: #28597a;
     background: #28597a;
     color: #ccc;
+    transition: color 0.25s ease;
+    transition: background-color 0.25s ease;
     .auctionStatusClose:active {
       border-top-color: #1b435e;
       background: #1b435e;
@@ -265,6 +272,8 @@ aside {
     border-top-color: #28597a;
     background: #212121;
     color: #ccc;
+    transition: color 0.25s ease;
+    transition: background-color 0.25s ease;
     button:active {
       border-top-color: #1b435e;
       background: #212121;
@@ -290,18 +299,32 @@ aside {
   }
   a {
     margin: 10px;
-    display: table-row;
     text-decoration: none;
     color: #fff;
-    background: #5783B9;
     border: 1px solid #54616A;
-    font-size: 12px;
+    font-size: 28px;
     border: 1px solid #212121;
-    text-shadow: 1px 1.3px #212121;
     color: white;
+    text-align: center;
     a:hover {
       color: black;
       text-decoration: underline;
+      transition: color 0.25s ease;
+    }
+  }
+  button.viewbtns {
+    height: 40px;
+    width: 50%;
+    background: rgba(84, 97, 106, 0.7);
+    border: 1px solid #fff;
+    a {
+      font-family: 'Varela Round', sans-serif;
+      text-align: center;
+      border: none;
+    }
+    :hover {
+      color: #212121;
+      transition: color 0.25s ease;
     }
   }
 }
@@ -355,6 +378,7 @@ aside {
       color: black;
       :hover {
         color: #fff;
+        transition: color 0.25s ease;
       }
     }
   }
@@ -454,6 +478,7 @@ aside {
   a:hover {
     color: white;
     text-decoration: underline;
+    transition: color 0.25s ease;
   }
 }
 
@@ -621,6 +646,7 @@ aside {
       color: white;
       text-decoration: underline;
       box-shadow: none;
+      transition: color 0.25s ease;
     }
   }
 }
@@ -666,6 +692,7 @@ aside {
       color: white;
       text-decoration: underline;
       box-shadow: none;
+      transition: color 0.25s ease;
     }
   }
 }
@@ -711,6 +738,8 @@ aside {
       background: #fff;
       color: black;
       border: none;
+      transition: color 0.25s ease;
+      transition: background-color 0.40s ease;
     }
   }
 }
@@ -761,8 +790,8 @@ aside {
   display: inline-flex;
   div {
     border-bottom: 1px solid #fff;
-    color: #6FC769;
-    background: rgba(100, 129, 184, 0.7);
+    color: #fff;
+    background: rgba(84, 97, 106, 0.7);
     span {
       font-size: 30px;
     }
