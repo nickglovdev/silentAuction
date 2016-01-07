@@ -80,8 +80,10 @@ class IndividualItemView extends React.Component {
         <button className="auctionItemDelete" onClick={this.handleItemDelete}>Delete</button>
         <img  src={this.state.item.image_url}/>
 
-        <article><h4>Description</h4>{this.state.item.description}</article>
-        <article><h4>Starting Bid</h4>{this.state.item.starting_bid}</article>
+        <div className="itemDescriptionWrap">
+          <article className="itemDescription"><h4>Description</h4>{this.state.item.description}</article>
+          <article className="itemDescription2"><h4>Starting Bid</h4>${this.state.item.starting_bid}</article>
+        </div>
 
         <div className="bids">
         <h5>Bid Feed</h5>

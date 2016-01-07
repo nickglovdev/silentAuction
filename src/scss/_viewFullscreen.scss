@@ -167,6 +167,7 @@ aside {
 
 .dashboardItem2 {
   @include span-columns(10);
+  background-image: url('https://images.unsplash.com/photo-1439737567250-e9ea931e97a4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6f360f09a234426c238233a742060faa');
   margin-left: 1.05961%;
   border-left: 1px solid rgba(252, 85, 33, 0.93);
   margin-top: 0.445px;
@@ -350,6 +351,12 @@ aside {
     margin: 0px;
     padding: 5px;
     width:20%;
+    a {
+      color: black;
+      :hover {
+        color: #fff;
+      }
+    }
   }
 }
 
@@ -568,6 +575,9 @@ aside {
     border: 1px solid;
     color: #fff;
   }
+  p{
+    text-align:center;
+  }
   .itemsDescriptions::after{
     bottom: 0;
     content: "";
@@ -705,6 +715,29 @@ aside {
   }
 }
 
+.itemDescriptionWrap {
+  @include outer-container;
+  display: block;
+}
+
+.itemDescription {
+  @include span-columns(3);
+  @include shift(3);
+  border-left: 1px solid #D35F32;
+  h4 {
+    text-decoration: underline;
+  }
+}
+
+.itemDescription2 {
+  @include span-columns(3);
+  @include shift(1);
+  border-left: 1px solid #D35F32;
+  h4 {
+    text-decoration: underline;
+  }
+}
+
 .bids {
   @include outer-container;
   border: 1px solid #D35F32;
@@ -789,7 +822,7 @@ $darkred: #FC602F;
   position: fixed;
   margin-top: 35px;
   opacity: .85;
-  @include span-columns(8 of 12);
+  width:50%;
   @include shift(2);
   background: $lightred;
   overflow: hidden;
