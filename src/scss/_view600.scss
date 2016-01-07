@@ -91,10 +91,15 @@
     }
   }
 
+
   .divSpace{
     width: 100%;
     background: #677B89;
     height: 5em;
+    display:block;
   }
-
+  .auctionCreateItem {
+    @include span-columns(12);
+    margin-left: 0;
+  }
 }

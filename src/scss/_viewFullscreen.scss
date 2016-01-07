@@ -8,7 +8,11 @@
 .pageWrap {
   @include outer-container(100%);
   // @include shift(1);
-  background-color: rgba(182, 182, 182, .65);
+  // background-color: rgba(182, 182, 182, .2);
+  background-image: url('https://images.unsplash.com/photo-1439737567250-e9ea931e97a4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6f360f09a234426c238233a742060faa');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .public {
@@ -56,7 +60,7 @@ aside {
     list-style: none;
     margin-top: 11em;
     padding-left:15%;
-    margin-top: 5.5em;
+    margin-top: 11em;
     padding-right:15%;
     text-decoration:none;
     padding: 0;
@@ -280,15 +284,42 @@ aside {
     color: #fff;
     text-align: center;
     text-decoration: overline;
-    font-size: 26px;
+    font-size: 40px;
     text-shadow: 1px 1.3px #212121;
   }
   a {
+    margin: 10px;
+    display: table-row;
     text-decoration: none;
     color: #fff;
     background: #5783B9;
     border: 1px solid #54616A;
     font-size: 12px;
+    border: 1px solid #212121;
+    text-shadow: 1px 1.3px #212121;
+    color: white;
+    a:hover {
+      color: black;
+      text-decoration: underline;
+    }
+  }
+}
+
+.clipboard {
+  display: table-caption;
+  button {
+    height: 30px;
+    width: 191.399999px;
+    background: #5783B9;
+    border: 1px solid #212121;
+    text-shadow: 1px 1.3px #212121;
+    border-left: none;
+    color: white;
+    box-shadow: -5px 7px 15px -7px #212121;
+    font-family: 'Varela Round', sans-serif;
+  }
+  input {
+    font-family: 'Varela Round', sans-serif;
   }
 }
 
@@ -345,6 +376,17 @@ aside {
   }
 }
 
+.divSpace{
+  width: 100%;
+  background: #677B89;
+  height: 5em;
+  display:none;
+
+  span{
+    text-color:none;
+  }
+}
+
 .toolBar {
   float:right;
   bottom:4.5em;
@@ -395,7 +437,7 @@ aside {
       a{
         @include span-columns(12)
         font-shadow:1px 1px black;
-        width: 110%;
+        width: 140%;
       }
     }
   }
@@ -411,9 +453,9 @@ aside {
 // end moderator dashboard //
 
 // moderator Create //
-.auctionCreate, .auctionEdit, .auctionCreateItem {
+.auctionCreate, .auctionEdit, {
   width: 100%;
-  @include span-columns(7);
+  @include span-columns(9);
   @include shift(2);
   padding: 10px 0;
   height: 720px;
@@ -436,6 +478,40 @@ aside {
   h1 {
     text-decoration: overline;
     margin-left: 25px;
+  }
+}
+
+.auctionCreateItem {
+  width: 100%;
+  @include span-columns(8);
+  @include shift(2);
+  padding: 10px 0;
+  height: 720px;
+  border-radius: 2px;
+  border: 1px solid #56646D;
+  background: rgba(95, 124, 138, 0.65);
+  color: #202020;
+  float: none;
+  padding: 30px 0;
+  box-shadow: -7px -4px 15px -8px #212121;
+  // margin-top: 10px;
+  font-family: 'Varela Round', sans-serif;
+  input{
+    opacity: 10.8;
+    height: 25px;
+    position: relative;
+    display: block;
+    margin: 10px auto;
+  }
+  h3 {
+    margin: 10px auto;
+  }
+  h1 {
+    text-decoration: overline;
+    margin-left: 25px;
+  }
+  .itemDescription {
+    text-overflow: inherit;
   }
 }
 
@@ -484,7 +560,7 @@ aside {
   border: 2px groove #5783B9;
   box-shadow: -5px 7px 15px -7px #212121;
   width: 47.76157%;
-  background: #8996A1;
+  background: rgba(139, 148, 160, .8);
   font-family: 'Varela Round', sans-serif;
   h3 {
     text-align: center;
@@ -525,6 +601,7 @@ aside {
     background: #D6D6CC;
     border: 1px solid;
     box-shadow: 5px 3px 15px -6px #212121;
+    text-shadow: 1px .5px beige;
   }
   a {
     text-decoration: none;
@@ -554,6 +631,7 @@ aside {
   }
   span {
     font-size: 14px;
+    width: 50%;
   }
   img {
     height: 225px;
@@ -585,6 +663,7 @@ aside {
 .individualItemWrap {
   @include span-columns(9);
   margin-left: 1.05961%;
+    background: rgba(139, 148, 160, .8);
 }
 
 .individualItemView {
@@ -626,17 +705,41 @@ aside {
   }
 }
 
+.bids {
+  @include outer-container;
+  border: 1px solid #D35F32;
+  border-bottom: none;
+  margin: 50px 0 25px 0;
+  h5 {
+    text-align: center;
+    font-size: 30px;
+    background: #54616B;
+    color: #5783B9;
+    box-shadow: 0px -4px 15px -7px #D35F32;
+    margin: -1px 0px 15px 0px;
+  }
+}
+
 .bidFeedWrap {
   @include span-columns(6);
   @include shift(3);
   border: 1px solid black;
-  margin-top: 50px;
+  margin-bottom: 25px;
+  display: inline-flex;
+  div {
+    border-bottom: 1px solid #fff;
+    color: #6FC769;
+    background: rgba(100, 129, 184, 0.7);
+    span {
+      font-size: 30px;
+    }
+  }
 }
 // end moderator Create //
 
 .editProfile  {
   width: 100%;
-  @include span-columns(7);
+  @include span-columns(9);
   @include shift(2);
   padding: 10px 0;
   height: 700px;
