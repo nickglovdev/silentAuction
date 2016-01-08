@@ -690,7 +690,6 @@ a
   img {
     height: 235px;
     width: 80%;
-    padding:0 1% 0 1%;
     display: flex;
     margin: auto;
     border: 2px solid #5783B9;
@@ -776,13 +775,16 @@ a
 }
 
 .individualItemView {
+  @include outer-container;
   @include span-columns(9);
   margin-right: 12px;
   border: 1px solid #CBCBCB;
   width: 100%;
   img {
-    height: 200px;
-    width: 250px;
+    @include span-columns(6);
+    @include shift(3);
+    height: 320px;
+    width: 50%;
   }
   h1 {
     margin: 30px;

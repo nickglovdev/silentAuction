@@ -76,9 +76,10 @@ class IndividualItemView extends React.Component {
     return(
     <div className="individualItemWrap">
       <section className='individualItemView'>
-        <h1>{this.state.item.name}</h1>
         <Link to={`/auctions/${id}/items/${itemId}/edit`}>Edit Item</Link>
         <button className="auctionItemDelete" onClick={this.handleItemDelete}>Delete</button>
+        <h1>{this.state.item.name}</h1>
+
         <img  src={this.state.item.image_url}/>
 
         <div className="itemDescriptionWrap">
