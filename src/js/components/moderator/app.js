@@ -7,6 +7,7 @@ import ToggleDisplay from 'react-toggle-display';
 import setup from '../../setup';
 import User from '../../models/users';
 import ListAuctions from './listAuctions';
+import WelcomeScreen from './welcomeScreen'
 
 
 class App extends React.Component {

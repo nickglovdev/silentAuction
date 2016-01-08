@@ -10,6 +10,7 @@ import Register from './components/public/register';
 import FAQ from './components/public/faq'
 import Answers from './components/public/faq'
 
+import WelcomeScreen from './components/moderator/welcomeScreen';
 import App from './components/moderator/app';
 import AuctionCreate from './components/moderator/auctionCreate';
 import AuctionEdit from './components/moderator/auctionEdit';
@@ -39,6 +40,7 @@ ReactDOM.render((
       <Route path="faq" component={Answers}/>
     </Route>
     <Route path='/dashboard' component={App} onEnter={requireAuth}>
+      <IndexRoute component={WelcomeScreen}/>
       <Route path='/profileEdit' component={ProfileEdit}/>
       <Route path='/auctions/create' component={AuctionCreate}/>
       <Route path='/auctions/:id/edit' component={AuctionEdit}/>

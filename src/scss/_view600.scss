@@ -7,6 +7,16 @@
     height: 660px;
   }
 
+  .welcomeScreen {
+    @include span-columns(12);
+    h1 {
+      font-size: 36px;
+    }
+    p {
+      padding: 0;
+    }
+  }
+
   .pageWrap {
     height: 1800px;
   }
