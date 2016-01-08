@@ -301,6 +301,12 @@ aside {
     margin-top:0.5%;
     margin-bottom:1em;
   }
+  .auctionStarted{
+    color:green;
+  }
+  .auctionEnded{
+    color:#B52D32;
+  }
 }
 
 .itemViewHeader {
@@ -623,6 +629,7 @@ aside {
     border: 1px solid;
     color: #fff;
   }
+
   p{
     text-align:center;
   }
@@ -697,8 +704,6 @@ aside {
   img {
     height: 225px;
     width: 300px;
-    display: flex;
-    margin: auto;
     border: 2px solid #5783B9;
     box-shadow: -5px 7px 15px -7px #212121;
   }
@@ -737,7 +742,6 @@ aside {
   img {
     height: 200px;
     width: 250px;
-    display: flex;
   }
   h1 {
     margin: 30px;
@@ -746,6 +750,51 @@ aside {
     background: #D1D8DB;
     border: 1px solid;
     color: #fff;
+  }
+}
+.individualItemWrap2{
+  @include span-columns(12);
+  height:70em;
+
+  img{
+    margin-left:37%;
+  }
+}
+
+@media (max-width:1200px){
+  .individualItemWrap2{
+    img{
+      margin-left:36%;
+    }
+  }
+}
+
+@media (max-width:1000px){
+  .individualItemWrap2{
+    img{
+      margin-left:34%;
+    }
+  }
+}
+@media (max-width:800px){
+  .individualItemWrap2{
+    img{
+      margin-left:30%;
+    }
+  }
+}
+@media (max-width:480px){
+  .individualItemWrap2{
+    img{
+      margin-left:25%;
+    }
+  }
+}
+@media (max-width:400px){
+  .individualItemWrap2{
+    img{
+      margin-left:20%;
+    }
   }
 }
 
@@ -761,14 +810,15 @@ aside {
 .addItems {
   background: #6481B8;
   height: 0px;
-  margin: 0px 20px 0px;
+  margin: 20px 20px 0px;
   border: 5px solid #D2D7DA;
+  padding-top: 1em;
   a {
     text-decoration: none;
     text-align: center;
     margin: 0 9px;
     color: #fff;
-    font-size: 12px;
+    font-size: 2em;
     a:hover {
       background: #fff;
       color: black;
@@ -803,7 +853,7 @@ aside {
 }
 
 .bids {
-  @include outer-container;
+  @include span-columns(12);
   border: 1px solid #D35F32;
   border-bottom: none;
   margin: 50px 0 25px 0;
