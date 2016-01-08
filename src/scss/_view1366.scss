@@ -4,6 +4,10 @@
   }
 
   // main/public //
+  main {
+    @include span-columns(12);
+    height: 2000px;
+  }
   //Home Page
   .pageWrap {
     @include outer-container(100%);
