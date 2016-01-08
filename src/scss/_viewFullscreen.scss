@@ -53,7 +53,7 @@ aside {
   font-family: Gill Sans;
   margin: 0;
   background: rgba(68, 89, 99, 0.93);
-  height: 2581px;
+  height: 2671px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
   box-shadow: -7px -4px 15px 7px #212121;
   .homeOptions {
@@ -650,7 +650,7 @@ aside {
 .listItem {
   @include outer-container;
   @include span-columns(4);
-  margin-right: 17.7px;
+  margin-right: 13.7px;
   margin-bottom: 17.7px;
   border: 2px groove #5783B9;
   box-shadow: -5px 7px 15px -7px #212121;
