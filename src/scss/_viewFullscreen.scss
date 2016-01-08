@@ -53,7 +53,7 @@ aside {
   font-family: Gill Sans;
   margin: 0;
   background: rgba(68, 89, 99, 0.93);
-  height: 2000px;
+  height: 2581px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
   box-shadow: -7px -4px 15px 7px #212121;
   .homeOptions {
@@ -650,7 +650,8 @@ aside {
 .listItem {
   @include outer-container;
   @include span-columns(4);
-  margin-right: 25px;
+  margin-right: 17.7px;
+  margin-bottom: 17.7px;
   border: 2px groove #5783B9;
   box-shadow: -5px 7px 15px -7px #212121;
   width: 48.26157%;
@@ -692,8 +693,8 @@ aside {
   }
 
   img {
-    height: 235px;
-    width: 80%;
+    height: 350px;
+    width: 85%;
     display: flex;
     margin: auto;
     border: 2px solid #5783B9;
