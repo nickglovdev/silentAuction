@@ -53,7 +53,7 @@ aside {
   font-family: Gill Sans;
   margin: 0;
   background: rgba(68, 89, 99, 0.93);
-  height: 1300px;
+  height: 2500px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
   box-shadow: -7px -4px 15px 7px #212121;
   .homeOptions {
@@ -542,6 +542,7 @@ aside {
 
 // moderator Create //
 .auctionCreate, .auctionEdit, {
+  @include outer-container;
   width: 100%;
   @include span-columns(9);
   @include shift(2);
@@ -566,6 +567,10 @@ aside {
   h1 {
     text-decoration: overline;
     margin-left: 25px;
+  }
+  button {
+    @include span-columns(4);
+    @include shift(4);
   }
 }
 
@@ -619,11 +624,7 @@ aside {
   }
 }
 
-
-.auctionCreateBtn {
-  float: right;
-  margin: 0 auto;
-}
+a
 .auctionFormLeft{
   border-left: 2px solid rgba(252, 85, 33, 0.93);
 }
@@ -949,11 +950,12 @@ aside {
 // end moderator Create //
 
 .editProfile  {
+  @include outer-container;
   width: 100%;
   @include span-columns(9);
   @include shift(2);
   padding: 10px 0;
-  height: 700px;
+  height: 720px;
   border-radius: 2px;
   border: 1px solid #56646D;
   background: rgba(95, 124, 138, 0.65);
@@ -971,6 +973,10 @@ aside {
     display: block;
     margin: 20px auto;
   }
+  button {
+    @include span-columns(4);
+    @include shift(4);
+  }
 }
 
 .editProfile {
@@ -981,9 +987,6 @@ aside {
   }
   span {
     padding-left: 100px;
-  }
-  button {
-    float: right;
   }
 }
 
