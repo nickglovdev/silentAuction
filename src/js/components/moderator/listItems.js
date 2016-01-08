@@ -44,7 +44,7 @@ class ListItems extends React.Component {
       return <div className='listItem' key= {item.id} item={item}>
               <div className="companyWrap">
                 <ul>
-                  <li><h4>Title:{item.auction.title}</h4></li>
+                  <li><h4>Title: {item.auction.title}</h4></li>
                   <li><h4>Host: {item.auction.company}</h4></li>
                   <li><h4>Phone Number: {item.auction.contact}</h4></li>
                 </ul>

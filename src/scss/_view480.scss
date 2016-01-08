@@ -164,10 +164,25 @@
     }
   }
 
+  .individualItemView2 {
+    @include outer-container;
+    @include span-columns(9);
+    margin-right: 12px;
+    border: 1px solid #CBCBCB;
+    width: 100%;
+    img {
+      @include span-columns(6);
+      @include shift(2);
+      height: 200px;
+      width: 65%;
+    }
+  }
+
   .itemDescription {
     @include span-columns(3);
-    margin-left: 0;
+    margin-left: -0.76;
     border-left: 1px solid #D35F32;
+    width: none;
     h4 {
       text-decoration: underline;
     }

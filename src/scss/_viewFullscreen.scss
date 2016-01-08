@@ -794,31 +794,34 @@ aside {
   h1 {
     margin: 30px;
     font-family: Gill Sans;
+    font-weight: lighter;
     text-align: center;
     background: #D1D8DB;
     border: 1px solid;
     color: #fff;
   }
 }
-.individualItemWrap2{
-  @include span-columns(12);
-  height:70em;
-  background: rgba(139, 148, 160, .8);
-  h1{
-    margin: 30px;
-    font-family: Gill Sans;
-    text-align: center;
-    background: #D1D8DB;
-    border: 1px solid;
-    color: #fff;
-  }
-  img{
+
+.individualItemView2 {
+  @include outer-container;
+  margin-right: 12px;
+  border: 1px solid #CBCBCB;
+  width: 100%;
+  img {
     @include span-columns(6);
     @include shift(3);
     height: 320px;
     width: 50%;
   }
-
+  h1 {
+    margin: 30px;
+    font-family: Gill Sans;
+    font-weight: lighter;
+    text-align: center;
+    background: #D1D8DB;
+    border: 1px solid;
+    color: #fff;
+  }
 }
 
 @media (max-width:1200px){
@@ -869,6 +872,10 @@ aside {
     font-family: helvetica;
     color: #fff;
     margin-bottom: 0;
+  }
+  span {
+    font-family: Gill Sans;
+    font-weight: lighter;
   }
 }
 
