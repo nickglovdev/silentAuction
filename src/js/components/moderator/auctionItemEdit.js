@@ -69,14 +69,14 @@ class AuctionItemEdit extends React.Component {
     //That the user put into it.
     return (
       <section className="auctionCreateItem">
-        <h1>Edit Items</h1>
+        <h1>Edit Item</h1>
           <section className="itemForm">
             <h3>Item Name:</h3>
               <input type='text' placeholder="Item Name" ref="name"/>
             <h3>Description:</h3>
               <input type='text' placeholder='Item Description' ref="description"/>
             <h3>Starting Price</h3>
-              <input type='text' placeholder='Starting Price' ref="bid"/>
+              <input type='number' placeholder='Starting Price' ref="bid"/>
             <h3>Add Photo</h3>
             <input type="filepicker"
                    ref="filepicker"

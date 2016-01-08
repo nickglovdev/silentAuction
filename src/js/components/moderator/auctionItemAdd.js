@@ -67,12 +67,12 @@ class AuctionItemAdd extends React.Component {
   render () {
     return (
       <section className="auctionCreateItem">
-        <h1>Add Items </h1>
+        <h1>Add Item</h1>
           <section className="itemForm">
             <h3>Item Name:</h3>
               <input type='text' placeholder="Item Name" ref="name"/>
             <h3>Description:</h3>
-              <input className="itemDescription" type='text' placeholder='Item Description' ref="description" maxLength="800"/>
+              <input className="itemDescription3" type='text' placeholder='Item Description' ref="description" maxLength="800"/>
             <h3>Starting Price</h3>
               <input type='number' placeholder='Starting Price' ref="bid"/>
             <h3>Add Photo</h3>

@@ -5,7 +5,6 @@ import ClipboardButton from 'react-clipboard.js';
 
 import setup from '../../setup'
 import User from '../../models/users'
-import publicListItems from './publicListItem'
 
 class publicViewIndividualItems extends React.Component {
   constructor(props) {
@@ -46,17 +45,26 @@ class publicViewIndividualItems extends React.Component {
     let itemId =this.props.params.itemId
     let bids = this.state.item.bids.map(bid => {
       return <div key={bid.id} bid={bid}>
-            {bid.amount}
+            ${bid.amount}
+           </div>
+    });
+    let guests = this.state.item.bids.map(bid => {
+      return <div key={bid.id} bid={bid}>
+            #{bid.guest_id}
            </div>
     });
     return(
-      <section className='individualItemView'>
-        <h1>{this.state.item.name}</h1>
-        <img  src={this.state.item.image_url}/>
-        {this.state.item.description}
-        {this.state.item.starting_bid}
-        {bids.sort().reverse()}
-      </section>
+      <div className="individualItemWrap individualItemWrap2">
+        <section className='individualItemView individualItemView2'>
+          <h1>{this.state.item.name}</h1>
+          <img  src={this.state.item.image_url}/>
+
+          <div className="itemDescriptionWrap">
+            <article className="itemDescription"><h4>Description</h4>{this.state.item.description}</article>
+            <article className="itemDescription2"><h4>Starting Bid</h4>${this.state.item.starting_bid}</article>
+          </div>
+        </section>
+      </div>
     )
 
   }

@@ -25,7 +25,7 @@
 
   .siteDescription {
     width: 100%;
-    font-family: 'Varela Round', sans-serif;
+    font-family: 'Crimson Text', serif;
     position: fixed;
     @include span-columns(8);
     @include shift(1);
@@ -44,7 +44,7 @@
 
   aside {
     @include span-columns(2.15);
-    font-family: 'Varela Round', sans-serif;
+    font-family: 'Crimson Text', serif;
     margin: 0;
     background: rgba(68, 89, 99, 0.93);
     height: 1000px;
@@ -142,7 +142,7 @@
   // moderator dashboard //
   .head {
     opacity: .6;
-    font-family: 'Varela Round', sans-serif;
+    font-family: 'Crimson Text', serif;
     font-size: 9px;
     width: 100%;
     height: 5em;
@@ -193,7 +193,7 @@
 
     .options {
       width: 20%;
-      font-family: 'Varela Round', sans-serif;
+      font-family: 'Crimson Text', serif;
       font-size: 14px;
       text-decoration: none;
     }
@@ -425,5 +425,10 @@
     margin-right: 0;
   }
 }
+
+ .individualItemView2{
+   @include shift(1);
+ }
+
 
 }
