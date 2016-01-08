@@ -4,6 +4,9 @@
   }
 
   // main/public //
+  main {
+    height: 2000px;
+  }
   //Home Page
   .pageWrap {
     @include outer-container(100%);

@@ -1,11 +1,4 @@
 @media (min-width:1px) and (max-width:960px){
-  main {
-    @include span-columns(12);
-    margin: 0;
-    padding: 0;
-    height: 660px;
-  }
-
   .welcomeScreen {
     @include span-columns(12);
     margin-top: 0px;
@@ -23,7 +16,7 @@
   }
 
   .pageWrap {
-    height: 1400px;
+    height: 3200px;
   }
 
   .login, .register, .faq, .editProfile {
