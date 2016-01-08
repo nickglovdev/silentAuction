@@ -76,7 +76,7 @@ class AuctionItemEdit extends React.Component {
             <h3>Description:</h3>
               <input type='text' placeholder='Item Description' ref="description"/>
             <h3>Starting Price</h3>
-              <input type='text' placeholder='Starting Price' ref="bid"/>
+              <input type='number' placeholder='Starting Price' ref="bid"/>
             <h3>Add Photo</h3>
             <input type="filepicker"
                    ref="filepicker"
