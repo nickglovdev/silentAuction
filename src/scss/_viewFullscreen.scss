@@ -21,13 +21,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 1000px;
+  height: 1100px;
 }
 
 
 .siteDescription {
   width: 100%;
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   position: fixed;
   @include span-columns(8);
   margin-top: 35px;
@@ -50,10 +50,10 @@
 
 aside {
   @include span-columns(2.15);
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   margin: 0;
   background: rgba(68, 89, 99, 0.93);
-  height: 1055px;
+  height: 1300px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
   box-shadow: -7px -4px 15px 7px #212121;
   .homeOptions {
@@ -158,6 +158,34 @@ aside {
 // end main/public //
 
 // moderator dashboard //
+.welcomeScreen {
+  font-family: Gill Sans;
+  @include span-columns(10);
+  // @include shift();
+  margin-top: 35px;
+  padding: 20px;
+  color: #fff;
+  background: rgba(95, 124, 138, 0.30);
+  border: 1px solid rgba(181, 181, 181, 0.30);
+  height: 550px;
+  h1 {
+    font-family: 'Crimson Text', serif;
+    text-align: center;
+    font-size: 95px;
+    margin: 50px;
+  }
+  p {
+    font-size: 30px;
+    text-align: center;
+    padding: 50px 0px;
+  }
+  a {
+    text-decoration: underline;
+    color: rgba(211, 95, 50, 1);
+  }
+}
+
+
 .dashboardItem {
   @include span-columns(10);
   margin-left: 1.05961%;
@@ -209,7 +237,7 @@ aside {
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: white;
    font-size: 16px;
-   font-family: 'Varela Round', sans-serif;
+   font-family: Gill Sans;
    text-decoration: underline;
    vertical-align: middle;
    width: 34%;
@@ -239,7 +267,7 @@ aside {
   border-bottom: none;
   color: white;
   font-size: 16px;
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   text-decoration: underline;
   vertical-align: middle;
   width: 34%;
@@ -268,7 +296,7 @@ aside {
   border-bottom: none;
   color: white;
   font-size: 16px;
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   text-decoration: underline;
   vertical-align: middle;
   width: 34%;
@@ -322,7 +350,7 @@ aside {
     background: rgba(84, 97, 106, 0.7);
     border: 1px solid #fff;
     a {
-      font-family: 'Varela Round', sans-serif;
+      font-family: Gill Sans;
       text-align: center;
       border: none;
     }
@@ -337,23 +365,23 @@ aside {
   display: table-caption;
   button {
     height: 30px;
-    width: 191.399999px;
+    width: 167.199999px;
     background: #5783B9;
     border: 1px solid #212121;
     text-shadow: 1px 1.3px #212121;
     border-left: none;
     color: white;
     box-shadow: -5px 7px 15px -7px #212121;
-    font-family: 'Varela Round', sans-serif;
+    font-family: Gill Sans;
   }
   input {
-    font-family: 'Varela Round', sans-serif;
+    font-family: Gill Sans;
   }
 }
 
 .head {
   opacity: .95;
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   font-size: 9px;
   width: 100%;
   height: 5em;
@@ -429,7 +457,7 @@ aside {
 
 
   .options {
-    font-family: 'Varela Round', sans-serif;
+    font-family: Gill Sans;
     font-size: 14px;
     text-decoration: none;
   }
@@ -504,7 +532,7 @@ aside {
   padding: 30px 0;
   box-shadow: -7px -4px 15px -8px #212121;
   // margin-top: 10px;
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   input {
     opacity: 10.8;
     height: 25px;
@@ -519,8 +547,8 @@ aside {
 }
 
 .auctionCreateItem {
-  width: 100%;
-  @include span-columns(8);
+  // width: 100%;
+  @include span-columns(5);
   @include shift(2);
   padding: 10px 0;
   height: 720px;
@@ -529,19 +557,17 @@ aside {
   background: rgba(95, 124, 138, 0.65);
   color: #202020;
   float: none;
-  padding: 30px 0;
+  padding: 30px 130px;
   box-shadow: -7px -4px 15px -8px #212121;
   // margin-top: 10px;
-  font-family: 'Varela Round', sans-serif;
-  input{
-    opacity: 10.8;
-    height: 25px;
-    position: relative;
-    display: block;
-    margin: 10px auto;
+  font-family: Gill Sans;
+  button {
+    height: 30px;
+    width: 120px;
+    margin: 24px 0px;
   }
   h3 {
-    margin: 10px auto;
+    margin: 35px auto;
   }
   h1 {
     text-decoration: overline;
@@ -592,18 +618,23 @@ aside {
 }
 
 .listItem {
+  @include outer-container;
   @include span-columns(4);
   margin-right: 25px;
   border: 2px groove #5783B9;
   box-shadow: -5px 7px 15px -7px #212121;
   width: 48.26157%;
   background: rgba(139, 148, 160, .8);
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   h3 {
     text-align: center;
-    background: #D1D8DB;
-    border: 1px solid;
+    font-size: 22px;
+    background: rgba(84, 97, 107, 0.76);
     color: #fff;
+    border: 1px solid;
+    box-shadow: 0px -4px 15px -7px #D35F32;
+    margin: 20px 80px;
+    padding: 6px;
   }
   p{
     text-align:center;
@@ -625,6 +656,8 @@ aside {
       line-height: 1.4em;
       overflow: hidden;
       position: relative;
+      font-size: 22px;
+      margin: 10px 30px;
   }
 
   img {
@@ -636,14 +669,15 @@ aside {
     border: 2px solid #5783B9;
     box-shadow: -5px 7px 15px -7px #212121;
   }
-  h2 {
-    margin: 0 0 5px;
+  h6 {
+    margin: 8px 30px 5px;
     text-align: center;
     background: #D6D6CC;
     border: 1px solid;
     box-shadow: 5px 3px 15px -6px #212121;
     text-shadow: 1px .5px beige;
-    font-size: 18px;
+    font-size: 20px;
+    height: 50px;
   }
   a {
     text-decoration: none;
@@ -656,6 +690,11 @@ aside {
       transition: color 0.25s ease;
     }
   }
+  span {
+    font-size: 21px;
+    margin: 0;
+    color: #fff;
+  }
 }
 
 .individualItemWrap {
@@ -665,7 +704,7 @@ aside {
   box-shadow: -5px 7px 15px -7px #212121;
   width: 47.76157%;
   background: #8996A1;
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   h3 {
     text-align: center;
     background: #D1D8DB;
@@ -673,7 +712,7 @@ aside {
     color: #fff;
   }
   span {
-    font-size: 14px;
+    font-size: 20px;
     width: 50%;
   }
   img {
@@ -723,7 +762,7 @@ aside {
   }
   h1 {
     margin: 30px;
-    font-family: 'Varela Round', sans-serif;
+    font-family: Gill Sans;
     text-align: center;
     background: #D1D8DB;
     border: 1px solid;
@@ -732,12 +771,31 @@ aside {
 }
 
 .companyWrap {
-  @include span-columns(4);
-  margin: 50px 18px;
-  font-family: helvetica;
-  color: #fff;
-  margin-bottom: 0;
+  @include outer-container;
+  margin-bottom: -8px;
+  border: 7px solid rgba(84, 97, 107, 0.46);
+  ul {
+    @include span-columns(6);
+    list-style-type: none;
+    margin: 20px 0px;
+    font-family: helvetica;
+    color: #fff;
+    margin-bottom: 0;
+  }
 }
+
+.companyWrap2 {
+  @include outer-container;
+  ul {
+    @include span-columns(6);
+    list-style-type: none;
+    margin: 20px 0px;
+    font-family: helvetica;
+    color: #fff;
+    margin-bottom: 0;
+  }
+}
+
 
 
 .addItems {
@@ -767,20 +825,24 @@ aside {
 }
 
 .itemDescription {
-  @include span-columns(3);
-  @include shift(3);
+  @include span-columns(4);
+  @include shift(2);
   border-left: 1px solid #D35F32;
   h4 {
     text-decoration: underline;
+    font-size: 29px;
+    margin: 20px;
   }
 }
 
 .itemDescription2 {
-  @include span-columns(3);
+  @include span-columns(4);
   @include shift(1);
   border-left: 1px solid #D35F32;
   h4 {
     text-decoration: underline;
+    font-size: 29px;
+    margin: 20px;
   }
 }
 
@@ -793,7 +855,8 @@ aside {
     text-align: center;
     font-size: 30px;
     background: #54616B;
-    color: #5783B9;
+    color: #fff;
+    border: 1px solid;
     box-shadow: 0px -4px 15px -7px #D35F32;
     margin: -1px 0px 15px 0px;
   }
@@ -830,7 +893,7 @@ aside {
   padding: 30px 0;
   box-shadow: -7px -4px 15px -8px #212121;
   // margin-top: 10px;
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   input {
     width: 25%;
     opacity: .8;

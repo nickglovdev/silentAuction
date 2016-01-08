@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router';
+import moment from 'moment';
 
 import setup from './../../setup'
 import User from './../../models/users'
@@ -50,19 +51,22 @@ class ListItems extends React.Component {
       return <div className='listItem' key= {item.id} item={item}>
 
               <div className="companyWrap">
-                <h4>Title:{item.auction.title}</h4>
-                <h4>Host: {item.auction.company}</h4>
-                <h4>Phone Number: {item.auction.contact}</h4>
-              </div>
-
-              <div className="companyWrap">
-                <h4>Date: {item.auction.time}</h4>
-                <h4>Time: {item.auction.date}</h4>
-                <h4>Location: {item.auction.location}</h4>
+                <ul>
+                  <li><h4>Title:{item.auction.title}</h4></li>
+                  <li><h4>Host: {item.auction.company}</h4></li>
+                  <li><h4>Phone Number: {item.auction.contact}</h4></li>
+                </ul>
+                <div className="companyWrap2">
+                  <ul>
+                    <li><h4>Date: {moment(item.auction.time, 'YYYY-MM-DD').format('MMM-D-YYYY')}</h4></li>
+                    <li><h4>Time: {moment(item.auction.date, 'HH:mm' ).format('h:mm a')}</h4></li>
+                    <li><h4>Location: {item.auction.location}</h4></li>
+                  </ul>
+                </div>
               </div>
 
               <Link to={`auctions/${this.props.id}/items/${item.id}`}>
-                <h2>{item.name}</h2>
+                <h6>{item.name}</h6>
                 <img  src={item.image_url}/>
               </Link>
               <h3>Description</h3>

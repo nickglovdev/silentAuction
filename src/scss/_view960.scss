@@ -6,6 +6,11 @@
     height: 660px;
   }
 
+  .welcomeScreen {
+    @include span-columns(12);
+    margin-top: 0px;
+  }
+
   .listItem {
     width: 47.56157%;
     img {
@@ -29,6 +34,9 @@
     }
   }
 
+  .auctionCreateItem {
+    @include span-columns(8);
+  }
 
   .siteDescription {
     @include span-columns(10);
@@ -443,7 +451,7 @@
     span{
       color:white;
       position:relative;
-      right: 1.8em;
+      right: 1.555em;
       bottom: 2.2em;
     }
   }
