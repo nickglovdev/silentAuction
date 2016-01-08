@@ -7,6 +7,20 @@
     height: 660px;
   }
 
+  .welcomeScreen {
+    @include span-columns(12);
+    h1 {
+      font-size: 36px;
+    }
+    p {
+      padding: 0;
+    }
+  }
+
+  .pageWrap {
+    height: 1800px;
+  }
+
   .login, .register, .faq, .editProfile {
     @include span-columns(12);
     margin: 0;
@@ -16,6 +30,10 @@
       width: 75%;
     }
 
+  }
+
+  .dashboardItem2 {
+    height: 100%;
   }
 
   .siteDescription {
@@ -61,7 +79,7 @@
     width: 100%;
     margin-left: 0;
     padding: 10px 0;
-    height: 720px;
+    height: 800px;
     border-radius: 2px;
     border: 1px solid #56646D;
     background: rgba(95, 124, 138, 0.65);

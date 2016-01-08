@@ -21,13 +21,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 1000px;
+  height: 1100px;
 }
 
 
 .siteDescription {
   width: 100%;
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   position: fixed;
   @include span-columns(8);
   margin-top: 35px;
@@ -50,10 +50,10 @@
 
 aside {
   @include span-columns(2.15);
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   margin: 0;
   background: rgba(68, 89, 99, 0.93);
-  height: 1000px;
+  height: 2500px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
   box-shadow: -7px -4px 15px 7px #212121;
   .homeOptions {
@@ -89,6 +89,7 @@ aside {
   text-decoration:none;
   :hover {
     color: black;
+    transition: color 0.25s ease;
   }
 }
 .mega-octicon {
@@ -110,9 +111,9 @@ aside {
 .login, .register {
   width: 100%;
   @include span-columns(7 of 12);
-  @include shift(1);
   margin-top: 32px;
   padding: 10px 0;
+  margin-left: 14%;
   height: 550px;
   border-radius: 2px;
   background: rgba(95, 124, 138, 0.65);
@@ -157,6 +158,34 @@ aside {
 // end main/public //
 
 // moderator dashboard //
+.welcomeScreen {
+  font-family: Gill Sans;
+  @include span-columns(10);
+  // @include shift();
+  margin-top: 35px;
+  padding: 20px;
+  color: #fff;
+  background: rgba(95, 124, 138, 0.30);
+  border: 1px solid rgba(181, 181, 181, 0.30);
+  height: 550px;
+  h1 {
+    font-family: 'Crimson Text', serif;
+    text-align: center;
+    font-size: 95px;
+    margin: 50px;
+  }
+  p {
+    font-size: 30px;
+    text-align: center;
+    padding: 50px 0px;
+  }
+  a {
+    text-decoration: underline;
+    color: rgba(211, 95, 50, 1);
+  }
+}
+
+
 .dashboardItem {
   @include span-columns(10);
   margin-left: 1.05961%;
@@ -168,10 +197,14 @@ aside {
 .dashboardItem2 {
   @include span-columns(10);
   background-image: url('https://images.unsplash.com/photo-1439737567250-e9ea931e97a4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6f360f09a234426c238233a742060faa');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   margin-left: 1.05961%;
   border-left: 1px solid rgba(252, 85, 33, 0.93);
   margin-top: 0.445px;
   width: 98%;
+  height: 1027px;
 }
 
 .statusOpen {
@@ -182,12 +215,15 @@ aside {
    border-top-color: #28597a;
    background: #28597a;
    color: #ccc;
+   transition: background-color 0.25s ease;
+   transition: color 0.25s ease;
    }
    button:active {
    border-top-color: #1b435e;
    background: #1b435e;
    }
 }
+
 
 .auctionStatusOpen {
    border-top: 1px solid #96d1f8;
@@ -202,7 +238,7 @@ aside {
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: white;
    font-size: 16px;
-   font-family: 'Varela Round', sans-serif;
+   font-family: Gill Sans;
    text-decoration: underline;
    vertical-align: middle;
    width: 34%;
@@ -210,6 +246,8 @@ aside {
    border-top-color: #28597a;
    background: #28597a;
    color: #ccc;
+   transition: color 0.25s ease;
+   transition: background-color 0.25s ease;
    .auctionStatusOpen:active {
    border-top-color: #1b435e;
    background: #1b435e;
@@ -230,7 +268,7 @@ aside {
   border-bottom: none;
   color: white;
   font-size: 16px;
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   text-decoration: underline;
   vertical-align: middle;
   width: 34%;
@@ -238,6 +276,8 @@ aside {
     border-top-color: #28597a;
     background: #28597a;
     color: #ccc;
+    transition: color 0.25s ease;
+    transition: background-color 0.25s ease;
     .auctionStatusClose:active {
       border-top-color: #1b435e;
       background: #1b435e;
@@ -257,7 +297,7 @@ aside {
   border-bottom: none;
   color: white;
   font-size: 16px;
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   text-decoration: underline;
   vertical-align: middle;
   width: 34%;
@@ -265,6 +305,8 @@ aside {
     border-top-color: #28597a;
     background: #212121;
     color: #ccc;
+    transition: color 0.25s ease;
+    transition: background-color 0.25s ease;
     button:active {
       border-top-color: #1b435e;
       background: #212121;
@@ -272,9 +314,32 @@ aside {
   }
 }
 
+.currentStatus{
+  margin-top: 5%;
+  h4{
+    text-align:center;
+    color:white;
+    font-size:2em;
+    margin-bottom:0;
+  }
+  p{
+    text-align:center;
+    color:white;
+    font-size:2em;
+    margin-top:0.5%;
+    margin-bottom:1em;
+  }
+  .auctionStarted{
+    color:green;
+  }
+  .auctionEnded{
+    color:#B52D32;
+  }
+}
+
 .itemViewHeader {
   @include span-columns(12);
-  background: #677B89;
+  background: rgba(103, 123, 137, .8);
   border: 2px solid #56646D;
   border-top: none;
   box-shadow: -5px 7px 15px -7px #212121;
@@ -290,18 +355,32 @@ aside {
   }
   a {
     margin: 10px;
-    display: table-row;
     text-decoration: none;
     color: #fff;
-    background: #5783B9;
     border: 1px solid #54616A;
-    font-size: 12px;
+    font-size: 28px;
     border: 1px solid #212121;
-    text-shadow: 1px 1.3px #212121;
     color: white;
+    text-align: center;
     a:hover {
       color: black;
       text-decoration: underline;
+      transition: color 0.25s ease;
+    }
+  }
+  button.viewbtns {
+    height: 40px;
+    width: 50%;
+    background: rgba(84, 97, 106, 0.7);
+    border: 1px solid #fff;
+    a {
+      font-family: Gill Sans;
+      text-align: center;
+      border: none;
+    }
+    :hover {
+      color: #212121;
+      transition: color 0.25s ease;
     }
   }
 }
@@ -310,23 +389,23 @@ aside {
   display: table-caption;
   button {
     height: 30px;
-    width: 191.399999px;
+    width: 167.199999px;
     background: #5783B9;
     border: 1px solid #212121;
     text-shadow: 1px 1.3px #212121;
     border-left: none;
     color: white;
     box-shadow: -5px 7px 15px -7px #212121;
-    font-family: 'Varela Round', sans-serif;
+    font-family: Gill Sans;
   }
   input {
-    font-family: 'Varela Round', sans-serif;
+    font-family: Gill Sans;
   }
 }
 
 .head {
   opacity: .95;
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   font-size: 9px;
   width: 100%;
   height: 5em;
@@ -355,6 +434,7 @@ aside {
       color: black;
       :hover {
         color: #fff;
+        transition: color 0.25s ease;
       }
     }
   }
@@ -364,13 +444,14 @@ aside {
   float: left;
   margin-right: 5em;
   padding: 0;
+  box-shadow:none;
   h2{
     text-align: center;
     color: #909BA0;
-    text-shadow: 1px 1px black;
     border-bottom: 2px groove #5783B9;
     padding: 10px 0;
     margin-top: 0px;
+    font-family: Helvetica;
   }
   nav{
     div{
@@ -400,7 +481,7 @@ aside {
 
 
   .options {
-    font-family: 'Varela Round', sans-serif;
+    font-family: Gill Sans;
     font-size: 14px;
     text-decoration: none;
   }
@@ -454,6 +535,7 @@ aside {
   a:hover {
     color: white;
     text-decoration: underline;
+    transition: color 0.25s ease;
   }
 }
 
@@ -461,6 +543,7 @@ aside {
 
 // moderator Create //
 .auctionCreate, .auctionEdit, {
+  @include outer-container;
   width: 100%;
   @include span-columns(9);
   @include shift(2);
@@ -474,7 +557,7 @@ aside {
   padding: 30px 0;
   box-shadow: -7px -4px 15px -8px #212121;
   // margin-top: 10px;
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   input {
     opacity: 10.8;
     height: 25px;
@@ -486,11 +569,15 @@ aside {
     text-decoration: overline;
     margin-left: 25px;
   }
+  button {
+    @include span-columns(4);
+    @include shift(4);
+  }
 }
 
 .auctionCreateItem {
-  width: 100%;
-  @include span-columns(8);
+  // width: 100%;
+  @include span-columns(5);
   @include shift(2);
   padding: 10px 0;
   height: 720px;
@@ -499,19 +586,17 @@ aside {
   background: rgba(95, 124, 138, 0.65);
   color: #202020;
   float: none;
-  padding: 30px 0;
+  padding: 30px 130px;
   box-shadow: -7px -4px 15px -8px #212121;
   // margin-top: 10px;
-  font-family: 'Varela Round', sans-serif;
-  input{
-    opacity: 10.8;
-    height: 25px;
-    position: relative;
-    display: block;
-    margin: 10px auto;
+  font-family: Gill Sans;
+  button {
+    height: 30px;
+    width: 120px;
+    margin: 24px 0px;
   }
   h3 {
-    margin: 10px auto;
+    margin: 35px auto;
   }
   h1 {
     text-decoration: overline;
@@ -538,11 +623,7 @@ aside {
   }
 }
 
-
-.auctionCreateBtn {
-  float: right;
-  margin: 0 auto;
-}
+a
 .auctionFormLeft{
   border-left: 2px solid rgba(252, 85, 33, 0.93);
 }
@@ -562,19 +643,25 @@ aside {
 }
 
 .listItem {
+  @include outer-container;
   @include span-columns(4);
   margin-right: 25px;
   border: 2px groove #5783B9;
   box-shadow: -5px 7px 15px -7px #212121;
-  width: 47.76157%;
+  width: 48.26157%;
   background: rgba(139, 148, 160, .8);
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   h3 {
     text-align: center;
-    background: #D1D8DB;
-    border: 1px solid;
+    font-size: 22px;
+    background: rgba(84, 97, 107, 0.76);
     color: #fff;
+    border: 1px solid;
+    box-shadow: 0px -4px 15px -7px #D35F32;
+    margin: 20px 80px;
+    padding: 6px;
   }
+
   p{
     text-align:center;
   }
@@ -591,27 +678,32 @@ aside {
   }
 
     .itemsDescriptions {
-    height: 5.6em;
-    line-height: 1.4em;
-    overflow: hidden;
-    position: relative;
+      height: 5.6em;
+      line-height: 1.4em;
+      overflow: hidden;
+      position: relative;
+      font-size: 22px;
+      margin: 10px 30px;
   }
 
   img {
-    height: 225px;
-    width: 300px;
+    height: 235px;
+    width: 80%;
+    padding:0 1% 0 1%;
     display: flex;
     margin: auto;
     border: 2px solid #5783B9;
     box-shadow: -5px 7px 15px -7px #212121;
   }
-  h2 {
-    margin: 0 0 5px;
+  h6 {
+    margin: 8px 30px 5px;
     text-align: center;
     background: #D6D6CC;
     border: 1px solid;
     box-shadow: 5px 3px 15px -6px #212121;
     text-shadow: 1px .5px beige;
+    font-size: 20px;
+    height: 50px;
   }
   a {
     text-decoration: none;
@@ -621,7 +713,13 @@ aside {
       color: white;
       text-decoration: underline;
       box-shadow: none;
+      transition: color 0.25s ease;
     }
+  }
+  span {
+    font-size: 21px;
+    margin: 0;
+    color: #fff;
   }
 }
 
@@ -632,7 +730,7 @@ aside {
   box-shadow: -5px 7px 15px -7px #212121;
   width: 47.76157%;
   background: #8996A1;
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   h3 {
     text-align: center;
     background: #D1D8DB;
@@ -640,14 +738,12 @@ aside {
     color: #fff;
   }
   span {
-    font-size: 14px;
+    font-size: 20px;
     width: 50%;
   }
   img {
     height: 225px;
     width: 300px;
-    display: flex;
-    margin: auto;
     border: 2px solid #5783B9;
     box-shadow: -5px 7px 15px -7px #212121;
   }
@@ -662,10 +758,12 @@ aside {
     text-decoration: none;
     font-size: 14px;
     color: #5783B9;
+    margin: 0 30px;
     :hover {
       color: white;
       text-decoration: underline;
       box-shadow: none;
+      transition: color 0.25s ease;
     }
   }
 }
@@ -684,33 +782,108 @@ aside {
   img {
     height: 200px;
     width: 250px;
-    display: flex;
   }
   h1 {
-    margin: 0;
-    font-family: 'Varela Round', sans-serif;
+    margin: 30px;
+    font-family: Gill Sans;
     text-align: center;
     background: #D1D8DB;
     border: 1px solid;
     color: #fff;
   }
 }
+.individualItemWrap2{
+  @include span-columns(12);
+  height:70em;
+
+  img{
+    margin-left:37%;
+  }
+}
+
+@media (max-width:1200px){
+  .individualItemWrap2{
+    img{
+      margin-left:36%;
+    }
+  }
+}
+
+@media (max-width:1000px){
+  .individualItemWrap2{
+    img{
+      margin-left:34%;
+    }
+  }
+}
+@media (max-width:800px){
+  .individualItemWrap2{
+    img{
+      margin-left:30%;
+    }
+  }
+}
+@media (max-width:480px){
+  .individualItemWrap2{
+    img{
+      margin-left:25%;
+    }
+  }
+}
+@media (max-width:400px){
+  .individualItemWrap2{
+    img{
+      margin-left:20%;
+    }
+  }
+}
+
+.companyWrap {
+  @include outer-container;
+  margin-bottom: -8px;
+  border: 7px solid rgba(84, 97, 107, 0.46);
+  ul {
+    @include span-columns(6);
+    list-style-type: none;
+    margin: 20px 0px;
+    font-family: helvetica;
+    color: #fff;
+    margin-bottom: 0;
+  }
+}
+
+.companyWrap2 {
+  @include outer-container;
+  ul {
+    @include span-columns(6);
+    list-style-type: none;
+    margin: 20px 0px;
+    font-family: helvetica;
+    color: #fff;
+    margin-bottom: 0;
+  }
+}
+
+
 
 .addItems {
   background: #6481B8;
   height: 0px;
-  margin: 0px 20px 0px;
+  margin: 20px 20px 0px;
   border: 5px solid #D2D7DA;
+  padding-top: 1em;
   a {
     text-decoration: none;
     text-align: center;
     margin: 0 9px;
     color: #fff;
-    font-size: 12px;
+    font-size: 2em;
     a:hover {
       background: #fff;
       color: black;
       border: none;
+      transition: color 0.25s ease;
+      transition: background-color 0.40s ease;
     }
   }
 }
@@ -721,25 +894,29 @@ aside {
 }
 
 .itemDescription {
-  @include span-columns(3);
-  @include shift(3);
+  @include span-columns(4);
+  @include shift(2);
   border-left: 1px solid #D35F32;
   h4 {
     text-decoration: underline;
+    font-size: 29px;
+    margin: 20px;
   }
 }
 
 .itemDescription2 {
-  @include span-columns(3);
+  @include span-columns(4);
   @include shift(1);
   border-left: 1px solid #D35F32;
   h4 {
     text-decoration: underline;
+    font-size: 29px;
+    margin: 20px;
   }
 }
 
 .bids {
-  @include outer-container;
+  @include span-columns(12);
   border: 1px solid #D35F32;
   border-bottom: none;
   margin: 50px 0 25px 0;
@@ -747,7 +924,8 @@ aside {
     text-align: center;
     font-size: 30px;
     background: #54616B;
-    color: #5783B9;
+    color: #fff;
+    border: 1px solid;
     box-shadow: 0px -4px 15px -7px #D35F32;
     margin: -1px 0px 15px 0px;
   }
@@ -761,8 +939,8 @@ aside {
   display: inline-flex;
   div {
     border-bottom: 1px solid #fff;
-    color: #6FC769;
-    background: rgba(100, 129, 184, 0.7);
+    color: #fff;
+    background: rgba(84, 97, 106, 0.7);
     span {
       font-size: 30px;
     }
@@ -771,11 +949,12 @@ aside {
 // end moderator Create //
 
 .editProfile  {
+  @include outer-container;
   width: 100%;
   @include span-columns(9);
   @include shift(2);
   padding: 10px 0;
-  height: 700px;
+  height: 720px;
   border-radius: 2px;
   border: 1px solid #56646D;
   background: rgba(95, 124, 138, 0.65);
@@ -784,7 +963,7 @@ aside {
   padding: 30px 0;
   box-shadow: -7px -4px 15px -8px #212121;
   // margin-top: 10px;
-  font-family: 'Varela Round', sans-serif;
+  font-family: Gill Sans;
   input {
     width: 25%;
     opacity: .8;
@@ -792,6 +971,10 @@ aside {
     position: relative;
     display: block;
     margin: 20px auto;
+  }
+  button {
+    @include span-columns(4);
+    @include shift(4);
   }
 }
 
@@ -803,9 +986,6 @@ aside {
   }
   span {
     padding-left: 100px;
-  }
-  button {
-    float: right;
   }
 }
 
