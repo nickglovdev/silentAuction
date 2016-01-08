@@ -142,19 +142,11 @@ class AuctionsItemView extends React.Component {
           <button className="viewbtns"><Link to={`/public/auctions/${id}`}>Public View</Link></button>
 
           <div className="statusOpen">
-            <button className="auctionStatusOpen" onClick={this.handleAuctionOpen} onClick={this.statusOpen}>Start</button>
-            <button className="auctionStatusClose" onClick={this.handleAuctionClose} onClick={this.statusClosed}>End</button>
+            <button className="auctionStatusOpen" onClick={this.handleAuctionOpen}>Start</button>
+            <button className="auctionStatusClose" onClick={this.handleAuctionClose}>End</button>
             <button className="auctionStatusDelete" onClick={this.handleAuctionDelete}>Delete</button>
           </div>
-          <section className="currentStatus">
-            <h4>Current Auction Status</h4>
-              <ToggleDisplay show={this.state.isAuthorizedOne}>
-                <p className='auctionStarted'>Started</p>
-              </ToggleDisplay>
-              <ToggleDisplay show={this.state.isAuthorizedTwo}>
-                <p className='auctionEnded'>Ended</p>
-              </ToggleDisplay>
-          </section>
+      
         </header>
         <span className="addItems"><Link to={`/auctions/${id}/items`}>Add Items</Link></span>
         <ListItems id={this.props.params.id}></ListItems>
