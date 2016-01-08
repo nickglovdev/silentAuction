@@ -761,8 +761,8 @@ aside {
   }
   a {
     text-decoration: none;
-    font-size: 14px;
-    color: #5783B9;
+    font-size: 18px;
+    color: white;
     margin: 0 30px;
     :hover {
       color: white;
@@ -804,58 +804,6 @@ aside {
   @include span-columns(12);
   height:70em;
   background: rgba(139, 148, 160, .8);
-  h1{
-    margin: 30px;
-    font-family: Gill Sans;
-    text-align: center;
-    background: #D1D8DB;
-    border: 1px solid;
-    color: #fff;
-  }
-  img{
-    @include span-columns(6);
-    @include shift(3);
-    height: 320px;
-    width: 50%;
-  }
-
-}
-
-@media (max-width:1200px){
-  .individualItemWrap2{
-    img{
-      margin-left:36%;
-    }
-  }
-}
-
-@media (max-width:1000px){
-  .individualItemWrap2{
-    img{
-      margin-left:34%;
-    }
-  }
-}
-@media (max-width:800px){
-  .individualItemWrap2{
-    img{
-      margin-left:30%;
-    }
-  }
-}
-@media (max-width:480px){
-  .individualItemWrap2{
-    img{
-      margin-left:25%;
-    }
-  }
-}
-@media (max-width:400px){
-  .individualItemWrap2{
-    img{
-      margin-left:20%;
-    }
-  }
 }
 
 .companyWrap {
@@ -883,8 +831,6 @@ aside {
     margin-bottom: 0;
   }
 }
-
-
 
 .addItems {
   background: #6481B8;
@@ -914,8 +860,9 @@ aside {
 }
 
 .itemDescription {
-  @include span-columns(4);
-  @include shift(2);
+  @include span-columns(4.5);
+  @include shift(2.4);
+  padding-left:4%;
   border-left: 1px solid #D35F32;
   h4 {
     text-decoration: underline;

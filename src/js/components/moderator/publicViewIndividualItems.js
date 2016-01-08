@@ -54,8 +54,8 @@ class publicViewIndividualItems extends React.Component {
            </div>
     });
     return(
-      <div className="individualItemWrap2">
-        <section className='individualItemView2'>
+      <div className="individualItemWrap individualItemWrap2">
+        <section className='individualItemView individualItemView2'>
           <h1>{this.state.item.name}</h1>
           <img  src={this.state.item.image_url}/>
 
