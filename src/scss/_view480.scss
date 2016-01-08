@@ -179,19 +179,20 @@
   }
 
   .itemDescription {
-    @include span-columns(3);
-    margin-left: -0.76;
+    @include span-columns(6);
+    margin-left: 0;
     border-left: 1px solid #D35F32;
-    width: none;
+    width: 85.76157%;
     h4 {
       text-decoration: underline;
     }
   }
 
   .itemDescription2 {
-    @include span-columns(3);
-    @include shift(3);
+    @include span-columns(6);
     border-left: 1px solid #D35F32;
+    width: 58.82117%;
+    margin-left: 0;
     h4 {
       text-decoration: underline;
     }

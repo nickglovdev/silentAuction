@@ -53,7 +53,7 @@ aside {
   font-family: Gill Sans;
   margin: 0;
   background: rgba(68, 89, 99, 0.93);
-  height: 2500px;
+  height: 2000px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
   box-shadow: -7px -4px 15px 7px #212121;
   .homeOptions {
@@ -601,7 +601,6 @@ aside {
   }
   h1 {
     text-decoration: overline;
-    margin-left: 25px;
   }
   .itemDescription {
     text-overflow: inherit;
@@ -619,7 +618,7 @@ aside {
 .auctionCreate, .auctionEdit {
   h3 {
     margin: 20px;
-    font-size: 14px;
+    font-size: 24px;
     color: #D7D7CD;
   }
 }
