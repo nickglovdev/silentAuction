@@ -6,8 +6,7 @@ import ClipboardButton from 'react-clipboard.js';
 import setup from '../../setup'
 import User from '../../models/users'
 import ListItems from './listItems'
-
-
+import PublicListItems from './publicListItem'
 
 class PublicViewItems extends React.Component {
   constructor(props) {
@@ -26,11 +25,9 @@ class PublicViewItems extends React.Component {
     return(
       <section className="dashboardItem2">
         <header className="itemViewHeader">
-
           <h3>Public Auction View</h3>
-
         </header>
-        <ListItems id={this.props.params.id}></ListItems>
+        <PublicListItems id={this.props.params.id}></PublicListItems>
         {/* id in this is setting the params for listitems */}
       </section>
     )

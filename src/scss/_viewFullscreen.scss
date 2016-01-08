@@ -53,7 +53,7 @@ aside {
   font-family: Gill Sans;
   margin: 0;
   background: rgba(68, 89, 99, 0.93);
-  height: 1300px;
+  height: 2500px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
   box-shadow: -7px -4px 15px 7px #212121;
   .homeOptions {
@@ -224,6 +224,7 @@ aside {
    }
 }
 
+
 .auctionStatusOpen {
    border-top: 1px solid #96d1f8;
    background: #18a138;
@@ -310,6 +311,29 @@ aside {
       border-top-color: #1b435e;
       background: #212121;
     }
+  }
+}
+
+.currentStatus{
+  margin-top: 5%;
+  h4{
+    text-align:center;
+    color:white;
+    font-size:2em;
+    margin-bottom:0;
+  }
+  p{
+    text-align:center;
+    color:white;
+    font-size:2em;
+    margin-top:0.5%;
+    margin-bottom:1em;
+  }
+  .auctionStarted{
+    color:green;
+  }
+  .auctionEnded{
+    color:#B52D32;
   }
 }
 
@@ -519,6 +543,7 @@ aside {
 
 // moderator Create //
 .auctionCreate, .auctionEdit, {
+  @include outer-container;
   width: 100%;
   @include span-columns(9);
   @include shift(2);
@@ -543,6 +568,10 @@ aside {
   h1 {
     text-decoration: overline;
     margin-left: 25px;
+  }
+  button {
+    @include span-columns(4);
+    @include shift(4);
   }
 }
 
@@ -594,11 +623,7 @@ aside {
   }
 }
 
-
-.auctionCreateBtn {
-  float: right;
-  margin: 0 auto;
-}
+a
 .auctionFormLeft{
   border-left: 2px solid rgba(252, 85, 33, 0.93);
 }
@@ -636,6 +661,7 @@ aside {
     margin: 20px 80px;
     padding: 6px;
   }
+
   p{
     text-align:center;
   }
@@ -718,8 +744,6 @@ aside {
   img {
     height: 225px;
     width: 300px;
-    display: flex;
-    margin: auto;
     border: 2px solid #5783B9;
     box-shadow: -5px 7px 15px -7px #212121;
   }
@@ -758,7 +782,6 @@ aside {
   img {
     height: 200px;
     width: 250px;
-    display: flex;
   }
   h1 {
     margin: 30px;
@@ -767,6 +790,51 @@ aside {
     background: #D1D8DB;
     border: 1px solid;
     color: #fff;
+  }
+}
+.individualItemWrap2{
+  @include span-columns(12);
+  height:70em;
+
+  img{
+    margin-left:37%;
+  }
+}
+
+@media (max-width:1200px){
+  .individualItemWrap2{
+    img{
+      margin-left:36%;
+    }
+  }
+}
+
+@media (max-width:1000px){
+  .individualItemWrap2{
+    img{
+      margin-left:34%;
+    }
+  }
+}
+@media (max-width:800px){
+  .individualItemWrap2{
+    img{
+      margin-left:30%;
+    }
+  }
+}
+@media (max-width:480px){
+  .individualItemWrap2{
+    img{
+      margin-left:25%;
+    }
+  }
+}
+@media (max-width:400px){
+  .individualItemWrap2{
+    img{
+      margin-left:20%;
+    }
   }
 }
 
@@ -801,14 +869,15 @@ aside {
 .addItems {
   background: #6481B8;
   height: 0px;
-  margin: 0px 20px 0px;
+  margin: 20px 20px 0px;
   border: 5px solid #D2D7DA;
+  padding-top: 1em;
   a {
     text-decoration: none;
     text-align: center;
     margin: 0 9px;
     color: #fff;
-    font-size: 12px;
+    font-size: 2em;
     a:hover {
       background: #fff;
       color: black;
@@ -847,7 +916,7 @@ aside {
 }
 
 .bids {
-  @include outer-container;
+  @include span-columns(12);
   border: 1px solid #D35F32;
   border-bottom: none;
   margin: 50px 0 25px 0;
@@ -880,11 +949,12 @@ aside {
 // end moderator Create //
 
 .editProfile  {
+  @include outer-container;
   width: 100%;
   @include span-columns(9);
   @include shift(2);
   padding: 10px 0;
-  height: 700px;
+  height: 720px;
   border-radius: 2px;
   border: 1px solid #56646D;
   background: rgba(95, 124, 138, 0.65);
@@ -902,6 +972,10 @@ aside {
     display: block;
     margin: 20px auto;
   }
+  button {
+    @include span-columns(4);
+    @include shift(4);
+  }
 }
 
 .editProfile {
@@ -912,9 +986,6 @@ aside {
   }
   span {
     padding-left: 100px;
-  }
-  button {
-    float: right;
   }
 }
 
