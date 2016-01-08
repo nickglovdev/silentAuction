@@ -624,13 +624,18 @@ aside {
   }
 }
 
-a
+.auctionEdit{
+  margin-left:33%;
+  width:50%;
+}
 .auctionFormLeft{
   border-left: 2px solid rgba(252, 85, 33, 0.93);
+  text-align:center
 }
 
 .auctionFormRight{
   border-left: 2px solid rgba(252, 85, 33, 0.93);
+  text-align:center
 }
 
 .fp__btn:nth-of-type(2) {
