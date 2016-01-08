@@ -34,6 +34,10 @@ class publicViewIndividualItems extends React.Component {
     this.interval = setInterval( () => {
       this.fetchItems(this.props.params.id, this.props.params.itemId)
     }, 5000);
+    
+    $(document).ready(function(){
+      $(this).scrollTop(0);
+    });
     }
 
   componentWillUnmount(){

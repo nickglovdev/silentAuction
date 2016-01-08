@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router';
 import jQuery from 'jQuery';
+import $ from 'jQuery';
 import ClipboardButton from 'react-clipboard.js';
 import ToggleDisplay from 'react-toggle-display';
 
@@ -117,8 +118,11 @@ class AuctionsItemView extends React.Component {
       self.props.history.pushState(null,'/dashboard');
     });
   };
-
   render () {
+      $(document).ready(function(){
+        $(this).scrollTop(0);
+      });
+
     let id = this.props.params.id; //grabs our id from params
     // the ${id} below is getting it's information from this
     return(

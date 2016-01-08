@@ -33,6 +33,10 @@ class ListItems extends React.Component {
     this.interval = setInterval( () => {
       this.fetchItems(this.fetchItems(this.props.id))
     }, 5000);
+
+    $(document).ready(function(){
+      $(this).scrollTop(0);
+    });
   }
   componentWillUnmount(){
     clearInterval(this.interval);

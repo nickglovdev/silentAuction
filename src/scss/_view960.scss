@@ -685,6 +685,12 @@
       margin: 10px auto;
     }
   }
+  .auctionCreate:last-child{
+    float:left;
+    .auctionEdit:last-child {
+      float: left;
+    }
+  }
   .auctionCreateItem {
     @include span-columns(12);
     margin-left: 0;

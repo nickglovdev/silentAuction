@@ -61,6 +61,10 @@ class AuctionItemEdit extends React.Component {
         self.props.history.pushState(null,'/dashboard');
         alert('item added.')
       });
+
+      $(document).ready(function(){
+        $(this).scrollTop(0);
+      });
   }
 
 
