@@ -156,4 +156,18 @@
       width: 50%;
     }
   }
+
+  .individualItemView2 {
+    @include outer-container;
+    @include span-columns(9);
+    margin-right: 12px;
+    border: 1px solid #CBCBCB;
+    width: 100%;
+    img {
+      @include span-columns(6);
+      @include shift(3);
+      height: 230px;
+      width: 50%;
+    }
+  }
 }

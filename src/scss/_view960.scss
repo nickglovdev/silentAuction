@@ -17,6 +17,9 @@
       height: 235px;
       width: 100%;
     }
+    span {
+      font-size: 15px;
+    }
   }
 
   .pageWrap {
@@ -682,8 +685,9 @@
   }
 
   .auctionCreateItem {
+    @include span-columns(12);
+    margin-left: 0;
     height:580;
-    margin-left: 20%;
   }
 
   .individualItemWrap{

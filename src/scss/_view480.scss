@@ -164,10 +164,25 @@
     }
   }
 
+  .individualItemView2 {
+    @include outer-container;
+    @include span-columns(9);
+    margin-right: 12px;
+    border: 1px solid #CBCBCB;
+    width: 100%;
+    img {
+      @include span-columns(6);
+      @include shift(2);
+      height: 200px;
+      width: 65%;
+    }
+  }
+
   .itemDescription {
-    @include span-columns(3);
+    @include span-columns(6);
     margin-left: 0;
     border-left: 1px solid #D35F32;
+    width: 85.76157%;
     h4 {
       text-decoration: underline;
       font-size:1.3em;
@@ -178,9 +193,10 @@
   }
 
   .itemDescription2 {
-    @include span-columns(3);
-    @include shift(3);
+    @include span-columns(6);
     border-left: 1px solid #D35F32;
+    width: 58.82117%;
+    margin-left: 0;
     h4 {
       text-decoration: underline;
     }

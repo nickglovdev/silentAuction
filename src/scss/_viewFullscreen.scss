@@ -53,7 +53,7 @@ aside {
   font-family: Gill Sans;
   margin: 0;
   background: rgba(68, 89, 99, 0.93);
-  height: 2500px;
+  height: 2000px;
   border-right: 2px solid rgba(181, 181, 181, 0.47);
   box-shadow: -7px -4px 15px 7px #212121;
   .homeOptions {
@@ -601,7 +601,6 @@ aside {
   }
   h1 {
     text-decoration: overline;
-    margin-left: 25px;
   }
   .itemDescription {
     text-overflow: inherit;
@@ -619,7 +618,7 @@ aside {
 .auctionCreate, .auctionEdit {
   h3 {
     margin: 20px;
-    font-size: 14px;
+    font-size: 24px;
     color: #D7D7CD;
   }
 }
@@ -794,16 +793,71 @@ aside {
   h1 {
     margin: 30px;
     font-family: Gill Sans;
+    font-weight: lighter;
     text-align: center;
     background: #D1D8DB;
     border: 1px solid;
     color: #fff;
   }
 }
-.individualItemWrap2{
-  @include span-columns(12);
-  height:70em;
-  background: rgba(139, 148, 160, .8);
+
+.individualItemView2 {
+  @include outer-container;
+  margin-right: 12px;
+  border: 1px solid #CBCBCB;
+  width: 100%;
+  img {
+    @include span-columns(6);
+    @include shift(3);
+    height: 320px;
+    width: 50%;
+  }
+  h1 {
+    margin: 30px;
+    font-family: Gill Sans;
+    font-weight: lighter;
+    text-align: center;
+    background: #D1D8DB;
+    border: 1px solid;
+    color: #fff;
+  }
+}
+
+@media (max-width:1200px){
+  .individualItemWrap2{
+    img{
+      margin-left:36%;
+    }
+  }
+}
+
+@media (max-width:1000px){
+  .individualItemWrap2{
+    img{
+      margin-left:34%;
+    }
+  }
+}
+@media (max-width:800px){
+  .individualItemWrap2{
+    img{
+      margin-left:30%;
+    }
+  }
+}
+@media (max-width:480px){
+  .individualItemWrap2{
+    img{
+      margin-left:25%;
+    }
+  }
+}
+@media (max-width:400px){
+  .individualItemWrap2{
+    img{
+      margin-left:20%;
+    }
+  }
 }
 
 .companyWrap {
@@ -817,6 +871,10 @@ aside {
     font-family: helvetica;
     color: #fff;
     margin-bottom: 0;
+  }
+  span {
+    font-family: Gill Sans;
+    font-weight: lighter;
   }
 }
 

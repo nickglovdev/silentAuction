@@ -20,13 +20,13 @@ class PublicListItems extends React.Component {
   fetchItems(nextId) {
     nextId = nextId || this.props.id
     $.ajax('http://silent-auctioner.herokuapp.com/auctions/'+ nextId + '/items') //used this.props.id to get the id. the this.props.params.id is on dashboarditemview
-     .then( (response) => {
-        this.setState({
-         loaded: true,
-         item: response,
-         itemBids: response
-        })
-     });
+    .then( (response) => {
+      this.setState({
+        loaded: true,
+        item: response,
+        itemBids: response
+      })
+    });
   }
 
   componentWillReceiveProps(nextProps){
@@ -49,29 +49,31 @@ class PublicListItems extends React.Component {
     let items = this.state.item.map(item => {
       console.log(item)
       return <div className='listItem' key= {item.id} item={item}>
-              <div className="companyWrap">
-                <h4>Title:{item.auction.title}</h4>
-                <h4>Host: {item.auction.company}</h4>
-                <h4>Phone Number: {item.auction.contact}</h4>
-              </div>
-
-              <div className="companyWrap">
-                <h4>Date: {moment(item.auction.time, 'YYYY-MM-DD').format('MMM-D-YYYY')}</h4>
-                <h4>Time: {moment(item.auction.date, 'HH:mm' ).format('h:mm a')}</h4>
-                <h4>Location: {item.auction.location}</h4>
-              </div>
-
-              <Link to={`/public/auctions/${this.props.id}/items/${item.id}`}>
-                <h2>{item.name}</h2>
-                <img  src={item.image_url}/>
-              </Link>
-              <h3>Description</h3>
-              <div className='itemsDescriptions'>{item.description}</div>
-              <h3>Starting Bid</h3><p>${item.starting_bid}</p>
-              <h3>Current Highest Bid</h3><p>${item.current_bid}</p>
-            </div>
+        <div className="companyWrap">
+          <ul>
+            <li><h4>Title: {item.auction.title}</h4></li>
+            <li><h4>Host: {item.auction.company}</h4></li>
+            <li><h4>Phone Number: {item.auction.contact}</h4></li>
+          </ul>
+          <div className="companyWrap2">
+            <ul>
+              <li><h4>Date: {moment(item.auction.time, 'YYYY-MM-DD').format('MMM-D-YYYY')}</h4></li>
+              <li><h4>Time: {moment(item.auction.date, 'HH:mm' ).format('h:mm a')}</h4></li>
+              <li><h4>Location: {item.auction.location}</h4></li>
+            </ul>
+          </div>
+        </div>
+        <Link to={`/public/auctions/${this.props.id}/items/${item.id}`}>
+          <h6>{item.name}</h6>
+          <img  src={item.image_url}/>
+        </Link>
+        <h3>Description</h3>
+        <div className='itemsDescriptions'>{item.description}</div>
+        <h3>Starting Bid</h3><p>${item.starting_bid}</p>
+        <h3>Current Highest Bid</h3><p>${item.current_bid}</p>
+      </div>
     });
-    return (
+    return(
       <section className='itemList'>
         {items}
       </section>
