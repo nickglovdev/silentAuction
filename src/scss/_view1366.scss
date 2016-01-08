@@ -422,5 +422,9 @@
   }
 }
 
+ .individualItemView2{
+   @include shift(1);
+ }
+
 
 }
