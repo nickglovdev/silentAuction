@@ -3,11 +3,11 @@
     @include outer-container(100%);
     margin: 0;
     padding: 0;
-    height: 660px;
+    height: auto;
   }
 
   .pageWrap {
-    height: 4500px;
+    height: auto;
   }
 
 
@@ -184,6 +184,10 @@
     width: 85.76157%;
     h4 {
       text-decoration: underline;
+      font-size:1.3em;
+    }
+    p{
+      width: 224%;
     }
   }
 

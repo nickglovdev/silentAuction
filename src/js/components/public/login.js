@@ -45,6 +45,7 @@ class Login extends React.Component{
     return(
       <div className="homePage">
         <div className="login">
+                  <span>SIGN IN AS, testProfile. PASSWORD, test.</span>
           <h3>Login</h3>
           <span className="inputLabel">E-Mail:</span>
             <input ref="email" type="text" className="username" placeholder="E-Mail..."></input>

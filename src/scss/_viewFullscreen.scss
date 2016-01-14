@@ -13,6 +13,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  // overflow: scroll;
 }
 
 .public {
@@ -21,7 +22,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 1100px;
+  height: auto;
 }
 
 
@@ -65,23 +66,23 @@ aside {
     text-decoration:none;
     padding: 0;
   }
-    nav {
-      @include span-columns(12);
-      padding:0;
-      position:relative;
-    }
-    li{
-      @include span-columns(12);
-      padding-top:15%;
+  nav {
+    @include span-columns(12);
+    padding:0;
+    position:relative;
+  }
+  li{
+    @include span-columns(12);
+    padding-top:15%;
 
-      a{
-        @include span-columns(12);
-        font-size:1.4em;
-        padding-left:0;
-        text-align:center;
-      }
+    a{
+      @include span-columns(12);
+      font-size:1.4em;
+      padding-left:0;
+      text-align:center;
     }
   }
+}
 
 
 .navOptions{
@@ -212,47 +213,47 @@ aside {
   margin-bottom: -1.55px;
   display: inline-flex;
   button:hover {
-   border-top-color: #28597a;
-   background: #28597a;
-   color: #ccc;
-   transition: background-color 0.25s ease;
-   transition: color 0.25s ease;
-   }
-   button:active {
-   border-top-color: #1b435e;
-   background: #1b435e;
-   }
+    border-top-color: #28597a;
+    background: #28597a;
+    color: #ccc;
+    transition: background-color 0.25s ease;
+    transition: color 0.25s ease;
+  }
+  button:active {
+    border-top-color: #1b435e;
+    background: #1b435e;
+  }
 }
 
 
 .auctionStatusOpen {
-   border-top: 1px solid #96d1f8;
-   background: #18a138;
-   background: -webkit(linear, left top, left bottom, from(#17d479), to(#18a138));
-   background: -webkit-linear(top, #17d479, #18a138);
-   background: -moz-linear(top, #17d479, #18a138);
-   background: -ms-linear(top, #17d479, #18a138);
-   background: -o-linear(top, #17d479, #18a138);
-   padding: 11.5px 23px;
-   border-bottom: none;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: white;
-   font-size: 16px;
-   font-family: Gill Sans;
-   text-decoration: underline;
-   vertical-align: middle;
-   width: 34%;
-   .auctionStatusOpen:hover {
-   border-top-color: #28597a;
-   background: #28597a;
-   color: #ccc;
-   transition: color 0.25s ease;
-   transition: background-color 0.25s ease;
-   .auctionStatusOpen:active {
-   border-top-color: #1b435e;
-   background: #1b435e;
-   }
- }
+  border-top: 1px solid #96d1f8;
+  background: #18a138;
+  background: -webkit(linear, left top, left bottom, from(#17d479), to(#18a138));
+  background: -webkit-linear(top, #17d479, #18a138);
+  background: -moz-linear(top, #17d479, #18a138);
+  background: -ms-linear(top, #17d479, #18a138);
+  background: -o-linear(top, #17d479, #18a138);
+  padding: 11.5px 23px;
+  border-bottom: none;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: white;
+  font-size: 16px;
+  font-family: Gill Sans;
+  text-decoration: underline;
+  vertical-align: middle;
+  width: 34%;
+  .auctionStatusOpen:hover {
+    border-top-color: #28597a;
+    background: #28597a;
+    color: #ccc;
+    transition: color 0.25s ease;
+    transition: background-color 0.25s ease;
+    .auctionStatusOpen:active {
+      border-top-color: #1b435e;
+      background: #1b435e;
+    }
+  }
 }
 
 .auctionStatusClose {
@@ -419,7 +420,7 @@ aside {
     font-size:2em;
     float:left;
     height: 2.45em;
-    }
+  }
   h1 {
     font-family: 'Crimson Text', serif;
     font-size: 16px;
@@ -683,18 +684,18 @@ aside {
     height: 23px;
   }
 
-    .itemsDescriptions {
-      height: 5.6em;
-      line-height: 1.4em;
-      overflow: hidden;
-      position: relative;
-      font-size: 22px;
-      margin: 10px 30px;
+  .itemsDescriptions {
+    height: 5.6em;
+    line-height: 1.4em;
+    overflow: hidden;
+    position: relative;
+    font-size: 22px;
+    margin: 10px 30px;
   }
 
   img {
-    height: 350px;
-    width: 85%;
+    height: auto;
+    width: 45%;
     display: flex;
     margin: auto;
     border: 2px solid #5783B9;
@@ -747,7 +748,7 @@ aside {
     width: 50%;
   }
   img {
-    height: 225px;
+    height: auto;
     width: 300px;
     border: 2px solid #5783B9;
     box-shadow: -5px 7px 15px -7px #212121;
@@ -761,8 +762,8 @@ aside {
   }
   a {
     text-decoration: none;
-    font-size: 14px;
-    color: #5783B9;
+    font-size: 18px;
+    color: white;
     margin: 0 30px;
     :hover {
       color: white;
@@ -788,7 +789,7 @@ aside {
   img {
     @include span-columns(6);
     @include shift(3);
-    height: 320px;
+    height: auto;
     width: 50%;
   }
   h1 {
@@ -802,15 +803,19 @@ aside {
   }
 }
 
+.individualItemWrap2{
+ width: 100%;
+ height: 68em;
+}
 .individualItemView2 {
-  @include outer-container;
   margin-right: 12px;
   border: 1px solid #CBCBCB;
   width: 100%;
+  max-width: 100%;
   img {
     @include span-columns(6);
     @include shift(3);
-    height: 320px;
+    height: auto;
     width: 50%;
   }
   h1 {
@@ -821,43 +826,6 @@ aside {
     background: #D1D8DB;
     border: 1px solid;
     color: #fff;
-  }
-}
-
-@media (max-width:1200px){
-  .individualItemWrap2{
-    img{
-      margin-left:36%;
-    }
-  }
-}
-
-@media (max-width:1000px){
-  .individualItemWrap2{
-    img{
-      margin-left:34%;
-    }
-  }
-}
-@media (max-width:800px){
-  .individualItemWrap2{
-    img{
-      margin-left:30%;
-    }
-  }
-}
-@media (max-width:480px){
-  .individualItemWrap2{
-    img{
-      margin-left:25%;
-    }
-  }
-}
-@media (max-width:400px){
-  .individualItemWrap2{
-    img{
-      margin-left:20%;
-    }
   }
 }
 
@@ -891,8 +859,6 @@ aside {
   }
 }
 
-
-
 .addItems {
   background: #6481B8;
   height: 0px;
@@ -921,12 +887,13 @@ aside {
 }
 
 .itemDescription {
-  @include span-columns(4);
-  @include shift(2);
+  @include span-columns(4.5);
+  @include shift(2.4);
+  padding-left:4%;
+  font-size: 29px;
   border-left: 1px solid #D35F32;
   h4 {
     text-decoration: underline;
-    font-size: 29px;
     margin: 20px;
   }
 }
@@ -939,6 +906,9 @@ aside {
     text-decoration: underline;
     font-size: 29px;
     margin: 20px;
+  }
+  span:nth-child(2){
+    padding-left: 6.5%;
   }
 }
 
@@ -1010,6 +980,7 @@ aside {
     text-decoration: overline;
     font-size: 26px;
     margin-bottom: 100px;
+    text-align:center;
   }
   span {
     padding-left: 100px;

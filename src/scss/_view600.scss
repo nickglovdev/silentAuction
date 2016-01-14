@@ -1,14 +1,10 @@
 @media (min-width:1px) and (max-width:600px){
 
-  main {
-    @include span-columns(12);
+  .welcomeScreen {
     margin: 0;
     padding: 0;
-    height: 660px;
-  }
+    height: 2000px;
 
-  .welcomeScreen {
-    @include span-columns(12);
     h1 {
       font-size: 36px;
     }
@@ -79,7 +75,7 @@
     width: 100%;
     margin-left: 0;
     padding: 10px 0;
-    height: 800px;
+    height: 1100px;
     border-radius: 2px;
     border: 1px solid #56646D;
     background: rgba(95, 124, 138, 0.65);

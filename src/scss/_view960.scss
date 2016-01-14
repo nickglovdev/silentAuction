@@ -1,20 +1,16 @@
 @media (min-width:1px) and (max-width:960px){
-  main {
+  .welcomeScreen {
     @include span-columns(12);
     margin: 0;
     padding: 0;
-    height: 660px;
-  }
-
-  .welcomeScreen {
-    @include span-columns(12);
+    height: 2000px;
     margin-top: 0px;
   }
 
   .listItem {
     width: 47.56157%;
     img {
-      height: 235px;
+      height: auto;
       width: 100%;
     }
     span {
@@ -23,7 +19,7 @@
   }
 
   .pageWrap {
-    height: 1400px;
+    height: auto;
   }
 
   .login, .register, .faq, .editProfile {
@@ -170,7 +166,8 @@
   @media (max-width:600px){
     .options{
       margin-right: 30%;
-      margin-top: 1em;
+       margin-top: 3.3em;
+
     }
   }
   @media (max-width:580px){
@@ -671,7 +668,7 @@
     @include span-columns(8);
     @include shift(2);
     padding: 10px 0;
-    height: 800px;
+    height: 1100px;
     border-radius: 2px;
     border: 1px solid #56646D;
     background: rgba(95, 124, 138, 0.65);
@@ -688,7 +685,12 @@
       margin: 10px auto;
     }
   }
-
+  .auctionCreate:last-child{
+    float:left;
+    .auctionEdit:last-child {
+      float: left;
+    }
+  }
   .auctionCreateItem {
     @include span-columns(12);
     margin-left: 0;

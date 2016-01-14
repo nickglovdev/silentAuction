@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router';
 import jQuery from 'jQuery';
+import $ from 'jQuery';
 import ClipboardButton from 'react-clipboard.js';
 import ToggleDisplay from 'react-toggle-display';
 
@@ -117,8 +118,11 @@ class AuctionsItemView extends React.Component {
       self.props.history.pushState(null,'/dashboard');
     });
   };
-
   render () {
+      $(document).ready(function(){
+        $(this).scrollTop(0);
+      });
+
     let id = this.props.params.id; //grabs our id from params
     // the ${id} below is getting it's information from this
     return(
@@ -126,10 +130,10 @@ class AuctionsItemView extends React.Component {
         <header className="itemViewHeader">
 
           <div className="clipboard">
-            <ClipboardButton data-clipboard-text={`http://localhost:8000/#/public/auctions/${id}`}>
+            <ClipboardButton data-clipboard-text={`http://nicholasglover.net/#/public/auctions/${id}`}>
               Copy Public URL
             </ClipboardButton>
-            <input id='publicURL' type="text" value={`http://localhost:8000/#/public/auctions/${id}`} readOnly/>
+            <input id='publicURL' type="text" value={`http://nicholasglover.net/#/public/auctions/${id}`} readOnly/>
           </div>
 
           <h3>Manage Auction</h3>
@@ -138,19 +142,11 @@ class AuctionsItemView extends React.Component {
           <button className="viewbtns"><Link to={`/public/auctions/${id}`}>Public View</Link></button>
 
           <div className="statusOpen">
-            <button className="auctionStatusOpen" onClick={this.handleAuctionOpen} onClick={this.statusOpen}>Start</button>
-            <button className="auctionStatusClose" onClick={this.handleAuctionClose} onClick={this.statusClosed}>End</button>
+            <button className="auctionStatusOpen" onClick={this.handleAuctionOpen}>Start</button>
+            <button className="auctionStatusClose" onClick={this.handleAuctionClose}>End</button>
             <button className="auctionStatusDelete" onClick={this.handleAuctionDelete}>Delete</button>
           </div>
-          <section className="currentStatus">
-            <h4>Current Auction Status</h4>
-              <ToggleDisplay show={this.state.isAuthorizedOne}>
-                <p className='auctionStarted'>Started</p>
-              </ToggleDisplay>
-              <ToggleDisplay show={this.state.isAuthorizedTwo}>
-                <p className='auctionEnded'>Ended</p>
-              </ToggleDisplay>
-          </section>
+      
         </header>
         <span className="addItems"><Link to={`/auctions/${id}/items`}>Add Items</Link></span>
         <ListItems id={this.props.params.id}></ListItems>
