@@ -10,7 +10,7 @@
   .listItem {
     width: 47.56157%;
     img {
-      height: 235px;
+      height: auto;
       width: 100%;
     }
     span {
@@ -19,7 +19,7 @@
   }
 
   .pageWrap {
-    height: 3200px;
+    height: auto;
   }
 
   .login, .register, .faq, .editProfile {

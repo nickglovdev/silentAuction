@@ -149,7 +149,7 @@ class User{
       }
     };
 
-    jQuery.ajax(options).then(response => {
+    jQuery.ajax(options + id).then(response => {
       this.updateAttributes(response);
 
       if (done) {

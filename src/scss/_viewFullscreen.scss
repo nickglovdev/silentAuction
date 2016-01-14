@@ -13,6 +13,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  // overflow: scroll;
 }
 
 .public {
@@ -21,7 +22,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 1100px;
+  height: auto;
 }
 
 
@@ -693,8 +694,8 @@ aside {
   }
 
   img {
-    height: 350px;
-    width: 85%;
+    height: auto;
+    width: 45%;
     display: flex;
     margin: auto;
     border: 2px solid #5783B9;
@@ -747,7 +748,7 @@ aside {
     width: 50%;
   }
   img {
-    height: 225px;
+    height: auto;
     width: 300px;
     border: 2px solid #5783B9;
     box-shadow: -5px 7px 15px -7px #212121;
@@ -788,7 +789,7 @@ aside {
   img {
     @include span-columns(6);
     @include shift(3);
-    height: 320px;
+    height: auto;
     width: 50%;
   }
   h1 {
@@ -814,7 +815,7 @@ aside {
   img {
     @include span-columns(6);
     @include shift(3);
-    height: 400px;
+    height: auto;
     width: 50%;
   }
   h1 {
