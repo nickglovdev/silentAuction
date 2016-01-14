@@ -10,6 +10,7 @@ class Home extends React.Component {
       <div className="homePage">
         <div className="homeScroll">
           <section className="siteDescription">
+            <span>SIGN IN AS, testProfile. PASSWORD, test.</span>
             <h2>iBid</h2>
             <p>The better silent auctioner. Place bids via text message,
               get notifications when you are outbid and when the auction is over.
